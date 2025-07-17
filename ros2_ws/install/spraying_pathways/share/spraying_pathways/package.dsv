@@ -1,0 +1,8 @@
+source;share/spraying_pathways/hook/cmake_prefix_path.ps1
+source;share/spraying_pathways/hook/cmake_prefix_path.dsv
+source;share/spraying_pathways/hook/cmake_prefix_path.sh
+source;share/spraying_pathways/local_setup.bash
+source;share/spraying_pathways/local_setup.dsv
+source;share/spraying_pathways/local_setup.ps1
+source;share/spraying_pathways/local_setup.sh
+source;share/spraying_pathways/local_setup.zsh
