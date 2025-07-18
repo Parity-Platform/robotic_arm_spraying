@@ -5,6 +5,8 @@
 /ros2_ws/build/spraying_pathways/CMakeFiles/cartesian_path_planner_cubes_v2_node.dir
 /ros2_ws/build/spraying_pathways/CMakeFiles/cartesian_path_planner_trajectory_v1_node.dir
 /ros2_ws/build/spraying_pathways/CMakeFiles/cartesian_path_planner_cubes_v3_node.dir
+/ros2_ws/build/spraying_pathways/CMakeFiles/cartesian_path_planner_cubes_test_v1_node.dir
+/ros2_ws/build/spraying_pathways/CMakeFiles/cartesian_path_planner_cubes_test_v2_node.dir
 /ros2_ws/build/spraying_pathways/CMakeFiles/test.dir
 /ros2_ws/build/spraying_pathways/CMakeFiles/edit_cache.dir
 /ros2_ws/build/spraying_pathways/CMakeFiles/rebuild_cache.dir

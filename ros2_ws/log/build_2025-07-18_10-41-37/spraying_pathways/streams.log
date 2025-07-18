@@ -1,0 +1,194 @@
+[0.053s] Invoking command in '/ros2_ws/build/spraying_pathways': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /ros2_ws/src/spraying_pathways -DCMAKE_INSTALL_PREFIX=/ros2_ws/install/spraying_pathways
+[0.842s] -- The C compiler identification is GNU 11.4.0
+[1.093s] -- The CXX compiler identification is GNU 11.4.0
+[1.100s] -- Detecting C compiler ABI info
+[1.297s] -- Detecting C compiler ABI info - done
+[1.304s] -- Check for working C compiler: /usr/bin/cc - skipped
+[1.308s] -- Detecting C compile features
+[1.309s] -- Detecting C compile features - done
+[1.314s] -- Detecting CXX compiler ABI info
+[1.532s] -- Detecting CXX compiler ABI info - done
+[1.539s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[1.540s] -- Detecting CXX compile features
+[1.540s] -- Detecting CXX compile features - done
+[1.554s] -- Found ament_cmake: 1.3.10 (/opt/ros/humble/share/ament_cmake/cmake)
+[1.789s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[1.988s] -- Found rclcpp: 16.0.10 (/opt/ros/humble/share/rclcpp/cmake)
+[2.149s] -- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[2.167s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[2.190s] -- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[2.234s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[2.286s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[2.425s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[2.430s] -- Found rmw_fastrtps_cpp: 6.2.6 (/opt/vulcanexus/humble/share/rmw_fastrtps_cpp/cmake)
+[2.702s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[2.741s] -- Found FastRTPS: /opt/vulcanexus/humble/include  
+[2.803s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[2.828s] -- Looking for pthread.h
+[2.984s] -- Looking for pthread.h - found
+[2.984s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[3.128s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[3.130s] -- Found Threads: TRUE  
+[3.261s] -- Found rclpy: 3.3.14 (/opt/ros/humble/share/rclpy/cmake)
+[3.268s] -- Found moveit_ros_planning_interface: 2.5.9 (/opt/ros/humble/share/moveit_ros_planning_interface/cmake)
+[3.331s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: date_time filesystem program_options system thread 
+[3.702s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: chrono date_time filesystem iostreams program_options regex serialization system thread 
+[3.807s] -- Found parameter_traits: 0.3.9 (/opt/ros/humble/share/parameter_traits/cmake)
+[3.839s] -- Found Eigen3: TRUE (found version "3.4.0") 
+[3.845s] -- Found rclcpp_lifecycle: 16.0.10 (/opt/ros/humble/share/rclcpp_lifecycle/cmake)
+[3.909s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: filesystem 
+[4.089s] -- library: /usr/lib/x86_64-linux-gnu/libcurl.so
+[4.172s] -- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+[4.553s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: system filesystem date_time program_options thread chrono 
+[4.613s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: thread system filesystem regex date_time program_options 
+[4.676s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: system filesystem date_time program_options thread 
+[4.752s] -- Found gazebo_ros: 3.9.0 (/opt/ros/humble/share/gazebo_ros/cmake)
+[4.778s] -- Found PkgConfig: /usr/bin/pkg-config (found version "0.29.2") 
+[4.782s] -- Checking for module 'bullet>=2.82'
+[4.848s] --   Found bullet, version 3.05
+[5.045s] -- Found fcl: /usr/include (found suitable version "0.7.0", minimum required is "0.5.0") 
+[5.158s] -- Found assimp: /usr/include (found version "5.2.0") 
+[5.170s] -- Found DART: /usr/include (Required is at least version "6.6") found components: dart 
+[5.188s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found suitable version "1.74.0", minimum required is "1.40.0") found components: thread system filesystem program_options regex iostreams date_time 
+[5.273s] -- Found Protobuf: /usr/lib/x86_64-linux-gnu/libprotobuf.so (found version "3.12.4") 
+[5.289s] -- Looking for ignition-math6 -- found version 6.15.1
+[5.320s] -- Searching for dependencies of ignition-math6
+[5.327s] -- Looking for OGRE...
+[5.327s] -- OGRE_PREFIX_WATCH changed.
+[5.343s] -- Checking for module 'OGRE'
+[5.371s] --   Found OGRE, version 1.9.0
+[5.429s] -- Found Ogre Ghadamon (1.9.0)
+[5.438s] -- Found OGRE: optimized;/usr/lib/x86_64-linux-gnu/libOgreMain.so;debug;/usr/lib/x86_64-linux-gnu/libOgreMain.so
+[5.450s] -- Looking for OGRE_Paging...
+[5.455s] -- Found OGRE_Paging: optimized;/usr/lib/x86_64-linux-gnu/libOgrePaging.so;debug;/usr/lib/x86_64-linux-gnu/libOgrePaging.so
+[5.456s] -- Looking for OGRE_Terrain...
+[5.460s] -- Found OGRE_Terrain: optimized;/usr/lib/x86_64-linux-gnu/libOgreTerrain.so;debug;/usr/lib/x86_64-linux-gnu/libOgreTerrain.so
+[5.460s] -- Looking for OGRE_Property...
+[5.466s] -- Found OGRE_Property: optimized;/usr/lib/x86_64-linux-gnu/libOgreProperty.so;debug;/usr/lib/x86_64-linux-gnu/libOgreProperty.so
+[5.466s] -- Looking for OGRE_RTShaderSystem...
+[5.470s] -- Found OGRE_RTShaderSystem: optimized;/usr/lib/x86_64-linux-gnu/libOgreRTShaderSystem.so;debug;/usr/lib/x86_64-linux-gnu/libOgreRTShaderSystem.so
+[5.470s] -- Looking for OGRE_Volume...
+[5.476s] -- Found OGRE_Volume: optimized;/usr/lib/x86_64-linux-gnu/libOgreVolume.so;debug;/usr/lib/x86_64-linux-gnu/libOgreVolume.so
+[5.476s] -- Looking for OGRE_Overlay...
+[5.481s] -- Found OGRE_Overlay: optimized;/usr/lib/x86_64-linux-gnu/libOgreOverlay.so;debug;/usr/lib/x86_64-linux-gnu/libOgreOverlay.so
+[5.611s] -- Looking for ignition-math6 -- found version 6.15.1
+[5.619s] -- Looking for ignition-transport8 -- found version 8.2.1
+[5.620s] -- Searching for dependencies of ignition-transport8
+[5.652s] -- Found Protobuf: /usr/lib/x86_64-linux-gnu/libprotobuf.so (found suitable version "3.12.4", minimum required is "3") 
+[5.673s] -- Config-file not installed for ZeroMQ -- checking for pkg-config
+[5.688s] -- Checking for module 'libzmq >= 4'
+[5.725s] --   Found libzmq , version 4.3.4
+[5.785s] -- Found ZeroMQ: TRUE (Required is at least version "4") 
+[5.796s] -- Checking for module 'uuid'
+[5.819s] --   Found uuid, version 2.37.2
+[5.889s] -- Found UUID: TRUE  
+[5.895s] -- Looking for ignition-msgs5 -- found version 5.8.1
+[5.896s] -- Searching for dependencies of ignition-msgs5
+[5.920s] -- Looking for ignition-math6 -- found version 6.15.1
+[5.928s] -- Checking for module 'tinyxml2'
+[5.958s] --   Found tinyxml2, version 9.0.0
+[6.022s] -- Looking for ignition-msgs5 -- found version 5.8.1
+[6.029s] -- Looking for ignition-common3 -- found version 3.14.0
+[6.030s] -- Searching for dependencies of ignition-common3
+[6.031s] -- Looking for dlfcn.h - found
+[6.031s] -- Looking for libdl - found
+[6.033s] -- Found DL: TRUE  
+[6.052s] -- Found tinyobjloader: /usr/lib/x86_64-linux-gnu/cmake/tinyobjloader/tinyobjloader-config.cmake (found version "2.0.0") 
+[6.054s] -- Searching for <ignition-common3> component [graphics]
+[6.060s] -- Looking for ignition-common3-graphics -- found version 3.14.0
+[6.061s] -- Searching for dependencies of ignition-common3-graphics
+[6.061s] -- Looking for ignition-math6 -- found version 6.15.1
+[6.070s] -- Looking for ignition-fuel_tools4 -- found version 4.4.0
+[6.071s] -- Searching for dependencies of ignition-fuel_tools4
+[6.112s] -- Found CURL: /usr/lib/x86_64-linux-gnu/libcurl.so (found version "7.81.0")  
+[6.129s] -- Checking for module 'jsoncpp'
+[6.151s] --   Found jsoncpp, version 1.9.5
+[6.209s] -- Found JSONCPP: TRUE  
+[6.219s] -- Checking for module 'libzip'
+[6.243s] --   Found libzip, version 1.7.3
+[6.309s] -- Found ZIP: TRUE  
+[6.310s] -- Looking for ignition-common3 -- found version 3.14.0
+[6.311s] -- Looking for ignition-math6 -- found version 6.15.1
+[6.311s] -- Looking for ignition-msgs5 -- found version 5.8.1
+[6.323s] -- Gazebo version: 11.10
+[6.324s] -- Checking for module 'tbb'
+[6.351s] --   Found tbb, version 2021.5.0
+[6.436s] -- Found ament_lint_auto: 0.12.11 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[6.570s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[6.570s] -- Configured cppcheck include dirs: 
+[6.570s] -- Configured cppcheck exclude dirs and/or files: 
+[6.572s] -- Added test 'flake8' to check Python code syntax and style conventions
+[6.574s] -- Added test 'lint_cmake' to check CMake code style
+[6.576s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[6.579s] -- Added test 'uncrustify' to check C / C++ code style
+[6.580s] -- Configured uncrustify additional arguments: 
+[6.581s] -- Added test 'xmllint' to check XML markup files
+[6.585s] -- Configuring done
+[6.819s] -- Generating done
+[6.826s] -- Build files have been written to: /ros2_ws/build/spraying_pathways
+[6.847s] Invoked command in '/ros2_ws/build/spraying_pathways' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /ros2_ws/src/spraying_pathways -DCMAKE_INSTALL_PREFIX=/ros2_ws/install/spraying_pathways
+[6.848s] Invoking command in '/ros2_ws/build/spraying_pathways': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /ros2_ws/build/spraying_pathways -- -j4 -l4
+[6.935s] [  7%] [32mBuilding CXX object CMakeFiles/follow_joints_positions_node.dir/src/follow_joints_positions.cpp.o[0m
+[6.937s] [ 14%] [32mBuilding CXX object CMakeFiles/go_home_node.dir/src/go_home.cpp.o[0m
+[6.946s] [ 21%] [32mBuilding CXX object CMakeFiles/cartesian_path_planner_trajectory_v1_node.dir/src/cartesian_path_planner_trajectory_v1.cpp.o[0m
+[6.947s] [ 28%] [32mBuilding CXX object CMakeFiles/cartesian_path_planner_cubes_v2_node.dir/src/cartesian_path_planner_cubes_v2.cpp.o[0m
+[21.404s] [ 35%] [32m[1mLinking CXX executable follow_joints_positions_node[0m
+[21.985s] [ 42%] [32m[1mLinking CXX executable go_home_node[0m
+[21.997s] [ 50%] [32m[1mLinking CXX executable cartesian_path_planner_trajectory_v1_node[0m
+[22.370s] [ 50%] Built target follow_joints_positions_node
+[22.411s] [ 57%] [32m[1mLinking CXX executable cartesian_path_planner_cubes_v2_node[0m
+[22.425s] [ 57%] Built target go_home_node
+[22.443s] [ 64%] [32mBuilding CXX object CMakeFiles/cartesian_path_planner_cubes_v3_node.dir/src/cartesian_path_planner_cubes_v3.cpp.o[0m
+[22.490s] [ 71%] [32mBuilding CXX object CMakeFiles/cartesian_path_planner_cubes_test_v1_node.dir/src/cartesian_path_planner_cubes_test_v1.cpp.o[0m
+[22.555s] [ 71%] Built target cartesian_path_planner_trajectory_v1_node
+[22.631s] [ 78%] [32mBuilding CXX object CMakeFiles/cartesian_path_planner_cubes_test_v2_node.dir/src/cartesian_path_planner_cubes_test_v2.cpp.o[0m
+[22.954s] [ 78%] Built target cartesian_path_planner_cubes_v2_node
+[31.681s] [ 85%] [32m[1mLinking CXX executable cartesian_path_planner_cubes_v3_node[0m
+[32.140s] [ 85%] Built target cartesian_path_planner_cubes_v3_node
+[32.232s] [ 92%] [32m[1mLinking CXX executable cartesian_path_planner_cubes_test_v2_node[0m
+[32.435s] [100%] [32m[1mLinking CXX executable cartesian_path_planner_cubes_test_v1_node[0m
+[32.623s] [100%] Built target cartesian_path_planner_cubes_test_v2_node
+[32.829s] [100%] Built target cartesian_path_planner_cubes_test_v1_node
+[32.855s] Invoked command in '/ros2_ws/build/spraying_pathways' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /ros2_ws/build/spraying_pathways -- -j4 -l4
+[32.961s] Invoking command in '/ros2_ws/build/spraying_pathways': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /ros2_ws/build/spraying_pathways
+[32.972s] -- Install configuration: ""
+[32.973s] -- Installing: /ros2_ws/install/spraying_pathways/lib/spraying_pathways/go_home_node
+[32.974s] -- Set runtime path of "/ros2_ws/install/spraying_pathways/lib/spraying_pathways/go_home_node" to ""
+[32.974s] -- Installing: /ros2_ws/install/spraying_pathways/lib/spraying_pathways/follow_joints_positions_node
+[32.976s] -- Set runtime path of "/ros2_ws/install/spraying_pathways/lib/spraying_pathways/follow_joints_positions_node" to ""
+[32.976s] -- Installing: /ros2_ws/install/spraying_pathways/lib/spraying_pathways/cartesian_path_planner_cubes_v2_node
+[32.978s] -- Set runtime path of "/ros2_ws/install/spraying_pathways/lib/spraying_pathways/cartesian_path_planner_cubes_v2_node" to ""
+[32.978s] -- Installing: /ros2_ws/install/spraying_pathways/lib/spraying_pathways/cartesian_path_planner_trajectory_v1_node
+[32.980s] -- Set runtime path of "/ros2_ws/install/spraying_pathways/lib/spraying_pathways/cartesian_path_planner_trajectory_v1_node" to ""
+[32.980s] -- Installing: /ros2_ws/install/spraying_pathways/lib/spraying_pathways/cartesian_path_planner_cubes_v3_node
+[32.982s] -- Set runtime path of "/ros2_ws/install/spraying_pathways/lib/spraying_pathways/cartesian_path_planner_cubes_v3_node" to ""
+[32.982s] -- Installing: /ros2_ws/install/spraying_pathways/lib/spraying_pathways/cartesian_path_planner_cubes_test_v1_node
+[32.986s] -- Set runtime path of "/ros2_ws/install/spraying_pathways/lib/spraying_pathways/cartesian_path_planner_cubes_test_v1_node" to ""
+[32.986s] -- Installing: /ros2_ws/install/spraying_pathways/lib/spraying_pathways/cartesian_path_planner_cubes_test_v2_node
+[32.988s] -- Set runtime path of "/ros2_ws/install/spraying_pathways/lib/spraying_pathways/cartesian_path_planner_cubes_test_v2_node" to ""
+[32.988s] -- Installing: /ros2_ws/install/spraying_pathways/lib/spraying_pathways/trajectory_logger.py
+[32.989s] -- Installing: /ros2_ws/install/spraying_pathways/lib/spraying_pathways/plot_trajectory_log.py
+[32.989s] -- Installing: /ros2_ws/install/spraying_pathways/share/spraying_pathways/launch
+[32.989s] -- Installing: /ros2_ws/install/spraying_pathways/share/spraying_pathways/launch/bringup.launch.py
+[32.989s] -- Installing: /ros2_ws/install/spraying_pathways/share/spraying_pathways/rviz
+[32.990s] -- Installing: /ros2_ws/install/spraying_pathways/share/spraying_pathways/config
+[32.990s] -- Installing: /ros2_ws/install/spraying_pathways/share/spraying_pathways/models
+[32.990s] -- Installing: /ros2_ws/install/spraying_pathways/share/spraying_pathways/models/box_0_5
+[32.991s] -- Installing: /ros2_ws/install/spraying_pathways/share/spraying_pathways/models/box_0_5/model.config
+[32.991s] -- Installing: /ros2_ws/install/spraying_pathways/share/spraying_pathways/models/box_0_5/model.sdf
+[32.993s] -- Installing: /ros2_ws/install/spraying_pathways/share/ament_index/resource_index/package_run_dependencies/spraying_pathways
+[32.993s] -- Installing: /ros2_ws/install/spraying_pathways/share/ament_index/resource_index/parent_prefix_path/spraying_pathways
+[32.993s] -- Installing: /ros2_ws/install/spraying_pathways/share/spraying_pathways/environment/ament_prefix_path.sh
+[32.993s] -- Installing: /ros2_ws/install/spraying_pathways/share/spraying_pathways/environment/ament_prefix_path.dsv
+[32.993s] -- Installing: /ros2_ws/install/spraying_pathways/share/spraying_pathways/environment/path.sh
+[32.996s] -- Installing: /ros2_ws/install/spraying_pathways/share/spraying_pathways/environment/path.dsv
+[32.996s] -- Installing: /ros2_ws/install/spraying_pathways/share/spraying_pathways/local_setup.bash
+[32.997s] -- Installing: /ros2_ws/install/spraying_pathways/share/spraying_pathways/local_setup.sh
+[32.997s] -- Installing: /ros2_ws/install/spraying_pathways/share/spraying_pathways/local_setup.zsh
+[32.998s] -- Installing: /ros2_ws/install/spraying_pathways/share/spraying_pathways/local_setup.dsv
+[32.998s] -- Installing: /ros2_ws/install/spraying_pathways/share/spraying_pathways/package.dsv
+[32.998s] -- Installing: /ros2_ws/install/spraying_pathways/share/ament_index/resource_index/packages/spraying_pathways
+[32.999s] -- Installing: /ros2_ws/install/spraying_pathways/share/spraying_pathways/cmake/spraying_pathwaysConfig.cmake
+[32.999s] -- Installing: /ros2_ws/install/spraying_pathways/share/spraying_pathways/cmake/spraying_pathwaysConfig-version.cmake
+[32.999s] -- Installing: /ros2_ws/install/spraying_pathways/share/spraying_pathways/package.xml
+[33.000s] Invoked command in '/ros2_ws/build/spraying_pathways' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /ros2_ws/build/spraying_pathways

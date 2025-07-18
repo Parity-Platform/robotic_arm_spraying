@@ -3,6 +3,8 @@
 /ros2_ws/install/spraying_pathways/lib/spraying_pathways/cartesian_path_planner_cubes_v2_node
 /ros2_ws/install/spraying_pathways/lib/spraying_pathways/cartesian_path_planner_trajectory_v1_node
 /ros2_ws/install/spraying_pathways/lib/spraying_pathways/cartesian_path_planner_cubes_v3_node
+/ros2_ws/install/spraying_pathways/lib/spraying_pathways/cartesian_path_planner_cubes_test_v1_node
+/ros2_ws/install/spraying_pathways/lib/spraying_pathways/cartesian_path_planner_cubes_test_v2_node
 /ros2_ws/install/spraying_pathways/lib/spraying_pathways/trajectory_logger.py
 /ros2_ws/install/spraying_pathways/lib/spraying_pathways/plot_trajectory_log.py
 /ros2_ws/install/spraying_pathways/share/spraying_pathways/launch/bringup.launch.py
