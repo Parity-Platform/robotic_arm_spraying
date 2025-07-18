@@ -288,6 +288,80 @@ cartesian_path_planner_cubes_test_v2_node/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cartesian_path_planner_cubes_test_v2_node.dir/build.make CMakeFiles/cartesian_path_planner_cubes_test_v2_node.dir/build
 .PHONY : cartesian_path_planner_cubes_test_v2_node/fast
 
+#=============================================================================
+# Target rules for targets named cartesian_path_planner_cubes_test_go_v1_node
+
+# Build rule for target.
+cartesian_path_planner_cubes_test_go_v1_node: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 cartesian_path_planner_cubes_test_go_v1_node
+.PHONY : cartesian_path_planner_cubes_test_go_v1_node
+
+# fast build rule for target.
+cartesian_path_planner_cubes_test_go_v1_node/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cartesian_path_planner_cubes_test_go_v1_node.dir/build.make CMakeFiles/cartesian_path_planner_cubes_test_go_v1_node.dir/build
+.PHONY : cartesian_path_planner_cubes_test_go_v1_node/fast
+
+#=============================================================================
+# Target rules for targets named cartesian_path_planner_cubes_test_go_v2_node
+
+# Build rule for target.
+cartesian_path_planner_cubes_test_go_v2_node: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 cartesian_path_planner_cubes_test_go_v2_node
+.PHONY : cartesian_path_planner_cubes_test_go_v2_node
+
+# fast build rule for target.
+cartesian_path_planner_cubes_test_go_v2_node/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cartesian_path_planner_cubes_test_go_v2_node.dir/build.make CMakeFiles/cartesian_path_planner_cubes_test_go_v2_node.dir/build
+.PHONY : cartesian_path_planner_cubes_test_go_v2_node/fast
+
+src/cartesian_path_planner_cubes_test_go_v1.o: src/cartesian_path_planner_cubes_test_go_v1.cpp.o
+.PHONY : src/cartesian_path_planner_cubes_test_go_v1.o
+
+# target to build an object file
+src/cartesian_path_planner_cubes_test_go_v1.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cartesian_path_planner_cubes_test_go_v1_node.dir/build.make CMakeFiles/cartesian_path_planner_cubes_test_go_v1_node.dir/src/cartesian_path_planner_cubes_test_go_v1.cpp.o
+.PHONY : src/cartesian_path_planner_cubes_test_go_v1.cpp.o
+
+src/cartesian_path_planner_cubes_test_go_v1.i: src/cartesian_path_planner_cubes_test_go_v1.cpp.i
+.PHONY : src/cartesian_path_planner_cubes_test_go_v1.i
+
+# target to preprocess a source file
+src/cartesian_path_planner_cubes_test_go_v1.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cartesian_path_planner_cubes_test_go_v1_node.dir/build.make CMakeFiles/cartesian_path_planner_cubes_test_go_v1_node.dir/src/cartesian_path_planner_cubes_test_go_v1.cpp.i
+.PHONY : src/cartesian_path_planner_cubes_test_go_v1.cpp.i
+
+src/cartesian_path_planner_cubes_test_go_v1.s: src/cartesian_path_planner_cubes_test_go_v1.cpp.s
+.PHONY : src/cartesian_path_planner_cubes_test_go_v1.s
+
+# target to generate assembly for a file
+src/cartesian_path_planner_cubes_test_go_v1.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cartesian_path_planner_cubes_test_go_v1_node.dir/build.make CMakeFiles/cartesian_path_planner_cubes_test_go_v1_node.dir/src/cartesian_path_planner_cubes_test_go_v1.cpp.s
+.PHONY : src/cartesian_path_planner_cubes_test_go_v1.cpp.s
+
+src/cartesian_path_planner_cubes_test_go_v2.o: src/cartesian_path_planner_cubes_test_go_v2.cpp.o
+.PHONY : src/cartesian_path_planner_cubes_test_go_v2.o
+
+# target to build an object file
+src/cartesian_path_planner_cubes_test_go_v2.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cartesian_path_planner_cubes_test_go_v2_node.dir/build.make CMakeFiles/cartesian_path_planner_cubes_test_go_v2_node.dir/src/cartesian_path_planner_cubes_test_go_v2.cpp.o
+.PHONY : src/cartesian_path_planner_cubes_test_go_v2.cpp.o
+
+src/cartesian_path_planner_cubes_test_go_v2.i: src/cartesian_path_planner_cubes_test_go_v2.cpp.i
+.PHONY : src/cartesian_path_planner_cubes_test_go_v2.i
+
+# target to preprocess a source file
+src/cartesian_path_planner_cubes_test_go_v2.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cartesian_path_planner_cubes_test_go_v2_node.dir/build.make CMakeFiles/cartesian_path_planner_cubes_test_go_v2_node.dir/src/cartesian_path_planner_cubes_test_go_v2.cpp.i
+.PHONY : src/cartesian_path_planner_cubes_test_go_v2.cpp.i
+
+src/cartesian_path_planner_cubes_test_go_v2.s: src/cartesian_path_planner_cubes_test_go_v2.cpp.s
+.PHONY : src/cartesian_path_planner_cubes_test_go_v2.s
+
+# target to generate assembly for a file
+src/cartesian_path_planner_cubes_test_go_v2.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cartesian_path_planner_cubes_test_go_v2_node.dir/build.make CMakeFiles/cartesian_path_planner_cubes_test_go_v2_node.dir/src/cartesian_path_planner_cubes_test_go_v2.cpp.s
+.PHONY : src/cartesian_path_planner_cubes_test_go_v2.cpp.s
+
 src/cartesian_path_planner_cubes_test_v1.o: src/cartesian_path_planner_cubes_test_v1.cpp.o
 .PHONY : src/cartesian_path_planner_cubes_test_v1.o
 
@@ -471,6 +545,8 @@ help:
 	@echo "... test"
 	@echo "... spraying_pathways_uninstall"
 	@echo "... uninstall"
+	@echo "... cartesian_path_planner_cubes_test_go_v1_node"
+	@echo "... cartesian_path_planner_cubes_test_go_v2_node"
 	@echo "... cartesian_path_planner_cubes_test_v1_node"
 	@echo "... cartesian_path_planner_cubes_test_v2_node"
 	@echo "... cartesian_path_planner_cubes_v2_node"
@@ -478,6 +554,12 @@ help:
 	@echo "... cartesian_path_planner_trajectory_v1_node"
 	@echo "... follow_joints_positions_node"
 	@echo "... go_home_node"
+	@echo "... src/cartesian_path_planner_cubes_test_go_v1.o"
+	@echo "... src/cartesian_path_planner_cubes_test_go_v1.i"
+	@echo "... src/cartesian_path_planner_cubes_test_go_v1.s"
+	@echo "... src/cartesian_path_planner_cubes_test_go_v2.o"
+	@echo "... src/cartesian_path_planner_cubes_test_go_v2.i"
+	@echo "... src/cartesian_path_planner_cubes_test_go_v2.s"
 	@echo "... src/cartesian_path_planner_cubes_test_v1.o"
 	@echo "... src/cartesian_path_planner_cubes_test_v1.i"
 	@echo "... src/cartesian_path_planner_cubes_test_v1.s"

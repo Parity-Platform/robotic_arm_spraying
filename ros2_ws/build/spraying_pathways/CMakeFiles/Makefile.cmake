@@ -1517,4 +1517,6 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/cartesian_path_planner_cubes_v3_node.dir/DependInfo.cmake"
   "CMakeFiles/cartesian_path_planner_cubes_test_v1_node.dir/DependInfo.cmake"
   "CMakeFiles/cartesian_path_planner_cubes_test_v2_node.dir/DependInfo.cmake"
+  "CMakeFiles/cartesian_path_planner_cubes_test_go_v1_node.dir/DependInfo.cmake"
+  "CMakeFiles/cartesian_path_planner_cubes_test_go_v2_node.dir/DependInfo.cmake"
   )

@@ -1,0 +1,248 @@
+#include <rclcpp/rclcpp.hpp>
+#include <geometry_msgs/msg/pose.hpp>
+#include <moveit/move_group_interface/move_group_interface.h>
+#include <tf2/LinearMath/Quaternion.h>
+#include <fstream>
+#include <sstream>
+#include <iomanip>
+#include <cstdlib>
+#include <ctime>
+#include <vector>
+#include <cmath>
+#include <algorithm>
+#include <iostream>
+#include <map>
+
+using Point2D = std::pair<double, double>;
+
+struct Cube {
+  geometry_msgs::msg::Pose pose;
+  double height;
+  int id;
+};
+
+double round_to(double value, int decimals) {
+  double factor = std::pow(10.0, decimals);
+  return std::round(value * factor) / factor;
+}
+
+std::vector<Point2D> sort_rectangle_corners(const std::vector<Point2D>& points) {
+  if (points.size() != 4)
+    throw std::runtime_error("Exactly 4 points are required.");
+
+  auto sorted = points;
+  std::sort(sorted.begin(), sorted.end(), [](const Point2D& a, const Point2D& b) {
+    return a.second > b.second || (a.second == b.second && a.first < b.first);
+  });
+
+  std::vector<Point2D> top(sorted.begin(), sorted.begin() + 2);
+  std::vector<Point2D> bottom(sorted.begin() + 2, sorted.end());
+
+  std::sort(top.begin(), top.end());
+  std::sort(bottom.begin(), bottom.end());
+
+  return {top[0], top[1], bottom[1], bottom[0]};
+}
+
+std::string generate_multi_box_sdf(const std::vector<Cube>& cubes, double cube_size_x, double cube_size_y) {
+  std::ostringstream sdf;
+  sdf << "<?xml version='1.0'?>\n";
+  sdf << "<sdf version='1.7'>\n";
+  sdf << "<model name='multi_cube'>\n";
+  sdf << "  <static>true</static>\n";
+
+  for (const auto& cube : cubes) {
+    sdf << "  <link name='cube_" << cube.id << "'>\n";
+    sdf << "    <pose>"
+        << cube.pose.position.x << " "
+        << cube.pose.position.y << " "
+        << cube.pose.position.z << " 0 0 0</pose>\n";
+    sdf << "    <collision name='collision'>\n";
+    sdf << "      <geometry>\n";
+    sdf << "        <box><size>" << cube_size_x << " " << cube_size_y << " " << cube.height << "</size></box>\n";
+    sdf << "      </geometry>\n";
+    sdf << "    </collision>\n";
+    sdf << "    <visual name='visual'>\n";
+    sdf << "      <geometry>\n";
+    sdf << "        <box><size>" << cube_size_x << " " << cube_size_y << " " << cube.height << "</size></box>\n";
+    sdf << "      </geometry>\n";
+    sdf << "      <material>\n";
+    sdf << "        <ambient>0.8 0.1 0.1 1</ambient>\n";
+    sdf << "      </material>\n";
+    sdf << "    </visual>\n";
+    sdf << "  </link>\n";
+  }
+
+  sdf << "</model>\n";
+  sdf << "</sdf>\n";
+  return sdf.str();
+}
+
+int main(int argc, char** argv) {
+  rclcpp::init(argc, argv);
+  auto node = rclcpp::Node::make_shared("cartesian_path_planner");
+  std::srand(std::time(nullptr));
+
+  moveit::planning_interface::MoveGroupInterface move_group(node, "ur_manipulator");
+  move_group.setPlanningTime(60.0);
+  move_group.setMaxVelocityScalingFactor(0.3);
+  move_group.setMaxAccelerationScalingFactor(0.3);
+
+  std::vector<Point2D> unordered_points = {
+    {0.3, 0.45}, {0.3, 0.05}, {0.7, 0.45}, {0.7, 0.05}
+  };
+  auto corners = sort_rectangle_corners(unordered_points);
+
+  double spray_width = 0.04;
+  int total_cubes_per_waypoint = 25;
+  int N = static_cast<int>(std::sqrt(total_cubes_per_waypoint));
+  double z_base = 0.2;
+  double max_height = 0.02;
+  double z_height = 0.4;
+
+  geometry_msgs::msg::Quaternion orientation;
+  orientation.x = 0.0;
+  orientation.y = 1.0;
+  orientation.z = 0.0;
+  orientation.w = 0.0;
+
+  auto dx = corners[1].first - corners[0].first;
+  auto dy = corners[3].second - corners[0].second;
+
+  double length = std::hypot(dx, corners[1].second - corners[0].second);
+  double height = std::hypot(corners[3].first - corners[0].first, dy);
+
+  int cols = std::max(1, static_cast<int>(std::floor(length / spray_width)));
+  int rows = std::max(1, static_cast<int>(std::floor(height / spray_width)));
+
+  double step_x = dx / cols;
+  double step_y = dy / rows;
+
+  double cube_size_x = step_x / N;
+  double cube_size_y = step_y / N;
+
+  std::vector<geometry_msgs::msg::Pose> waypoints;
+  std::vector<std::tuple<double, double>> positions;
+
+  for (int i = 0; i < rows; ++i) {
+    for (int j = 0; j < cols; ++j) {
+      int col = (i % 2 == 0) ? j : (cols - j - 1);
+
+      geometry_msgs::msg::Pose center_pose;
+      center_pose.position.x = corners[0].first + (col + 0.5) * step_x;
+      center_pose.position.y = corners[0].second + (i + 0.5) * step_y;
+      center_pose.position.z = z_height;
+      center_pose.orientation = orientation;
+
+      waypoints.push_back(center_pose);
+
+      double start_x = center_pose.position.x - step_x / 2.0 + cube_size_x / 2.0;
+      double start_y = center_pose.position.y - step_y / 2.0 + cube_size_y / 2.0;
+
+      for (int cx = 0; cx < N; ++cx) {
+        for (int cy = 0; cy < N; ++cy) {
+          double x_pos = start_x + cx * cube_size_x;
+          double y_pos = start_y + cy * cube_size_y;
+          positions.push_back({round_to(x_pos, 4), round_to(y_pos, 4)});
+        }
+      }
+    }
+  }
+
+  std::map<std::pair<double, double>, double> selected_positions;
+  std::cout << "Available positions (x y):\n";
+  for (const auto& pos : positions) {
+    std::cout << std::fixed << std::setprecision(4) << std::get<0>(pos) << " " << std::get<1>(pos) << "\n";
+  }
+
+  std::cout << "Enter positions and height (x y h), type 'done' to finish:\n";
+  std::string input;
+  while (true) {
+    std::getline(std::cin, input);
+    if (input == "done") break;
+    std::istringstream iss(input);
+    double x, y, h;
+    if (iss >> x >> y >> h) {
+      selected_positions[{round_to(x, 4), round_to(y, 4)}] = h;
+    }
+  }
+
+  // ✳️ Εκτέλεση πρώτης διαδρομής
+  moveit_msgs::msg::RobotTrajectory trajectory;
+  const double eef_step = 0.01;
+  const double jump_threshold = 0.0;
+  double fraction = move_group.computeCartesianPath(waypoints, eef_step, jump_threshold, trajectory);
+  if (fraction > 0.9) {
+    RCLCPP_INFO(node->get_logger(), "Path %.2f%% planned successfully. Executing...", fraction * 100.0);
+    move_group.execute(trajectory);
+  } else {
+    RCLCPP_ERROR(node->get_logger(), "Path planning failed. Only %.2f%% completed.", fraction * 100.0);
+  }
+
+  // 🧱 Spawn cubes
+  std::vector<Cube> cubes;
+  int count = 0;
+  for (const auto& pos : positions) {
+    double x = std::get<0>(pos);
+    double y = std::get<1>(pos);
+    double h = max_height;
+
+    auto it = selected_positions.find({x, y});
+    if (it != selected_positions.end()) {
+      h = it->second;
+    }
+
+    geometry_msgs::msg::Pose pose_cube;
+    pose_cube.position.x = x;
+    pose_cube.position.y = y;
+    pose_cube.position.z = z_base + h / 2.0;
+    pose_cube.orientation = orientation;
+
+    cubes.push_back(Cube{pose_cube, h, count++});
+  }
+
+  std::string sdf_all = generate_multi_box_sdf(cubes, cube_size_x, cube_size_y);
+  std::string path = "/tmp/multi_cubes.sdf";
+  std::ofstream out(path);
+  out << sdf_all;
+  out.close();
+
+  std::ostringstream cmd;
+  cmd << "ros2 run gazebo_ros spawn_entity.py"
+      << " -file " << path
+      << " -entity all_cubes";
+  std::system(cmd.str().c_str());
+
+  // ⏳ Wait for 'go' command
+  std::string go_cmd;
+  std::cout << "Type 'go' to move the robot to selected positions:\n";
+  std::getline(std::cin, go_cmd);
+  if (go_cmd == "go") {
+    std::vector<geometry_msgs::msg::Pose> selected_waypoints;
+    for (const auto& sel : selected_positions) {
+      geometry_msgs::msg::Pose p;
+      p.position.x = sel.first.first;
+      p.position.y = sel.first.second;
+      p.position.z = z_height;
+      p.orientation = orientation;
+      selected_waypoints.push_back(p);
+    }
+
+    // 🔽 Sort waypoints by X
+    std::sort(selected_waypoints.begin(), selected_waypoints.end(), [](const auto& a, const auto& b) {
+      return a.position.x < b.position.x;
+    });
+
+    moveit_msgs::msg::RobotTrajectory traj2;
+    double frac2 = move_group.computeCartesianPath(selected_waypoints, eef_step, jump_threshold, traj2);
+    if (frac2 > 0.9) {
+      RCLCPP_INFO(node->get_logger(), "Final path %.2f%% planned successfully.", frac2 * 100.0);
+      move_group.execute(traj2);
+    } else {
+      RCLCPP_ERROR(node->get_logger(), "Final path planning failed. Only %.2f%% completed.", frac2 * 100.0);
+    }
+  }
+
+  rclcpp::shutdown();
+  return 0;
+}

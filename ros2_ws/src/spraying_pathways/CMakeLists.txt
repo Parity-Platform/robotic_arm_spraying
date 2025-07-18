@@ -89,6 +89,26 @@ ament_target_dependencies(cartesian_path_planner_cubes_test_v2_node
   tf2_ros
 )
 
+add_executable(cartesian_path_planner_cubes_test_go_v1_node src/cartesian_path_planner_cubes_test_go_v1.cpp)
+ament_target_dependencies(cartesian_path_planner_cubes_test_go_v1_node
+  rclcpp
+  moveit_ros_planning_interface
+  geometry_msgs
+  std_msgs
+  sensor_msgs
+  tf2_ros
+)
+
+add_executable(cartesian_path_planner_cubes_test_go_v2_node src/cartesian_path_planner_cubes_test_go_v2.cpp)
+ament_target_dependencies(cartesian_path_planner_cubes_test_go_v2_node
+  rclcpp
+  moveit_ros_planning_interface
+  geometry_msgs
+  std_msgs
+  sensor_msgs
+  tf2_ros
+)
+
 # === Install C++ Executables ===
 install(TARGETS
   go_home_node
@@ -98,6 +118,8 @@ install(TARGETS
   cartesian_path_planner_cubes_v3_node
   cartesian_path_planner_cubes_test_v1_node
   cartesian_path_planner_cubes_test_v2_node
+  cartesian_path_planner_cubes_test_go_v1_node
+  cartesian_path_planner_cubes_test_go_v2_node
   DESTINATION lib/${PROJECT_NAME}
 )
 
