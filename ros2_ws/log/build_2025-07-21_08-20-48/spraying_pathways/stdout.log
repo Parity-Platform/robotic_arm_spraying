@@ -126,29 +126,29 @@
 -- Generating done
 -- Build files have been written to: /ros2_ws/build/spraying_pathways
 [  5%] [32mBuilding CXX object CMakeFiles/go_home_node.dir/src/go_home.cpp.o[0m
-[ 11%] [32mBuilding CXX object CMakeFiles/cartesian_path_planner_cubes_v2_node.dir/src/cartesian_path_planner_cubes_v2.cpp.o[0m
+[ 11%] [32mBuilding CXX object CMakeFiles/cartesian_path_planner_trajectory_v1_node.dir/src/cartesian_path_planner_trajectory_v1.cpp.o[0m
 [ 16%] [32mBuilding CXX object CMakeFiles/follow_joints_positions_node.dir/src/follow_joints_positions.cpp.o[0m
-[ 22%] [32mBuilding CXX object CMakeFiles/cartesian_path_planner_trajectory_v1_node.dir/src/cartesian_path_planner_trajectory_v1.cpp.o[0m
-[ 27%] [32m[1mLinking CXX executable go_home_node[0m
-[ 27%] Built target go_home_node
-[ 33%] [32m[1mLinking CXX executable cartesian_path_planner_cubes_v2_node[0m
-[ 38%] [32mBuilding CXX object CMakeFiles/cartesian_path_planner_cubes_v3_node.dir/src/cartesian_path_planner_cubes_v3.cpp.o[0m
-[ 38%] Built target cartesian_path_planner_cubes_v2_node
-[ 44%] [32m[1mLinking CXX executable cartesian_path_planner_trajectory_v1_node[0m
-[ 50%] [32mBuilding CXX object CMakeFiles/cartesian_path_planner_cubes_test_v1_node.dir/src/cartesian_path_planner_cubes_test_v1.cpp.o[0m
-[ 55%] [32m[1mLinking CXX executable follow_joints_positions_node[0m
-[ 55%] Built target cartesian_path_planner_trajectory_v1_node
-[ 55%] Built target follow_joints_positions_node
+[ 22%] [32mBuilding CXX object CMakeFiles/cartesian_path_planner_cubes_v2_node.dir/src/cartesian_path_planner_cubes_v2.cpp.o[0m
+[ 27%] [32m[1mLinking CXX executable follow_joints_positions_node[0m
+[ 33%] [32m[1mLinking CXX executable cartesian_path_planner_trajectory_v1_node[0m
+[ 38%] [32m[1mLinking CXX executable cartesian_path_planner_cubes_v2_node[0m
+[ 44%] [32m[1mLinking CXX executable go_home_node[0m
+[ 44%] Built target follow_joints_positions_node
+[ 50%] [32mBuilding CXX object CMakeFiles/cartesian_path_planner_cubes_v3_node.dir/src/cartesian_path_planner_cubes_v3.cpp.o[0m
+[ 50%] Built target cartesian_path_planner_trajectory_v1_node
+[ 50%] Built target cartesian_path_planner_cubes_v2_node
+[ 55%] [32mBuilding CXX object CMakeFiles/cartesian_path_planner_cubes_test_v1_node.dir/src/cartesian_path_planner_cubes_test_v1.cpp.o[0m
 [ 61%] [32mBuilding CXX object CMakeFiles/cartesian_path_planner_cubes_test_v2_node.dir/src/cartesian_path_planner_cubes_test_v2.cpp.o[0m
+[ 61%] Built target go_home_node
 [ 66%] [32mBuilding CXX object CMakeFiles/cartesian_path_planner_cubes_test_go_v1_node.dir/src/cartesian_path_planner_cubes_test_go_v1.cpp.o[0m
 [ 72%] [32m[1mLinking CXX executable cartesian_path_planner_cubes_v3_node[0m
-[ 77%] [32m[1mLinking CXX executable cartesian_path_planner_cubes_test_v1_node[0m
-[ 77%] Built target cartesian_path_planner_cubes_v3_node
+[ 72%] Built target cartesian_path_planner_cubes_v3_node
+[ 77%] [32m[1mLinking CXX executable cartesian_path_planner_cubes_test_v2_node[0m
 [ 83%] [32mBuilding CXX object CMakeFiles/cartesian_path_planner_cubes_test_go_v2_node.dir/src/cartesian_path_planner_cubes_test_go_v2.cpp.o[0m
-[ 83%] Built target cartesian_path_planner_cubes_test_v1_node
-[ 88%] [32m[1mLinking CXX executable cartesian_path_planner_cubes_test_v2_node[0m
+[ 88%] [32m[1mLinking CXX executable cartesian_path_planner_cubes_test_v1_node[0m
+[ 88%] Built target cartesian_path_planner_cubes_test_v2_node
+[ 88%] Built target cartesian_path_planner_cubes_test_v1_node
 [ 94%] [32m[1mLinking CXX executable cartesian_path_planner_cubes_test_go_v1_node[0m
-[ 94%] Built target cartesian_path_planner_cubes_test_v2_node
 [ 94%] Built target cartesian_path_planner_cubes_test_go_v1_node
 [100%] [32m[1mLinking CXX executable cartesian_path_planner_cubes_test_go_v2_node[0m
 [100%] Built target cartesian_path_planner_cubes_test_go_v2_node
