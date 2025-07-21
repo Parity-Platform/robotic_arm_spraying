@@ -314,6 +314,32 @@ cartesian_path_planner_cubes_test_go_v2_node/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cartesian_path_planner_cubes_test_go_v2_node.dir/build.make CMakeFiles/cartesian_path_planner_cubes_test_go_v2_node.dir/build
 .PHONY : cartesian_path_planner_cubes_test_go_v2_node/fast
 
+#=============================================================================
+# Target rules for targets named cartesian_path_planner_cubes_v4_node
+
+# Build rule for target.
+cartesian_path_planner_cubes_v4_node: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 cartesian_path_planner_cubes_v4_node
+.PHONY : cartesian_path_planner_cubes_v4_node
+
+# fast build rule for target.
+cartesian_path_planner_cubes_v4_node/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cartesian_path_planner_cubes_v4_node.dir/build.make CMakeFiles/cartesian_path_planner_cubes_v4_node.dir/build
+.PHONY : cartesian_path_planner_cubes_v4_node/fast
+
+#=============================================================================
+# Target rules for targets named lidar_surface_scanner_node
+
+# Build rule for target.
+lidar_surface_scanner_node: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lidar_surface_scanner_node
+.PHONY : lidar_surface_scanner_node
+
+# fast build rule for target.
+lidar_surface_scanner_node/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lidar_surface_scanner_node.dir/build.make CMakeFiles/lidar_surface_scanner_node.dir/build
+.PHONY : lidar_surface_scanner_node/fast
+
 src/cartesian_path_planner_cubes_test_go_v1.o: src/cartesian_path_planner_cubes_test_go_v1.cpp.o
 .PHONY : src/cartesian_path_planner_cubes_test_go_v1.o
 
@@ -458,6 +484,30 @@ src/cartesian_path_planner_cubes_v3.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cartesian_path_planner_cubes_v3_node.dir/build.make CMakeFiles/cartesian_path_planner_cubes_v3_node.dir/src/cartesian_path_planner_cubes_v3.cpp.s
 .PHONY : src/cartesian_path_planner_cubes_v3.cpp.s
 
+src/cartesian_path_planner_cubes_v4.o: src/cartesian_path_planner_cubes_v4.cpp.o
+.PHONY : src/cartesian_path_planner_cubes_v4.o
+
+# target to build an object file
+src/cartesian_path_planner_cubes_v4.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cartesian_path_planner_cubes_v4_node.dir/build.make CMakeFiles/cartesian_path_planner_cubes_v4_node.dir/src/cartesian_path_planner_cubes_v4.cpp.o
+.PHONY : src/cartesian_path_planner_cubes_v4.cpp.o
+
+src/cartesian_path_planner_cubes_v4.i: src/cartesian_path_planner_cubes_v4.cpp.i
+.PHONY : src/cartesian_path_planner_cubes_v4.i
+
+# target to preprocess a source file
+src/cartesian_path_planner_cubes_v4.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cartesian_path_planner_cubes_v4_node.dir/build.make CMakeFiles/cartesian_path_planner_cubes_v4_node.dir/src/cartesian_path_planner_cubes_v4.cpp.i
+.PHONY : src/cartesian_path_planner_cubes_v4.cpp.i
+
+src/cartesian_path_planner_cubes_v4.s: src/cartesian_path_planner_cubes_v4.cpp.s
+.PHONY : src/cartesian_path_planner_cubes_v4.s
+
+# target to generate assembly for a file
+src/cartesian_path_planner_cubes_v4.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cartesian_path_planner_cubes_v4_node.dir/build.make CMakeFiles/cartesian_path_planner_cubes_v4_node.dir/src/cartesian_path_planner_cubes_v4.cpp.s
+.PHONY : src/cartesian_path_planner_cubes_v4.cpp.s
+
 src/cartesian_path_planner_trajectory_v1.o: src/cartesian_path_planner_trajectory_v1.cpp.o
 .PHONY : src/cartesian_path_planner_trajectory_v1.o
 
@@ -530,6 +580,30 @@ src/go_home.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/go_home_node.dir/build.make CMakeFiles/go_home_node.dir/src/go_home.cpp.s
 .PHONY : src/go_home.cpp.s
 
+src/lidar_surface_scanner.o: src/lidar_surface_scanner.cpp.o
+.PHONY : src/lidar_surface_scanner.o
+
+# target to build an object file
+src/lidar_surface_scanner.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lidar_surface_scanner_node.dir/build.make CMakeFiles/lidar_surface_scanner_node.dir/src/lidar_surface_scanner.cpp.o
+.PHONY : src/lidar_surface_scanner.cpp.o
+
+src/lidar_surface_scanner.i: src/lidar_surface_scanner.cpp.i
+.PHONY : src/lidar_surface_scanner.i
+
+# target to preprocess a source file
+src/lidar_surface_scanner.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lidar_surface_scanner_node.dir/build.make CMakeFiles/lidar_surface_scanner_node.dir/src/lidar_surface_scanner.cpp.i
+.PHONY : src/lidar_surface_scanner.cpp.i
+
+src/lidar_surface_scanner.s: src/lidar_surface_scanner.cpp.s
+.PHONY : src/lidar_surface_scanner.s
+
+# target to generate assembly for a file
+src/lidar_surface_scanner.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lidar_surface_scanner_node.dir/build.make CMakeFiles/lidar_surface_scanner_node.dir/src/lidar_surface_scanner.cpp.s
+.PHONY : src/lidar_surface_scanner.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -551,9 +625,11 @@ help:
 	@echo "... cartesian_path_planner_cubes_test_v2_node"
 	@echo "... cartesian_path_planner_cubes_v2_node"
 	@echo "... cartesian_path_planner_cubes_v3_node"
+	@echo "... cartesian_path_planner_cubes_v4_node"
 	@echo "... cartesian_path_planner_trajectory_v1_node"
 	@echo "... follow_joints_positions_node"
 	@echo "... go_home_node"
+	@echo "... lidar_surface_scanner_node"
 	@echo "... src/cartesian_path_planner_cubes_test_go_v1.o"
 	@echo "... src/cartesian_path_planner_cubes_test_go_v1.i"
 	@echo "... src/cartesian_path_planner_cubes_test_go_v1.s"
@@ -572,6 +648,9 @@ help:
 	@echo "... src/cartesian_path_planner_cubes_v3.o"
 	@echo "... src/cartesian_path_planner_cubes_v3.i"
 	@echo "... src/cartesian_path_planner_cubes_v3.s"
+	@echo "... src/cartesian_path_planner_cubes_v4.o"
+	@echo "... src/cartesian_path_planner_cubes_v4.i"
+	@echo "... src/cartesian_path_planner_cubes_v4.s"
 	@echo "... src/cartesian_path_planner_trajectory_v1.o"
 	@echo "... src/cartesian_path_planner_trajectory_v1.i"
 	@echo "... src/cartesian_path_planner_trajectory_v1.s"
@@ -581,6 +660,9 @@ help:
 	@echo "... src/go_home.o"
 	@echo "... src/go_home.i"
 	@echo "... src/go_home.s"
+	@echo "... src/lidar_surface_scanner.o"
+	@echo "... src/lidar_surface_scanner.i"
+	@echo "... src/lidar_surface_scanner.s"
 .PHONY : help
 
 

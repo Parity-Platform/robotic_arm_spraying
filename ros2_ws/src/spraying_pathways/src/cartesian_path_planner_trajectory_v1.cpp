@@ -39,6 +39,10 @@ std::vector<geometry_msgs::msg::Pose> generate_spray_waypoints(
 {
   std::vector<geometry_msgs::msg::Pose> waypoints;
 
+  // Robot base offset (NEW)
+  const double robot_base_x = 0.25;
+  const double robot_base_y = 0.0;
+
   auto dx = p2.first - p1.first;
   auto dy = p4.second - p1.second;
 
@@ -59,8 +63,8 @@ std::vector<geometry_msgs::msg::Pose> generate_spray_waypoints(
       int col = (i % 2 == 0) ? j : (cols - j - 1); // zig-zag
 
       geometry_msgs::msg::Pose pose;
-      pose.position.x = p1.first + (col + 0.5) * step_x;
-      pose.position.y = p1.second + (i + 0.5) * step_y;
+      pose.position.x = p1.first + (col + 0.5) * step_x - robot_base_x;
+      pose.position.y = p1.second + (i + 0.5) * step_y - robot_base_y;
       pose.position.z = height_z;
       pose.orientation = orientation;
 
@@ -91,10 +95,10 @@ int main(int argc, char** argv) {
 
   // Define 4 unordered corner points (x, y)
   std::vector<Point2D> unordered_points = {
-    {0.3, 0.45},
-    {0.3, 0.05},
-    {0.7, 0.45},
-    {0.7, 0.05}
+    {0.8, 0.0},
+    {0.8, 0.4},
+    {1.2, 0.0},
+    {1.2, 0.4}
   };
 
   auto corners = sort_rectangle_corners(unordered_points); // TL, TR, BR, BL
@@ -102,6 +106,7 @@ int main(int argc, char** argv) {
   // Spray parameters
   double spray_width = 0.02; // distance between spray lines
   double z_height = 0.4;    // fixed spray height
+  double z_base = 0.715 + 0.05; // defined for consistency (not used directly here)
 
   // Tool orientation (pointing downward -Z)
   geometry_msgs::msg::Quaternion orientation;

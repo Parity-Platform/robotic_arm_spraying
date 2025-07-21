@@ -599,6 +599,18 @@ CMakeFiles/cartesian_path_planner_cubes_v3_node.dir/src/cartesian_path_planner_c
  /opt/ros/humble/include/rclcpp/rclcpp/wait_set_policies/thread_safe_synchronization.hpp \
  /opt/ros/humble/include/rclcpp/rclcpp/wait_set_policies/detail/write_preferring_read_write_lock.hpp \
  /opt/ros/humble/include/rclcpp/rclcpp/wait_set_template.hpp \
+ /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/point_cloud2.hpp \
+ /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/point_cloud2__struct.hpp \
+ /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/header__struct.hpp \
+ /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/point_field__struct.hpp \
+ /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/point_cloud2__builder.hpp \
+ /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/point_cloud2__traits.hpp \
+ /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/header__traits.hpp \
+ /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/point_field__traits.hpp \
+ /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/joint_state.hpp \
+ /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/joint_state__struct.hpp \
+ /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/joint_state__builder.hpp \
+ /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/joint_state__traits.hpp \
  /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/pose.hpp \
  /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/pose__struct.hpp \
  /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/point__struct.hpp \
@@ -992,12 +1004,10 @@ CMakeFiles/cartesian_path_planner_cubes_v3_node.dir/src/cartesian_path_planner_c
  /opt/ros/humble/include/moveit/transforms/transforms.h \
  /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/transform_stamped.hpp \
  /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/transform_stamped__struct.hpp \
- /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/header__struct.hpp \
  /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/transform__struct.hpp \
  /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/vector3__struct.hpp \
  /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/transform_stamped__builder.hpp \
  /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/transform_stamped__traits.hpp \
- /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/header__traits.hpp \
  /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/transform__traits.hpp \
  /opt/ros/humble/include/geometry_msgs/geometry_msgs/msg/detail/vector3__traits.hpp \
  /opt/ros/humble/include/eigen_stl_containers/eigen_stl_containers/eigen_stl_containers.h \
@@ -1008,10 +1018,6 @@ CMakeFiles/cartesian_path_planner_cubes_v3_node.dir/src/cartesian_path_planner_c
  /opt/ros/humble/include/trajectory_msgs/trajectory_msgs/msg/detail/joint_trajectory__builder.hpp \
  /opt/ros/humble/include/trajectory_msgs/trajectory_msgs/msg/detail/joint_trajectory__traits.hpp \
  /opt/ros/humble/include/trajectory_msgs/trajectory_msgs/msg/detail/joint_trajectory_point__traits.hpp \
- /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/joint_state.hpp \
- /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/joint_state__struct.hpp \
- /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/joint_state__builder.hpp \
- /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/joint_state__traits.hpp \
  /opt/ros/humble/include/visualization_msgs/visualization_msgs/msg/marker_array.hpp \
  /opt/ros/humble/include/visualization_msgs/visualization_msgs/msg/detail/marker_array__struct.hpp \
  /opt/ros/humble/include/visualization_msgs/visualization_msgs/msg/detail/marker__struct.hpp \
@@ -1237,6 +1243,107 @@ CMakeFiles/cartesian_path_planner_cubes_v3_node.dir/src/cartesian_path_planner_c
  /opt/ros/humble/include/tf2_msgs/tf2_msgs/srv/detail/frame_graph__builder.hpp \
  /opt/ros/humble/include/tf2_msgs/tf2_msgs/srv/detail/frame_graph__traits.hpp \
  /opt/ros/humble/include/moveit_move_group_interface_export.h \
+ /opt/ros/humble/include/tf2_ros/tf2_ros/transform_listener.h \
+ /opt/ros/humble/include/tf2_msgs/tf2_msgs/msg/tf_message.hpp \
+ /opt/ros/humble/include/tf2_msgs/tf2_msgs/msg/detail/tf_message__struct.hpp \
+ /opt/ros/humble/include/tf2_msgs/tf2_msgs/msg/detail/tf_message__builder.hpp \
+ /opt/ros/humble/include/tf2_msgs/tf2_msgs/msg/detail/tf_message__traits.hpp \
+ /opt/ros/humble/include/tf2_ros/tf2_ros/qos.hpp \
+ /opt/ros/humble/include/tf2_sensor_msgs/tf2_sensor_msgs.h \
+ /opt/ros/humble/include/tf2_sensor_msgs/tf2_sensor_msgs.hpp \
+ /usr/include/eigen3/Eigen/Eigen /usr/include/eigen3/Eigen/Dense \
+ /usr/include/eigen3/Eigen/Geometry /usr/include/eigen3/Eigen/Eigenvalues \
+ /usr/include/eigen3/Eigen/src/Eigenvalues/Tridiagonalization.h \
+ /usr/include/eigen3/Eigen/src/Eigenvalues/RealSchur.h \
+ /usr/include/eigen3/Eigen/src/Eigenvalues/HessenbergDecomposition.h \
+ /usr/include/eigen3/Eigen/src/Eigenvalues/EigenSolver.h \
+ /usr/include/eigen3/Eigen/src/Eigenvalues/RealSchur.h \
+ /usr/include/eigen3/Eigen/src/Eigenvalues/SelfAdjointEigenSolver.h \
+ /usr/include/eigen3/Eigen/src/Eigenvalues/Tridiagonalization.h \
+ /usr/include/eigen3/Eigen/src/Eigenvalues/GeneralizedSelfAdjointEigenSolver.h \
+ /usr/include/eigen3/Eigen/src/Eigenvalues/HessenbergDecomposition.h \
+ /usr/include/eigen3/Eigen/src/Eigenvalues/ComplexSchur.h \
+ /usr/include/eigen3/Eigen/src/Eigenvalues/ComplexEigenSolver.h \
+ /usr/include/eigen3/Eigen/src/Eigenvalues/ComplexSchur.h \
+ /usr/include/eigen3/Eigen/src/Eigenvalues/RealQZ.h \
+ /usr/include/eigen3/Eigen/src/Eigenvalues/GeneralizedEigenSolver.h \
+ /usr/include/eigen3/Eigen/src/Eigenvalues/RealQZ.h \
+ /usr/include/eigen3/Eigen/src/Eigenvalues/MatrixBaseEigenvalues.h \
+ /usr/include/eigen3/Eigen/Sparse /usr/include/eigen3/Eigen/SparseCore \
+ /usr/include/eigen3/Eigen/src/SparseCore/SparseUtil.h \
+ /usr/include/eigen3/Eigen/src/SparseCore/SparseMatrixBase.h \
+ /usr/include/eigen3/Eigen/src/plugins/CommonCwiseUnaryOps.h \
+ /usr/include/eigen3/Eigen/src/plugins/CommonCwiseBinaryOps.h \
+ /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseUnaryOps.h \
+ /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseBinaryOps.h \
+ /usr/include/eigen3/Eigen/src/plugins/BlockMethods.h \
+ /usr/include/eigen3/Eigen/src/SparseCore/SparseAssign.h \
+ /usr/include/eigen3/Eigen/src/SparseCore/CompressedStorage.h \
+ /usr/include/eigen3/Eigen/src/SparseCore/AmbiVector.h \
+ /usr/include/eigen3/Eigen/src/SparseCore/SparseCompressedBase.h \
+ /usr/include/eigen3/Eigen/src/SparseCore/SparseMatrix.h \
+ /usr/include/eigen3/Eigen/src/SparseCore/SparseMap.h \
+ /usr/include/eigen3/Eigen/src/SparseCore/MappedSparseMatrix.h \
+ /usr/include/eigen3/Eigen/src/SparseCore/SparseVector.h \
+ /usr/include/eigen3/Eigen/src/SparseCore/SparseRef.h \
+ /usr/include/eigen3/Eigen/src/SparseCore/SparseCwiseUnaryOp.h \
+ /usr/include/eigen3/Eigen/src/SparseCore/SparseCwiseBinaryOp.h \
+ /usr/include/eigen3/Eigen/src/SparseCore/SparseTranspose.h \
+ /usr/include/eigen3/Eigen/src/SparseCore/SparseBlock.h \
+ /usr/include/eigen3/Eigen/src/SparseCore/SparseDot.h \
+ /usr/include/eigen3/Eigen/src/SparseCore/SparseRedux.h \
+ /usr/include/eigen3/Eigen/src/SparseCore/SparseView.h \
+ /usr/include/eigen3/Eigen/src/SparseCore/SparseDiagonalProduct.h \
+ /usr/include/eigen3/Eigen/src/SparseCore/ConservativeSparseSparseProduct.h \
+ /usr/include/eigen3/Eigen/src/SparseCore/SparseSparseProductWithPruning.h \
+ /usr/include/eigen3/Eigen/src/SparseCore/SparseProduct.h \
+ /usr/include/eigen3/Eigen/src/SparseCore/SparseDenseProduct.h \
+ /usr/include/eigen3/Eigen/src/SparseCore/SparseSelfAdjointView.h \
+ /usr/include/eigen3/Eigen/src/SparseCore/SparseTriangularView.h \
+ /usr/include/eigen3/Eigen/src/SparseCore/TriangularSolver.h \
+ /usr/include/eigen3/Eigen/src/SparseCore/SparsePermutation.h \
+ /usr/include/eigen3/Eigen/src/SparseCore/SparseFuzzy.h \
+ /usr/include/eigen3/Eigen/src/SparseCore/SparseSolverBase.h \
+ /usr/include/eigen3/Eigen/OrderingMethods \
+ /usr/include/eigen3/Eigen/src/OrderingMethods/Amd.h \
+ /usr/include/eigen3/Eigen/src/OrderingMethods/Ordering.h \
+ /usr/include/eigen3/Eigen/src/OrderingMethods/Eigen_Colamd.h \
+ /usr/include/eigen3/Eigen/SparseCholesky \
+ /usr/include/eigen3/Eigen/src/SparseCholesky/SimplicialCholesky.h \
+ /usr/include/eigen3/Eigen/src/SparseCholesky/SimplicialCholesky_impl.h \
+ /usr/include/eigen3/Eigen/SparseLU \
+ /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_gemm_kernel.h \
+ /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_Structs.h \
+ /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_SupernodalMatrix.h \
+ /usr/include/eigen3/Eigen/src/SparseLU/SparseLUImpl.h \
+ /usr/include/eigen3/Eigen/src/SparseCore/SparseColEtree.h \
+ /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_Memory.h \
+ /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_heap_relax_snode.h \
+ /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_relax_snode.h \
+ /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_pivotL.h \
+ /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_panel_dfs.h \
+ /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_kernel_bmod.h \
+ /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_panel_bmod.h \
+ /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_column_dfs.h \
+ /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_column_bmod.h \
+ /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_copy_to_ucol.h \
+ /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_pruneL.h \
+ /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_Utils.h \
+ /usr/include/eigen3/Eigen/src/SparseLU/SparseLU.h \
+ /usr/include/eigen3/Eigen/SparseQR \
+ /usr/include/eigen3/Eigen/src/SparseQR/SparseQR.h \
+ /usr/include/eigen3/Eigen/IterativeLinearSolvers \
+ /usr/include/eigen3/Eigen/src/IterativeLinearSolvers/SolveWithGuess.h \
+ /usr/include/eigen3/Eigen/src/IterativeLinearSolvers/IterativeSolverBase.h \
+ /usr/include/eigen3/Eigen/src/IterativeLinearSolvers/BasicPreconditioners.h \
+ /usr/include/eigen3/Eigen/src/IterativeLinearSolvers/ConjugateGradient.h \
+ /usr/include/eigen3/Eigen/src/IterativeLinearSolvers/LeastSquareConjugateGradient.h \
+ /usr/include/eigen3/Eigen/src/IterativeLinearSolvers/BiCGSTAB.h \
+ /usr/include/eigen3/Eigen/src/IterativeLinearSolvers/IncompleteLUT.h \
+ /usr/include/eigen3/Eigen/src/IterativeLinearSolvers/IncompleteCholesky.h \
+ /opt/ros/humble/include/sensor_msgs/sensor_msgs/point_cloud2_iterator.hpp \
+ /usr/include/c++/11/cstdarg \
+ /opt/ros/humble/include/sensor_msgs/sensor_msgs/impl/point_cloud2_iterator.hpp \
  /usr/include/c++/11/fstream \
  /usr/include/x86_64-linux-gnu/c++/11/bits/basic_file.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h \

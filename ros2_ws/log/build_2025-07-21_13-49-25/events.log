@@ -1,0 +1,768 @@
+[0.000000] (-) TimerEvent: {}
+[0.000827] (spraying_pathways) JobQueued: {'identifier': 'spraying_pathways', 'dependencies': OrderedDict()}
+[0.000873] (ur_simulation_gazebo) JobQueued: {'identifier': 'ur_simulation_gazebo', 'dependencies': OrderedDict()}
+[0.000908] (spraying_pathways) JobStarted: {'identifier': 'spraying_pathways'}
+[0.008949] (ur_simulation_gazebo) JobStarted: {'identifier': 'ur_simulation_gazebo'}
+[0.014065] (spraying_pathways) JobProgress: {'identifier': 'spraying_pathways', 'progress': 'cmake'}
+[0.014640] (spraying_pathways) Command: {'cmd': ['/usr/bin/cmake', '/ros2_ws/src/spraying_pathways', '-DCMAKE_INSTALL_PREFIX=/ros2_ws/install/spraying_pathways'], 'cwd': '/ros2_ws/build/spraying_pathways', 'env': OrderedDict([('HOSTNAME', 'bonitsispantelis-virtual-machine'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/vulcanexus/humble/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/vulcanexus_user'), ('ROS_PYTHON_VERSION', '3'), ('COLCON_PREFIX_PATH', '/ros2_ws/install:/opt/vulcanexus/humble'), ('ROS_DISTRO', 'humble'), ('VULCANEXUS_HOME', '/opt/vulcanexus/humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('PKG_CONFIG_PATH', '/opt/vulcanexus/humble/lib/x86_64-linux-gnu/pkgconfig:/opt/vulcanexus/humble/lib/pkgconfig'), ('TERM', 'xterm'), ('ROS_LOCALHOST_ONLY', '0'), ('QT_X11_NO_MITSHM', '1'), ('PATH', '/opt/vulcanexus/humble/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('RMW_IMPLEMENTATION', 'rmw_fastrtps_cpp'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/ros2_ws/install/ur_simulation_gazebo:/ros2_ws/install/spraying_pathways:/opt/vulcanexus/humble:/opt/ros/humble'), ('DEBIAN_FRONTEND', 'noninteractive'), ('VULCANEXUS_BRANCH', 'humble'), ('VULCANEXUS_DISTRO', 'humble'), ('PWD', '/ros2_ws/build/spraying_pathways'), ('LC_ALL', 'C.UTF-8'), ('GAZEBO_PLUGIN_PATH', '/opt/ros/humble/lib'), ('PYTHONPATH', '/opt/vulcanexus/humble/local/lib/python3.10/dist-packages:/opt/vulcanexus/humble/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/ros2_ws/install/ur_simulation_gazebo:/ros2_ws/install/spraying_pathways:/opt/vulcanexus/humble:/opt/ros/humble')]), 'shell': False}
+[0.024417] (ur_simulation_gazebo) JobProgress: {'identifier': 'ur_simulation_gazebo', 'progress': 'cmake'}
+[0.024479] (ur_simulation_gazebo) Command: {'cmd': ['/usr/bin/cmake', '/ros2_ws/src/ur_simulation_gazebo', '-DCMAKE_INSTALL_PREFIX=/ros2_ws/install/ur_simulation_gazebo'], 'cwd': '/ros2_ws/build/ur_simulation_gazebo', 'env': OrderedDict([('HOSTNAME', 'bonitsispantelis-virtual-machine'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/vulcanexus/humble/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/vulcanexus_user'), ('ROS_PYTHON_VERSION', '3'), ('COLCON_PREFIX_PATH', '/ros2_ws/install:/opt/vulcanexus/humble'), ('ROS_DISTRO', 'humble'), ('VULCANEXUS_HOME', '/opt/vulcanexus/humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('PKG_CONFIG_PATH', '/opt/vulcanexus/humble/lib/x86_64-linux-gnu/pkgconfig:/opt/vulcanexus/humble/lib/pkgconfig'), ('TERM', 'xterm'), ('ROS_LOCALHOST_ONLY', '0'), ('QT_X11_NO_MITSHM', '1'), ('PATH', '/opt/vulcanexus/humble/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('RMW_IMPLEMENTATION', 'rmw_fastrtps_cpp'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/ros2_ws/install/ur_simulation_gazebo:/ros2_ws/install/spraying_pathways:/opt/vulcanexus/humble:/opt/ros/humble'), ('DEBIAN_FRONTEND', 'noninteractive'), ('VULCANEXUS_BRANCH', 'humble'), ('VULCANEXUS_DISTRO', 'humble'), ('PWD', '/ros2_ws/build/ur_simulation_gazebo'), ('LC_ALL', 'C.UTF-8'), ('GAZEBO_PLUGIN_PATH', '/opt/ros/humble/lib'), ('PYTHONPATH', '/opt/vulcanexus/humble/local/lib/python3.10/dist-packages:/opt/vulcanexus/humble/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/ros2_ws/install/ur_simulation_gazebo:/ros2_ws/install/spraying_pathways:/opt/vulcanexus/humble:/opt/ros/humble')]), 'shell': False}
+[0.085218] (spraying_pathways) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[0.088068] (ur_simulation_gazebo) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[0.099673] (-) TimerEvent: {}
+[0.146060] (ur_simulation_gazebo) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[0.146324] (spraying_pathways) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[0.154491] (spraying_pathways) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.155130] (ur_simulation_gazebo) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.200213] (-) TimerEvent: {}
+[0.234671] (spraying_pathways) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.234850] (ur_simulation_gazebo) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.240543] (spraying_pathways) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[0.240777] (ur_simulation_gazebo) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[0.240832] (ur_simulation_gazebo) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.240881] (spraying_pathways) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.241075] (ur_simulation_gazebo) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.242354] (spraying_pathways) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.245765] (ur_simulation_gazebo) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.246039] (spraying_pathways) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.300311] (-) TimerEvent: {}
+[0.337148] (ur_simulation_gazebo) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[0.341163] (spraying_pathways) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[0.343746] (ur_simulation_gazebo) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[0.344672] (ur_simulation_gazebo) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[0.344787] (ur_simulation_gazebo) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[0.346927] (spraying_pathways) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[0.347288] (spraying_pathways) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[0.348340] (spraying_pathways) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[0.348442] (ur_simulation_gazebo) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.10 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.351215] (spraying_pathways) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.10 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.400759] (-) TimerEvent: {}
+[0.483671] (spraying_pathways) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter \n'}
+[0.485411] (ur_simulation_gazebo) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter \n'}
+[0.501677] (-) TimerEvent: {}
+[0.580764] (spraying_pathways) StdoutLine: {'line': b'-- Found rclcpp: 16.0.10 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[0.581770] (ur_simulation_gazebo) StdoutLine: {'line': b'-- Found launch_testing_ament_cmake: 1.0.6 (/opt/ros/humble/share/launch_testing_ament_cmake/cmake)\n'}
+[0.582778] (ur_simulation_gazebo) StdoutLine: {'line': b'-- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)\n'}
+[0.601804] (-) TimerEvent: {}
+[0.606763] (ur_simulation_gazebo) StdoutLine: {'line': b'-- Found PythonInterp: /usr/bin/python3 (found suitable version "3.10.12", minimum required is "3.6") \n'}
+[0.615234] (ur_simulation_gazebo) StdoutLine: {'line': b'-- Found PythonLibs: /usr/lib/x86_64-linux-gnu/libpython3.10.so (found suitable version "3.10.12", minimum required is "3.5") \n'}
+[0.615387] (ur_simulation_gazebo) StdoutLine: {'line': b'-- Using PYTHON_EXECUTABLE: /usr/bin/python3\n'}
+[0.615457] (ur_simulation_gazebo) StdoutLine: {'line': b'-- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10\n'}
+[0.615506] (ur_simulation_gazebo) StdoutLine: {'line': b'-- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.10.so\n'}
+[0.623690] (spraying_pathways) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[0.628863] (spraying_pathways) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[0.635477] (ur_simulation_gazebo) StdoutLine: {'line': b'-- Found PythonExtra: .so  \n'}
+[0.638137] (spraying_pathways) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[0.638242] (ur_simulation_gazebo) StdoutLine: {'line': b'-- Found ament_cmake_pytest: 1.3.10 (/opt/ros/humble/share/ament_cmake_pytest/cmake)\n'}
+[0.650497] (spraying_pathways) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.663210] (spraying_pathways) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.701930] (-) TimerEvent: {}
+[0.702221] (ur_simulation_gazebo) StdoutLine: {'line': b'-- Configuring done\n'}
+[0.709889] (spraying_pathways) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[0.710339] (spraying_pathways) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.6 (/opt/vulcanexus/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[0.715689] (ur_simulation_gazebo) StdoutLine: {'line': b'-- Generating done\n'}
+[0.716534] (ur_simulation_gazebo) StdoutLine: {'line': b'-- Build files have been written to: /ros2_ws/build/ur_simulation_gazebo\n'}
+[0.722452] (ur_simulation_gazebo) CommandEnded: {'returncode': 0}
+[0.725574] (ur_simulation_gazebo) JobProgress: {'identifier': 'ur_simulation_gazebo', 'progress': 'build'}
+[0.725689] (ur_simulation_gazebo) Command: {'cmd': ['/usr/bin/cmake', '--build', '/ros2_ws/build/ur_simulation_gazebo', '--', '-j4', '-l4'], 'cwd': '/ros2_ws/build/ur_simulation_gazebo', 'env': OrderedDict([('HOSTNAME', 'bonitsispantelis-virtual-machine'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/vulcanexus/humble/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/vulcanexus_user'), ('ROS_PYTHON_VERSION', '3'), ('COLCON_PREFIX_PATH', '/ros2_ws/install:/opt/vulcanexus/humble'), ('ROS_DISTRO', 'humble'), ('VULCANEXUS_HOME', '/opt/vulcanexus/humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('PKG_CONFIG_PATH', '/opt/vulcanexus/humble/lib/x86_64-linux-gnu/pkgconfig:/opt/vulcanexus/humble/lib/pkgconfig'), ('TERM', 'xterm'), ('ROS_LOCALHOST_ONLY', '0'), ('QT_X11_NO_MITSHM', '1'), ('PATH', '/opt/vulcanexus/humble/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('RMW_IMPLEMENTATION', 'rmw_fastrtps_cpp'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/ros2_ws/install/ur_simulation_gazebo:/ros2_ws/install/spraying_pathways:/opt/vulcanexus/humble:/opt/ros/humble'), ('DEBIAN_FRONTEND', 'noninteractive'), ('VULCANEXUS_BRANCH', 'humble'), ('VULCANEXUS_DISTRO', 'humble'), ('PWD', '/ros2_ws/build/ur_simulation_gazebo'), ('LC_ALL', 'C.UTF-8'), ('GAZEBO_PLUGIN_PATH', '/opt/ros/humble/lib'), ('PYTHONPATH', '/opt/vulcanexus/humble/local/lib/python3.10/dist-packages:/opt/vulcanexus/humble/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/ros2_ws/install/ur_simulation_gazebo:/ros2_ws/install/spraying_pathways:/opt/vulcanexus/humble:/opt/ros/humble')]), 'shell': False}
+[0.769436] (ur_simulation_gazebo) CommandEnded: {'returncode': 0}
+[0.802186] (-) TimerEvent: {}
+[0.806638] (ur_simulation_gazebo) JobProgress: {'identifier': 'ur_simulation_gazebo', 'progress': 'install'}
+[0.809298] (spraying_pathways) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  \n'}
+[0.816075] (ur_simulation_gazebo) Command: {'cmd': ['/usr/bin/cmake', '--install', '/ros2_ws/build/ur_simulation_gazebo'], 'cwd': '/ros2_ws/build/ur_simulation_gazebo', 'env': OrderedDict([('HOSTNAME', 'bonitsispantelis-virtual-machine'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/vulcanexus/humble/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/vulcanexus_user'), ('ROS_PYTHON_VERSION', '3'), ('COLCON_PREFIX_PATH', '/ros2_ws/install:/opt/vulcanexus/humble'), ('ROS_DISTRO', 'humble'), ('VULCANEXUS_HOME', '/opt/vulcanexus/humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('PKG_CONFIG_PATH', '/opt/vulcanexus/humble/lib/x86_64-linux-gnu/pkgconfig:/opt/vulcanexus/humble/lib/pkgconfig'), ('TERM', 'xterm'), ('ROS_LOCALHOST_ONLY', '0'), ('QT_X11_NO_MITSHM', '1'), ('PATH', '/opt/vulcanexus/humble/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('RMW_IMPLEMENTATION', 'rmw_fastrtps_cpp'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/ros2_ws/install/ur_simulation_gazebo:/ros2_ws/install/spraying_pathways:/opt/vulcanexus/humble:/opt/ros/humble'), ('DEBIAN_FRONTEND', 'noninteractive'), ('VULCANEXUS_BRANCH', 'humble'), ('VULCANEXUS_DISTRO', 'humble'), ('PWD', '/ros2_ws/build/ur_simulation_gazebo'), ('LC_ALL', 'C.UTF-8'), ('GAZEBO_PLUGIN_PATH', '/opt/ros/humble/lib'), ('PYTHONPATH', '/opt/vulcanexus/humble/local/lib/python3.10/dist-packages:/opt/vulcanexus/humble/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/ros2_ws/install/ur_simulation_gazebo:/ros2_ws/install/spraying_pathways:/opt/vulcanexus/humble:/opt/ros/humble')]), 'shell': False}
+[0.824787] (ur_simulation_gazebo) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[0.824923] (ur_simulation_gazebo) StdoutLine: {'line': b'-- Installing: /ros2_ws/install/ur_simulation_gazebo/share/ur_simulation_gazebo/config\n'}
+[0.825057] (ur_simulation_gazebo) StdoutLine: {'line': b'-- Installing: /ros2_ws/install/ur_simulation_gazebo/share/ur_simulation_gazebo/config/ur_controllers.yaml\n'}
+[0.825391] (ur_simulation_gazebo) StdoutLine: {'line': b'-- Installing: /ros2_ws/install/ur_simulation_gazebo/share/ur_simulation_gazebo/launch\n'}
+[0.825460] (ur_simulation_gazebo) StdoutLine: {'line': b'-- Installing: /ros2_ws/install/ur_simulation_gazebo/share/ur_simulation_gazebo/launch/ur_sim_moveit.launch.py\n'}
+[0.825559] (ur_simulation_gazebo) StdoutLine: {'line': b'-- Installing: /ros2_ws/install/ur_simulation_gazebo/share/ur_simulation_gazebo/launch/ur_sim_control.launch.py\n'}
+[0.825889] (ur_simulation_gazebo) StdoutLine: {'line': b'-- Installing: /ros2_ws/install/ur_simulation_gazebo/share/ament_index/resource_index/package_run_dependencies/ur_simulation_gazebo\n'}
+[0.826153] (ur_simulation_gazebo) StdoutLine: {'line': b'-- Installing: /ros2_ws/install/ur_simulation_gazebo/share/ament_index/resource_index/parent_prefix_path/ur_simulation_gazebo\n'}
+[0.826395] (ur_simulation_gazebo) StdoutLine: {'line': b'-- Installing: /ros2_ws/install/ur_simulation_gazebo/share/ur_simulation_gazebo/environment/ament_prefix_path.sh\n'}
+[0.827288] (ur_simulation_gazebo) StdoutLine: {'line': b'-- Installing: /ros2_ws/install/ur_simulation_gazebo/share/ur_simulation_gazebo/environment/ament_prefix_path.dsv\n'}
+[0.827439] (ur_simulation_gazebo) StdoutLine: {'line': b'-- Installing: /ros2_ws/install/ur_simulation_gazebo/share/ur_simulation_gazebo/environment/path.sh\n'}
+[0.827500] (ur_simulation_gazebo) StdoutLine: {'line': b'-- Installing: /ros2_ws/install/ur_simulation_gazebo/share/ur_simulation_gazebo/environment/path.dsv\n'}
+[0.828023] (ur_simulation_gazebo) StdoutLine: {'line': b'-- Installing: /ros2_ws/install/ur_simulation_gazebo/share/ur_simulation_gazebo/local_setup.bash\n'}
+[0.828195] (ur_simulation_gazebo) StdoutLine: {'line': b'-- Installing: /ros2_ws/install/ur_simulation_gazebo/share/ur_simulation_gazebo/local_setup.sh\n'}
+[0.828861] (ur_simulation_gazebo) StdoutLine: {'line': b'-- Installing: /ros2_ws/install/ur_simulation_gazebo/share/ur_simulation_gazebo/local_setup.zsh\n'}
+[0.828951] (ur_simulation_gazebo) StdoutLine: {'line': b'-- Installing: /ros2_ws/install/ur_simulation_gazebo/share/ur_simulation_gazebo/local_setup.dsv\n'}
+[0.829005] (ur_simulation_gazebo) StdoutLine: {'line': b'-- Installing: /ros2_ws/install/ur_simulation_gazebo/share/ur_simulation_gazebo/package.dsv\n'}
+[0.830130] (ur_simulation_gazebo) StdoutLine: {'line': b'-- Installing: /ros2_ws/install/ur_simulation_gazebo/share/ament_index/resource_index/packages/ur_simulation_gazebo\n'}
+[0.830202] (ur_simulation_gazebo) StdoutLine: {'line': b'-- Installing: /ros2_ws/install/ur_simulation_gazebo/share/ur_simulation_gazebo/cmake/ur_simulation_gazeboConfig.cmake\n'}
+[0.830260] (ur_simulation_gazebo) StdoutLine: {'line': b'-- Installing: /ros2_ws/install/ur_simulation_gazebo/share/ur_simulation_gazebo/cmake/ur_simulation_gazeboConfig-version.cmake\n'}
+[0.830316] (ur_simulation_gazebo) StdoutLine: {'line': b'-- Installing: /ros2_ws/install/ur_simulation_gazebo/share/ur_simulation_gazebo/package.xml\n'}
+[0.833292] (ur_simulation_gazebo) CommandEnded: {'returncode': 0}
+[0.842957] (spraying_pathways) StdoutLine: {'line': b'-- Found FastRTPS: /opt/vulcanexus/humble/include  \n'}
+[0.891615] (spraying_pathways) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[0.898129] (ur_simulation_gazebo) JobEnded: {'identifier': 'ur_simulation_gazebo', 'rc': 0}
+[0.902275] (-) TimerEvent: {}
+[0.903470] (spraying_pathways) StdoutLine: {'line': b'-- Looking for pthread.h\n'}
+[0.991963] (spraying_pathways) StdoutLine: {'line': b'-- Looking for pthread.h - found\n'}
+[0.992841] (spraying_pathways) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD\n'}
+[1.002461] (-) TimerEvent: {}
+[1.082758] (spraying_pathways) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success\n'}
+[1.082947] (spraying_pathways) StdoutLine: {'line': b'-- Found Threads: TRUE  \n'}
+[1.102650] (-) TimerEvent: {}
+[1.124829] (spraying_pathways) StdoutLine: {'line': b'-- Found rclpy: 3.3.14 (/opt/ros/humble/share/rclpy/cmake)\n'}
+[1.127925] (spraying_pathways) StdoutLine: {'line': b'-- Found moveit_ros_planning_interface: 2.5.9 (/opt/ros/humble/share/moveit_ros_planning_interface/cmake)\n'}
+[1.154628] (spraying_pathways) StdoutLine: {'line': b'-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: date_time filesystem program_options system thread \n'}
+[1.202756] (-) TimerEvent: {}
+[1.303298] (-) TimerEvent: {}
+[1.321480] (spraying_pathways) StdoutLine: {'line': b'-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: chrono date_time filesystem iostreams program_options regex serialization system thread \n'}
+[1.367351] (spraying_pathways) StdoutLine: {'line': b'-- Found parameter_traits: 0.3.9 (/opt/ros/humble/share/parameter_traits/cmake)\n'}
+[1.381622] (spraying_pathways) StdoutLine: {'line': b'-- Found Eigen3: TRUE (found version "3.4.0") \n'}
+[1.385948] (spraying_pathways) StdoutLine: {'line': b'-- Found rclcpp_lifecycle: 16.0.10 (/opt/ros/humble/share/rclcpp_lifecycle/cmake)\n'}
+[1.403570] (-) TimerEvent: {}
+[1.413881] (spraying_pathways) StdoutLine: {'line': b'-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: filesystem \n'}
+[1.503680] (-) TimerEvent: {}
+[1.519002] (spraying_pathways) StdoutLine: {'line': b'-- library: /usr/lib/x86_64-linux-gnu/libcurl.so\n'}
+[1.559487] (spraying_pathways) StdoutLine: {'line': b'-- Ensuring Eigen3 include directory is part of orocos-kdl CMake target\n'}
+[1.603900] (-) TimerEvent: {}
+[1.682378] (spraying_pathways) StdoutLine: {'line': b'-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: system filesystem date_time program_options thread chrono \n'}
+[1.704096] (-) TimerEvent: {}
+[1.707604] (spraying_pathways) StdoutLine: {'line': b'-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: thread system filesystem regex date_time program_options \n'}
+[1.725746] (spraying_pathways) StdoutLine: {'line': b'-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: system filesystem date_time program_options thread \n'}
+[1.750249] (spraying_pathways) StdoutLine: {'line': b'-- Found gazebo_ros: 3.9.0 (/opt/ros/humble/share/gazebo_ros/cmake)\n'}
+[1.761503] (spraying_pathways) StdoutLine: {'line': b'-- Found PkgConfig: /usr/bin/pkg-config (found version "0.29.2") \n'}
+[1.762777] (spraying_pathways) StdoutLine: {'line': b"-- Checking for module 'bullet>=2.82'\n"}
+[1.777498] (spraying_pathways) StdoutLine: {'line': b'--   Found bullet, version 3.05\n'}
+[1.804212] (-) TimerEvent: {}
+[1.901607] (spraying_pathways) StdoutLine: {'line': b'-- Found fcl: /usr/include (found suitable version "0.7.0", minimum required is "0.5.0") \n'}
+[1.904427] (-) TimerEvent: {}
+[1.961800] (spraying_pathways) StdoutLine: {'line': b'-- Found assimp: /usr/include (found version "5.2.0") \n'}
+[1.968050] (spraying_pathways) StdoutLine: {'line': b'-- Found DART: /usr/include (Required is at least version "6.6") found components: dart \n'}
+[1.979325] (spraying_pathways) StdoutLine: {'line': b'-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found suitable version "1.74.0", minimum required is "1.40.0") found components: thread system filesystem program_options regex iostreams date_time \n'}
+[1.990861] (spraying_pathways) StdoutLine: {'line': b'-- Found Protobuf: /usr/lib/x86_64-linux-gnu/libprotobuf.so (found version "3.12.4") \n'}
+[1.996627] (spraying_pathways) StdoutLine: {'line': b'-- Looking for ignition-math6 -- found version 6.15.1\n'}
+[2.002538] (spraying_pathways) StdoutLine: {'line': b'-- Searching for dependencies of ignition-math6\n'}
+[2.003810] (spraying_pathways) StdoutLine: {'line': b'-- Looking for OGRE...\n'}
+[2.004205] (spraying_pathways) StdoutLine: {'line': b'-- OGRE_PREFIX_WATCH changed.\n'}
+[2.004503] (-) TimerEvent: {}
+[2.009598] (spraying_pathways) StdoutLine: {'line': b"-- Checking for module 'OGRE'\n"}
+[2.024564] (spraying_pathways) StdoutLine: {'line': b'--   Found OGRE, version 1.9.0\n'}
+[2.064488] (spraying_pathways) StdoutLine: {'line': b'-- Found Ogre Ghadamon (1.9.0)\n'}
+[2.070397] (spraying_pathways) StdoutLine: {'line': b'-- Found OGRE: optimized;/usr/lib/x86_64-linux-gnu/libOgreMain.so;debug;/usr/lib/x86_64-linux-gnu/libOgreMain.so\n'}
+[2.078382] (spraying_pathways) StdoutLine: {'line': b'-- Looking for OGRE_Paging...\n'}
+[2.081119] (spraying_pathways) StdoutLine: {'line': b'-- Found OGRE_Paging: optimized;/usr/lib/x86_64-linux-gnu/libOgrePaging.so;debug;/usr/lib/x86_64-linux-gnu/libOgrePaging.so\n'}
+[2.081270] (spraying_pathways) StdoutLine: {'line': b'-- Looking for OGRE_Terrain...\n'}
+[2.089184] (spraying_pathways) StdoutLine: {'line': b'-- Found OGRE_Terrain: optimized;/usr/lib/x86_64-linux-gnu/libOgreTerrain.so;debug;/usr/lib/x86_64-linux-gnu/libOgreTerrain.so\n'}
+[2.089328] (spraying_pathways) StdoutLine: {'line': b'-- Looking for OGRE_Property...\n'}
+[2.091988] (spraying_pathways) StdoutLine: {'line': b'-- Found OGRE_Property: optimized;/usr/lib/x86_64-linux-gnu/libOgreProperty.so;debug;/usr/lib/x86_64-linux-gnu/libOgreProperty.so\n'}
+[2.092121] (spraying_pathways) StdoutLine: {'line': b'-- Looking for OGRE_RTShaderSystem...\n'}
+[2.095096] (spraying_pathways) StdoutLine: {'line': b'-- Found OGRE_RTShaderSystem: optimized;/usr/lib/x86_64-linux-gnu/libOgreRTShaderSystem.so;debug;/usr/lib/x86_64-linux-gnu/libOgreRTShaderSystem.so\n'}
+[2.095175] (spraying_pathways) StdoutLine: {'line': b'-- Looking for OGRE_Volume...\n'}
+[2.097745] (spraying_pathways) StdoutLine: {'line': b'-- Found OGRE_Volume: optimized;/usr/lib/x86_64-linux-gnu/libOgreVolume.so;debug;/usr/lib/x86_64-linux-gnu/libOgreVolume.so\n'}
+[2.097874] (spraying_pathways) StdoutLine: {'line': b'-- Looking for OGRE_Overlay...\n'}
+[2.100631] (spraying_pathways) StdoutLine: {'line': b'-- Found OGRE_Overlay: optimized;/usr/lib/x86_64-linux-gnu/libOgreOverlay.so;debug;/usr/lib/x86_64-linux-gnu/libOgreOverlay.so\n'}
+[2.104618] (-) TimerEvent: {}
+[2.172290] (spraying_pathways) StdoutLine: {'line': b'-- Looking for ignition-math6 -- found version 6.15.1\n'}
+[2.175150] (spraying_pathways) StdoutLine: {'line': b'-- Looking for ignition-transport8 -- found version 8.2.1\n'}
+[2.175678] (spraying_pathways) StdoutLine: {'line': b'-- Searching for dependencies of ignition-transport8\n'}
+[2.193980] (spraying_pathways) StdoutLine: {'line': b'-- Found Protobuf: /usr/lib/x86_64-linux-gnu/libprotobuf.so (found suitable version "3.12.4", minimum required is "3") \n'}
+[2.204265] (spraying_pathways) StdoutLine: {'line': b'-- Config-file not installed for ZeroMQ -- checking for pkg-config\n'}
+[2.204746] (-) TimerEvent: {}
+[2.209757] (spraying_pathways) StdoutLine: {'line': b"-- Checking for module 'libzmq >= 4'\n"}
+[2.226062] (spraying_pathways) StdoutLine: {'line': b'--   Found libzmq , version 4.3.4\n'}
+[2.271171] (spraying_pathways) StdoutLine: {'line': b'-- Found ZeroMQ: TRUE (Required is at least version "4") \n'}
+[2.276875] (spraying_pathways) StdoutLine: {'line': b"-- Checking for module 'uuid'\n"}
+[2.291385] (spraying_pathways) StdoutLine: {'line': b'--   Found uuid, version 2.37.2\n'}
+[2.304887] (-) TimerEvent: {}
+[2.331028] (spraying_pathways) StdoutLine: {'line': b'-- Found UUID: TRUE  \n'}
+[2.334586] (spraying_pathways) StdoutLine: {'line': b'-- Looking for ignition-msgs5 -- found version 5.8.1\n'}
+[2.335023] (spraying_pathways) StdoutLine: {'line': b'-- Searching for dependencies of ignition-msgs5\n'}
+[2.357119] (spraying_pathways) StdoutLine: {'line': b'-- Looking for ignition-math6 -- found version 6.15.1\n'}
+[2.363125] (spraying_pathways) StdoutLine: {'line': b"-- Checking for module 'tinyxml2'\n"}
+[2.382149] (spraying_pathways) StdoutLine: {'line': b'--   Found tinyxml2, version 9.0.0\n'}
+[2.405504] (-) TimerEvent: {}
+[2.424579] (spraying_pathways) StdoutLine: {'line': b'-- Looking for ignition-msgs5 -- found version 5.8.1\n'}
+[2.428264] (spraying_pathways) StdoutLine: {'line': b'-- Looking for ignition-common3 -- found version 3.14.0\n'}
+[2.428735] (spraying_pathways) StdoutLine: {'line': b'-- Searching for dependencies of ignition-common3\n'}
+[2.429076] (spraying_pathways) StdoutLine: {'line': b'-- Looking for dlfcn.h - found\n'}
+[2.429619] (spraying_pathways) StdoutLine: {'line': b'-- Looking for libdl - found\n'}
+[2.430814] (spraying_pathways) StdoutLine: {'line': b'-- Found DL: TRUE  \n'}
+[2.442599] (spraying_pathways) StdoutLine: {'line': b'-- Found tinyobjloader: /usr/lib/x86_64-linux-gnu/cmake/tinyobjloader/tinyobjloader-config.cmake (found version "2.0.0") \n'}
+[2.443170] (spraying_pathways) StdoutLine: {'line': b'-- Searching for <ignition-common3> component [graphics]\n'}
+[2.445781] (spraying_pathways) StdoutLine: {'line': b'-- Looking for ignition-common3-graphics -- found version 3.14.0\n'}
+[2.446305] (spraying_pathways) StdoutLine: {'line': b'-- Searching for dependencies of ignition-common3-graphics\n'}
+[2.446699] (spraying_pathways) StdoutLine: {'line': b'-- Looking for ignition-math6 -- found version 6.15.1\n'}
+[2.449816] (spraying_pathways) StdoutLine: {'line': b'-- Looking for ignition-fuel_tools4 -- found version 4.4.0\n'}
+[2.450280] (spraying_pathways) StdoutLine: {'line': b'-- Searching for dependencies of ignition-fuel_tools4\n'}
+[2.479082] (spraying_pathways) StdoutLine: {'line': b'-- Found CURL: /usr/lib/x86_64-linux-gnu/libcurl.so (found version "7.81.0")  \n'}
+[2.488130] (spraying_pathways) StdoutLine: {'line': b"-- Checking for module 'jsoncpp'\n"}
+[2.503386] (spraying_pathways) StdoutLine: {'line': b'--   Found jsoncpp, version 1.9.5\n'}
+[2.505629] (-) TimerEvent: {}
+[2.545208] (spraying_pathways) StdoutLine: {'line': b'-- Found JSONCPP: TRUE  \n'}
+[2.551014] (spraying_pathways) StdoutLine: {'line': b"-- Checking for module 'libzip'\n"}
+[2.567196] (spraying_pathways) StdoutLine: {'line': b'--   Found libzip, version 1.7.3\n'}
+[2.605776] (-) TimerEvent: {}
+[2.608344] (spraying_pathways) StdoutLine: {'line': b'-- Found ZIP: TRUE  \n'}
+[2.608882] (spraying_pathways) StdoutLine: {'line': b'-- Looking for ignition-common3 -- found version 3.14.0\n'}
+[2.609301] (spraying_pathways) StdoutLine: {'line': b'-- Looking for ignition-math6 -- found version 6.15.1\n'}
+[2.609868] (spraying_pathways) StdoutLine: {'line': b'-- Looking for ignition-msgs5 -- found version 5.8.1\n'}
+[2.613490] (spraying_pathways) StdoutLine: {'line': b'-- Gazebo version: 11.10\n'}
+[2.613838] (spraying_pathways) StdoutLine: {'line': b"-- Checking for module 'tbb'\n"}
+[2.635920] (spraying_pathways) StdoutLine: {'line': b'--   Found tbb, version 2021.5.0\n'}
+[2.682541] (spraying_pathways) StdoutLine: {'line': b'-- Found laser_geometry: 2.4.0 (/opt/ros/humble/share/laser_geometry/cmake)\n'}
+[2.688132] (spraying_pathways) StdoutLine: {'line': b'-- Found pcl_ros: 2.4.5 (/opt/ros/humble/share/pcl_ros/cmake)\n'}
+[2.705905] (-) TimerEvent: {}
+[2.724711] (spraying_pathways) StdoutLine: {'line': b"-- Checking for module 'eigen3'\n"}
+[2.741202] (spraying_pathways) StdoutLine: {'line': b'--   Found eigen3, version 3.4.0\n'}
+[2.783749] (spraying_pathways) StdoutLine: {'line': b'-- Found Eigen: /usr/include/eigen3 (Required is at least version "3.1") \n'}
+[2.783996] (spraying_pathways) StdoutLine: {'line': b'-- Eigen found (include: /usr/include/eigen3, version: 3.4.0)\n'}
+[2.805276] (spraying_pathways) StdoutLine: {'line': b"-- Checking for module 'flann'\n"}
+[2.806091] (-) TimerEvent: {}
+[2.821569] (spraying_pathways) StdoutLine: {'line': b'--   Found flann, version 1.9.1\n'}
+[2.868680] (spraying_pathways) StdoutLine: {'line': b'-- Found FLANN: /usr/lib/x86_64-linux-gnu/libflann_cpp.so  \n'}
+[2.868925] (spraying_pathways) StdoutLine: {'line': b'-- FLANN found (include: /usr/include, lib: /usr/lib/x86_64-linux-gnu/libflann_cpp.so)\n'}
+[2.906269] (-) TimerEvent: {}
+[3.006678] (-) TimerEvent: {}
+[3.106982] (-) TimerEvent: {}
+[3.207944] (-) TimerEvent: {}
+[3.308367] (-) TimerEvent: {}
+[3.408686] (-) TimerEvent: {}
+[3.509053] (-) TimerEvent: {}
+[3.609496] (-) TimerEvent: {}
+[3.709873] (-) TimerEvent: {}
+[3.810367] (-) TimerEvent: {}
+[3.901639] (spraying_pathways) StdoutLine: {'line': b"-- Checking for module 'libusb-1.0'\n"}
+[3.910525] (-) TimerEvent: {}
+[3.918964] (spraying_pathways) StdoutLine: {'line': b'--   Found libusb-1.0, version 1.0.25\n'}
+[3.964635] (spraying_pathways) StdoutLine: {'line': b'-- Found libusb: /usr/lib/x86_64-linux-gnu/libusb-1.0.so  \n'}
+[3.965574] (spraying_pathways) StdoutLine: {'line': b'-- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)\n'}
+[4.010797] (-) TimerEvent: {}
+[4.038240] (spraying_pathways) StdoutLine: {'line': b'-- OpenNI2 found (version: 2.2.0.33, include: /usr/include/openni2, lib: /usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb)\n'}
+[4.110987] (-) TimerEvent: {}
+[4.158816] (spraying_pathways) StdoutLine: {'line': b'-- Eigen found (include: /usr/include/eigen3, version: 3.4.0)\n'}
+[4.165841] (spraying_pathways) StdoutLine: {'line': b'-- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)\n'}
+[4.174752] (spraying_pathways) StdoutLine: {'line': b'-- OpenNI2 found (version: 2.2.0.33, include: /usr/include/openni2, lib: /usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb)\n'}
+[4.211106] (-) TimerEvent: {}
+[4.290459] (spraying_pathways) StdoutLine: {'line': b'-- Found Qhull version 8.0.2\n'}
+[4.311231] (-) TimerEvent: {}
+[4.409956] (spraying_pathways) StdoutLine: {'line': b'-- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)\n'}
+[4.411425] (-) TimerEvent: {}
+[4.511816] (-) TimerEvent: {}
+[4.519997] (spraying_pathways) StdoutLine: {'line': b'-- Found PCL_COMMON: /usr/lib/x86_64-linux-gnu/libpcl_common.so  \n'}
+[4.520872] (spraying_pathways) StdoutLine: {'line': b'-- Found PCL_KDTREE: /usr/lib/x86_64-linux-gnu/libpcl_kdtree.so  \n'}
+[4.521471] (spraying_pathways) StdoutLine: {'line': b'-- Found PCL_OCTREE: /usr/lib/x86_64-linux-gnu/libpcl_octree.so  \n'}
+[4.522110] (spraying_pathways) StdoutLine: {'line': b'-- Found PCL_SEARCH: /usr/lib/x86_64-linux-gnu/libpcl_search.so  \n'}
+[4.522915] (spraying_pathways) StdoutLine: {'line': b'-- Found PCL_SAMPLE_CONSENSUS: /usr/lib/x86_64-linux-gnu/libpcl_sample_consensus.so  \n'}
+[4.523497] (spraying_pathways) StdoutLine: {'line': b'-- Found PCL_FILTERS: /usr/lib/x86_64-linux-gnu/libpcl_filters.so  \n'}
+[4.523903] (spraying_pathways) StdoutLine: {'line': b'-- Found PCL_2D: /usr/include/pcl-1.12  \n'}
+[4.524266] (spraying_pathways) StdoutLine: {'line': b'-- Found PCL_GEOMETRY: /usr/include/pcl-1.12  \n'}
+[4.525054] (spraying_pathways) StdoutLine: {'line': b'-- Found PCL_IO: /usr/lib/x86_64-linux-gnu/libpcl_io.so  \n'}
+[4.525734] (spraying_pathways) StdoutLine: {'line': b'-- Found PCL_FEATURES: /usr/lib/x86_64-linux-gnu/libpcl_features.so  \n'}
+[4.526409] (spraying_pathways) StdoutLine: {'line': b'-- Found PCL_ML: /usr/lib/x86_64-linux-gnu/libpcl_ml.so  \n'}
+[4.527107] (spraying_pathways) StdoutLine: {'line': b'-- Found PCL_SEGMENTATION: /usr/lib/x86_64-linux-gnu/libpcl_segmentation.so  \n'}
+[4.527834] (spraying_pathways) StdoutLine: {'line': b'-- Found PCL_VISUALIZATION: /usr/lib/x86_64-linux-gnu/libpcl_visualization.so  \n'}
+[4.528532] (spraying_pathways) StdoutLine: {'line': b'-- Found PCL_SURFACE: /usr/lib/x86_64-linux-gnu/libpcl_surface.so  \n'}
+[4.529213] (spraying_pathways) StdoutLine: {'line': b'-- Found PCL_REGISTRATION: /usr/lib/x86_64-linux-gnu/libpcl_registration.so  \n'}
+[4.529935] (spraying_pathways) StdoutLine: {'line': b'-- Found PCL_KEYPOINTS: /usr/lib/x86_64-linux-gnu/libpcl_keypoints.so  \n'}
+[4.530644] (spraying_pathways) StdoutLine: {'line': b'-- Found PCL_TRACKING: /usr/lib/x86_64-linux-gnu/libpcl_tracking.so  \n'}
+[4.531325] (spraying_pathways) StdoutLine: {'line': b'-- Found PCL_RECOGNITION: /usr/lib/x86_64-linux-gnu/libpcl_recognition.so  \n'}
+[4.532029] (spraying_pathways) StdoutLine: {'line': b'-- Found PCL_STEREO: /usr/lib/x86_64-linux-gnu/libpcl_stereo.so  \n'}
+[4.532697] (spraying_pathways) StdoutLine: {'line': b'-- Found PCL_APPS: /usr/lib/x86_64-linux-gnu/libpcl_apps.so  \n'}
+[4.533377] (spraying_pathways) StdoutLine: {'line': b'-- Found PCL_IN_HAND_SCANNER: /usr/include/pcl-1.12  \n'}
+[4.533741] (spraying_pathways) StdoutLine: {'line': b'-- Found PCL_MODELER: /usr/include/pcl-1.12  \n'}
+[4.534131] (spraying_pathways) StdoutLine: {'line': b'-- Found PCL_POINT_CLOUD_EDITOR: /usr/include/pcl-1.12  \n'}
+[4.534765] (spraying_pathways) StdoutLine: {'line': b'-- Found PCL_OUTOFCORE: /usr/lib/x86_64-linux-gnu/libpcl_outofcore.so  \n'}
+[4.535409] (spraying_pathways) StdoutLine: {'line': b'-- Found PCL_PEOPLE: /usr/lib/x86_64-linux-gnu/libpcl_people.so  \n'}
+[4.550602] (spraying_pathways) StdoutLine: {'line': b'-- Found rosbag2_cpp: 0.15.12 (/opt/ros/humble/share/rosbag2_cpp/cmake)\n'}
+[4.564475] (spraying_pathways) StdoutLine: {'line': b'-- Found tf2_sensor_msgs: 0.25.7 (/opt/ros/humble/share/tf2_sensor_msgs/cmake)\n'}
+[4.570632] (spraying_pathways) StdoutLine: {'line': b'-- Found tf2_py: 0.25.7 (/opt/ros/humble/share/tf2_py/cmake)\n'}
+[4.591968] (spraying_pathways) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.12.11 (/opt/ros/humble/share/ament_lint_auto/cmake)\n'}
+[4.612019] (-) TimerEvent: {}
+[4.667228] (spraying_pathways) StdoutLine: {'line': b"-- Added test 'cppcheck' to perform static code analysis on C / C++ code\n"}
+[4.667775] (spraying_pathways) StdoutLine: {'line': b'-- Configured cppcheck include dirs: \n'}
+[4.667904] (spraying_pathways) StdoutLine: {'line': b'-- Configured cppcheck exclude dirs and/or files: \n'}
+[4.668625] (spraying_pathways) StdoutLine: {'line': b"-- Added test 'flake8' to check Python code syntax and style conventions\n"}
+[4.669645] (spraying_pathways) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[4.670408] (spraying_pathways) StdoutLine: {'line': b"-- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257\n"}
+[4.672946] (spraying_pathways) StdoutLine: {'line': b"-- Added test 'uncrustify' to check C / C++ code style\n"}
+[4.673045] (spraying_pathways) StdoutLine: {'line': b'-- Configured uncrustify additional arguments: \n'}
+[4.673739] (spraying_pathways) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[4.681096] (spraying_pathways) StdoutLine: {'line': b'-- Configuring done\n'}
+[4.712160] (-) TimerEvent: {}
+[4.812566] (-) TimerEvent: {}
+[4.907765] (spraying_pathways) StdoutLine: {'line': b'-- Generating done\n'}
+[4.912714] (-) TimerEvent: {}
+[4.914315] (spraying_pathways) StdoutLine: {'line': b'-- Build files have been written to: /ros2_ws/build/spraying_pathways\n'}
+[4.937869] (spraying_pathways) CommandEnded: {'returncode': 0}
+[4.938858] (spraying_pathways) JobProgress: {'identifier': 'spraying_pathways', 'progress': 'build'}
+[4.940263] (spraying_pathways) Command: {'cmd': ['/usr/bin/cmake', '--build', '/ros2_ws/build/spraying_pathways', '--', '-j4', '-l4'], 'cwd': '/ros2_ws/build/spraying_pathways', 'env': OrderedDict([('HOSTNAME', 'bonitsispantelis-virtual-machine'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/vulcanexus/humble/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/vulcanexus_user'), ('ROS_PYTHON_VERSION', '3'), ('COLCON_PREFIX_PATH', '/ros2_ws/install:/opt/vulcanexus/humble'), ('ROS_DISTRO', 'humble'), ('VULCANEXUS_HOME', '/opt/vulcanexus/humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('PKG_CONFIG_PATH', '/opt/vulcanexus/humble/lib/x86_64-linux-gnu/pkgconfig:/opt/vulcanexus/humble/lib/pkgconfig'), ('TERM', 'xterm'), ('ROS_LOCALHOST_ONLY', '0'), ('QT_X11_NO_MITSHM', '1'), ('PATH', '/opt/vulcanexus/humble/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('RMW_IMPLEMENTATION', 'rmw_fastrtps_cpp'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/ros2_ws/install/ur_simulation_gazebo:/ros2_ws/install/spraying_pathways:/opt/vulcanexus/humble:/opt/ros/humble'), ('DEBIAN_FRONTEND', 'noninteractive'), ('VULCANEXUS_BRANCH', 'humble'), ('VULCANEXUS_DISTRO', 'humble'), ('PWD', '/ros2_ws/build/spraying_pathways'), ('LC_ALL', 'C.UTF-8'), ('GAZEBO_PLUGIN_PATH', '/opt/ros/humble/lib'), ('PYTHONPATH', '/opt/vulcanexus/humble/local/lib/python3.10/dist-packages:/opt/vulcanexus/humble/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/ros2_ws/install/ur_simulation_gazebo:/ros2_ws/install/spraying_pathways:/opt/vulcanexus/humble:/opt/ros/humble')]), 'shell': False}
+[5.014210] (-) TimerEvent: {}
+[5.017335] (spraying_pathways) StdoutLine: {'line': b'[  9%] \x1b[32mBuilding CXX object CMakeFiles/go_home_node.dir/src/go_home.cpp.o\x1b[0m\n'}
+[5.017520] (spraying_pathways) StdoutLine: {'line': b'[  9%] \x1b[32mBuilding CXX object CMakeFiles/cartesian_path_planner_trajectory_v1_node.dir/src/cartesian_path_planner_trajectory_v1.cpp.o\x1b[0m\n'}
+[5.017629] (spraying_pathways) StdoutLine: {'line': b'[ 13%] \x1b[32mBuilding CXX object CMakeFiles/cartesian_path_planner_cubes_v2_node.dir/src/cartesian_path_planner_cubes_v2.cpp.o\x1b[0m\n'}
+[5.017718] (spraying_pathways) StdoutLine: {'line': b'[ 18%] \x1b[32mBuilding CXX object CMakeFiles/follow_joints_positions_node.dir/src/follow_joints_positions.cpp.o\x1b[0m\n'}
+[5.116661] (-) TimerEvent: {}
+[5.217094] (-) TimerEvent: {}
+[5.317488] (-) TimerEvent: {}
+[5.418004] (-) TimerEvent: {}
+[5.518441] (-) TimerEvent: {}
+[5.618892] (-) TimerEvent: {}
+[5.721768] (-) TimerEvent: {}
+[5.822097] (-) TimerEvent: {}
+[5.922477] (-) TimerEvent: {}
+[6.022856] (-) TimerEvent: {}
+[6.123158] (-) TimerEvent: {}
+[6.223542] (-) TimerEvent: {}
+[6.324043] (-) TimerEvent: {}
+[6.424421] (-) TimerEvent: {}
+[6.525865] (-) TimerEvent: {}
+[6.626257] (-) TimerEvent: {}
+[6.726680] (-) TimerEvent: {}
+[6.827790] (-) TimerEvent: {}
+[6.928084] (-) TimerEvent: {}
+[7.030815] (-) TimerEvent: {}
+[7.131188] (-) TimerEvent: {}
+[7.231717] (-) TimerEvent: {}
+[7.332141] (-) TimerEvent: {}
+[7.432540] (-) TimerEvent: {}
+[7.532967] (-) TimerEvent: {}
+[7.633344] (-) TimerEvent: {}
+[7.734795] (-) TimerEvent: {}
+[7.835293] (-) TimerEvent: {}
+[7.938938] (-) TimerEvent: {}
+[8.039451] (-) TimerEvent: {}
+[8.139891] (-) TimerEvent: {}
+[8.240329] (-) TimerEvent: {}
+[8.340885] (-) TimerEvent: {}
+[8.441531] (-) TimerEvent: {}
+[8.543716] (-) TimerEvent: {}
+[8.644056] (-) TimerEvent: {}
+[8.744610] (-) TimerEvent: {}
+[8.845712] (-) TimerEvent: {}
+[8.949645] (-) TimerEvent: {}
+[9.050486] (-) TimerEvent: {}
+[9.152676] (-) TimerEvent: {}
+[9.254124] (-) TimerEvent: {}
+[9.354482] (-) TimerEvent: {}
+[9.454828] (-) TimerEvent: {}
+[9.555159] (-) TimerEvent: {}
+[9.655840] (-) TimerEvent: {}
+[9.757779] (-) TimerEvent: {}
+[9.858096] (-) TimerEvent: {}
+[9.958491] (-) TimerEvent: {}
+[10.058953] (-) TimerEvent: {}
+[10.159356] (-) TimerEvent: {}
+[10.260904] (-) TimerEvent: {}
+[10.299750] (spraying_pathways) StderrLine: {'line': b'\x1b[01m\x1b[K/ros2_ws/src/spraying_pathways/src/cartesian_path_planner_trajectory_v1.cpp:\x1b[m\x1b[K In function \xe2\x80\x98\x1b[01m\x1b[Kint main(int, char**)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[10.299950] (spraying_pathways) StderrLine: {'line': b'\x1b[01m\x1b[K/ros2_ws/src/spraying_pathways/src/cartesian_path_planner_trajectory_v1.cpp:109:10:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused variable \xe2\x80\x98\x1b[01m\x1b[Kz_base\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wunused-variable\x1b[m\x1b[K]\n'}
+[10.299997] (spraying_pathways) StderrLine: {'line': b'  109 |   double \x1b[01;35m\x1b[Kz_base\x1b[m\x1b[K = 0.715 + 0.05; // defined for consistency (not used directly here)\n'}
+[10.300037] (spraying_pathways) StderrLine: {'line': b'      |          \x1b[01;35m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[10.363657] (-) TimerEvent: {}
+[10.464045] (-) TimerEvent: {}
+[10.564404] (-) TimerEvent: {}
+[10.664839] (-) TimerEvent: {}
+[10.765218] (-) TimerEvent: {}
+[10.865642] (-) TimerEvent: {}
+[10.966086] (-) TimerEvent: {}
+[11.066421] (-) TimerEvent: {}
+[11.168667] (-) TimerEvent: {}
+[11.269028] (-) TimerEvent: {}
+[11.369339] (-) TimerEvent: {}
+[11.469873] (-) TimerEvent: {}
+[11.570362] (-) TimerEvent: {}
+[11.670776] (-) TimerEvent: {}
+[11.772828] (-) TimerEvent: {}
+[11.873186] (-) TimerEvent: {}
+[11.973529] (-) TimerEvent: {}
+[12.073957] (-) TimerEvent: {}
+[12.174379] (-) TimerEvent: {}
+[12.275867] (-) TimerEvent: {}
+[12.376286] (-) TimerEvent: {}
+[12.476793] (-) TimerEvent: {}
+[12.578840] (-) TimerEvent: {}
+[12.679226] (-) TimerEvent: {}
+[12.779715] (-) TimerEvent: {}
+[12.880106] (-) TimerEvent: {}
+[12.881843] (spraying_pathways) StdoutLine: {'line': b'[ 22%] \x1b[32m\x1b[1mLinking CXX executable follow_joints_positions_node\x1b[0m\n'}
+[12.980240] (-) TimerEvent: {}
+[13.080846] (-) TimerEvent: {}
+[13.181404] (-) TimerEvent: {}
+[13.253689] (spraying_pathways) StdoutLine: {'line': b'[ 22%] Built target follow_joints_positions_node\n'}
+[13.284776] (-) TimerEvent: {}
+[13.288400] (spraying_pathways) StdoutLine: {'line': b'[ 27%] \x1b[32mBuilding CXX object CMakeFiles/cartesian_path_planner_cubes_v3_node.dir/src/cartesian_path_planner_cubes_v3.cpp.o\x1b[0m\n'}
+[13.341674] (spraying_pathways) StdoutLine: {'line': b'[ 31%] \x1b[32m\x1b[1mLinking CXX executable cartesian_path_planner_trajectory_v1_node\x1b[0m\n'}
+[13.384888] (-) TimerEvent: {}
+[13.485427] (-) TimerEvent: {}
+[13.515897] (spraying_pathways) StdoutLine: {'line': b'[ 36%] \x1b[32m\x1b[1mLinking CXX executable cartesian_path_planner_cubes_v2_node\x1b[0m\n'}
+[13.585554] (-) TimerEvent: {}
+[13.662426] (spraying_pathways) StdoutLine: {'line': b'[ 36%] Built target cartesian_path_planner_trajectory_v1_node\n'}
+[13.685681] (-) TimerEvent: {}
+[13.692665] (spraying_pathways) StdoutLine: {'line': b'[ 40%] \x1b[32mBuilding CXX object CMakeFiles/cartesian_path_planner_cubes_test_v1_node.dir/src/cartesian_path_planner_cubes_test_v1.cpp.o\x1b[0m\n'}
+[13.784393] (spraying_pathways) StdoutLine: {'line': b'[ 45%] \x1b[32m\x1b[1mLinking CXX executable go_home_node\x1b[0m\n'}
+[13.785780] (-) TimerEvent: {}
+[13.805726] (spraying_pathways) StdoutLine: {'line': b'[ 45%] Built target cartesian_path_planner_cubes_v2_node\n'}
+[13.837720] (spraying_pathways) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/cartesian_path_planner_cubes_test_v2_node.dir/src/cartesian_path_planner_cubes_test_v2.cpp.o\x1b[0m\n'}
+[13.885984] (-) TimerEvent: {}
+[13.986345] (-) TimerEvent: {}
+[14.086699] (-) TimerEvent: {}
+[14.099222] (spraying_pathways) StdoutLine: {'line': b'[ 50%] Built target go_home_node\n'}
+[14.136480] (spraying_pathways) StdoutLine: {'line': b'[ 54%] \x1b[32mBuilding CXX object CMakeFiles/cartesian_path_planner_cubes_test_go_v1_node.dir/src/cartesian_path_planner_cubes_test_go_v1.cpp.o\x1b[0m\n'}
+[14.186810] (-) TimerEvent: {}
+[14.216956] (spraying_pathways) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/ros2_ws/src/spraying_pathways/src/cartesian_path_planner_cubes_v3.cpp:9\x1b[m\x1b[K:\n'}
+[14.217129] (spraying_pathways) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/tf2_sensor_msgs/tf2_sensor_msgs.h:32:2:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K#warning This header is obsolete, please include tf2_sensor_msgs/tf2_sensor_msgs.hpp instead [\x1b[01;35m\x1b[K-Wcpp\x1b[m\x1b[K]\n'}
+[14.217176] (spraying_pathways) StderrLine: {'line': b'   32 | #\x1b[01;35m\x1b[Kwarning\x1b[m\x1b[K This header is obsolete, please include tf2_sensor_msgs/tf2_sensor_msgs.hpp instead\n'}
+[14.217213] (spraying_pathways) StderrLine: {'line': b'      |  \x1b[01;35m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[14.287771] (-) TimerEvent: {}
+[14.388168] (-) TimerEvent: {}
+[14.488608] (-) TimerEvent: {}
+[14.589798] (-) TimerEvent: {}
+[14.690107] (-) TimerEvent: {}
+[14.791819] (-) TimerEvent: {}
+[14.892393] (-) TimerEvent: {}
+[14.993021] (-) TimerEvent: {}
+[15.094951] (-) TimerEvent: {}
+[15.195261] (-) TimerEvent: {}
+[15.295606] (-) TimerEvent: {}
+[15.396302] (-) TimerEvent: {}
+[15.499078] (-) TimerEvent: {}
+[15.599424] (-) TimerEvent: {}
+[15.700081] (-) TimerEvent: {}
+[15.800619] (-) TimerEvent: {}
+[15.901000] (-) TimerEvent: {}
+[16.003677] (-) TimerEvent: {}
+[16.104225] (-) TimerEvent: {}
+[16.204908] (-) TimerEvent: {}
+[16.305427] (-) TimerEvent: {}
+[16.405908] (-) TimerEvent: {}
+[16.506333] (-) TimerEvent: {}
+[16.606675] (-) TimerEvent: {}
+[16.710666] (-) TimerEvent: {}
+[16.811067] (-) TimerEvent: {}
+[16.911402] (-) TimerEvent: {}
+[17.011791] (-) TimerEvent: {}
+[17.112111] (-) TimerEvent: {}
+[17.212426] (-) TimerEvent: {}
+[17.313158] (-) TimerEvent: {}
+[17.413517] (-) TimerEvent: {}
+[17.513902] (-) TimerEvent: {}
+[17.614232] (-) TimerEvent: {}
+[17.714567] (-) TimerEvent: {}
+[17.816873] (-) TimerEvent: {}
+[17.917190] (-) TimerEvent: {}
+[18.017508] (-) TimerEvent: {}
+[18.117953] (-) TimerEvent: {}
+[18.218334] (-) TimerEvent: {}
+[18.319991] (-) TimerEvent: {}
+[18.420346] (-) TimerEvent: {}
+[18.520649] (-) TimerEvent: {}
+[18.621013] (-) TimerEvent: {}
+[18.723755] (-) TimerEvent: {}
+[18.824085] (-) TimerEvent: {}
+[18.924445] (-) TimerEvent: {}
+[19.024917] (-) TimerEvent: {}
+[19.125282] (-) TimerEvent: {}
+[19.225613] (-) TimerEvent: {}
+[19.327648] (-) TimerEvent: {}
+[19.427955] (-) TimerEvent: {}
+[19.528262] (-) TimerEvent: {}
+[19.628572] (-) TimerEvent: {}
+[19.729006] (-) TimerEvent: {}
+[19.830681] (-) TimerEvent: {}
+[19.931257] (-) TimerEvent: {}
+[20.033828] (-) TimerEvent: {}
+[20.134132] (-) TimerEvent: {}
+[20.234431] (-) TimerEvent: {}
+[20.334777] (-) TimerEvent: {}
+[20.435155] (-) TimerEvent: {}
+[20.535650] (-) TimerEvent: {}
+[20.636052] (-) TimerEvent: {}
+[20.738896] (-) TimerEvent: {}
+[20.839241] (-) TimerEvent: {}
+[20.939679] (-) TimerEvent: {}
+[21.040012] (-) TimerEvent: {}
+[21.140352] (-) TimerEvent: {}
+[21.240681] (-) TimerEvent: {}
+[21.341045] (-) TimerEvent: {}
+[21.441531] (-) TimerEvent: {}
+[21.544880] (-) TimerEvent: {}
+[21.641694] (spraying_pathways) StdoutLine: {'line': b'[ 59%] \x1b[32m\x1b[1mLinking CXX executable cartesian_path_planner_cubes_v3_node\x1b[0m\n'}
+[21.644956] (-) TimerEvent: {}
+[21.745232] (-) TimerEvent: {}
+[21.845592] (-) TimerEvent: {}
+[21.848427] (spraying_pathways) StdoutLine: {'line': b'[ 63%] \x1b[32m\x1b[1mLinking CXX executable cartesian_path_planner_cubes_test_v2_node\x1b[0m\n'}
+[21.867331] (spraying_pathways) StdoutLine: {'line': b'[ 68%] \x1b[32m\x1b[1mLinking CXX executable cartesian_path_planner_cubes_test_v1_node\x1b[0m\n'}
+[21.945703] (-) TimerEvent: {}
+[21.990700] (spraying_pathways) StdoutLine: {'line': b'[ 68%] Built target cartesian_path_planner_cubes_v3_node\n'}
+[22.019720] (spraying_pathways) StdoutLine: {'line': b'[ 72%] \x1b[32mBuilding CXX object CMakeFiles/cartesian_path_planner_cubes_test_go_v2_node.dir/src/cartesian_path_planner_cubes_test_go_v2.cpp.o\x1b[0m\n'}
+[22.045840] (-) TimerEvent: {}
+[22.146483] (-) TimerEvent: {}
+[22.197512] (spraying_pathways) StdoutLine: {'line': b'[ 72%] Built target cartesian_path_planner_cubes_test_v2_node\n'}
+[22.224732] (spraying_pathways) StdoutLine: {'line': b'[ 77%] \x1b[32mBuilding CXX object CMakeFiles/cartesian_path_planner_cubes_v4_node.dir/src/cartesian_path_planner_cubes_v4.cpp.o\x1b[0m\n'}
+[22.246616] (-) TimerEvent: {}
+[22.252317] (spraying_pathways) StdoutLine: {'line': b'[ 77%] Built target cartesian_path_planner_cubes_test_v1_node\n'}
+[22.291420] (spraying_pathways) StdoutLine: {'line': b'[ 81%] \x1b[32mBuilding CXX object CMakeFiles/lidar_surface_scanner_node.dir/src/lidar_surface_scanner.cpp.o\x1b[0m\n'}
+[22.346781] (-) TimerEvent: {}
+[22.447219] (-) TimerEvent: {}
+[22.547766] (-) TimerEvent: {}
+[22.648292] (-) TimerEvent: {}
+[22.748672] (-) TimerEvent: {}
+[22.816679] (spraying_pathways) StdoutLine: {'line': b'[ 86%] \x1b[32m\x1b[1mLinking CXX executable cartesian_path_planner_cubes_test_go_v1_node\x1b[0m\n'}
+[22.848767] (-) TimerEvent: {}
+[22.949285] (-) TimerEvent: {}
+[23.049607] (-) TimerEvent: {}
+[23.123992] (spraying_pathways) StdoutLine: {'line': b'[ 86%] Built target cartesian_path_planner_cubes_test_go_v1_node\n'}
+[23.149763] (-) TimerEvent: {}
+[23.250114] (-) TimerEvent: {}
+[23.350496] (-) TimerEvent: {}
+[23.450854] (-) TimerEvent: {}
+[23.551961] (-) TimerEvent: {}
+[23.652456] (-) TimerEvent: {}
+[23.752920] (-) TimerEvent: {}
+[23.853391] (-) TimerEvent: {}
+[23.953881] (-) TimerEvent: {}
+[24.054260] (-) TimerEvent: {}
+[24.154619] (-) TimerEvent: {}
+[24.255060] (-) TimerEvent: {}
+[24.355560] (-) TimerEvent: {}
+[24.456132] (-) TimerEvent: {}
+[24.556766] (-) TimerEvent: {}
+[24.657218] (-) TimerEvent: {}
+[24.661653] (spraying_pathways) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/ros2_ws/src/spraying_pathways/src/lidar_surface_scanner.cpp:12\x1b[m\x1b[K:\n'}
+[24.661851] (spraying_pathways) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/tf2_sensor_msgs/tf2_sensor_msgs.h:32:2:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K#warning This header is obsolete, please include tf2_sensor_msgs/tf2_sensor_msgs.hpp instead [\x1b[01;35m\x1b[K-Wcpp\x1b[m\x1b[K]\n'}
+[24.661923] (spraying_pathways) StderrLine: {'line': b'   32 | #\x1b[01;35m\x1b[Kwarning\x1b[m\x1b[K This header is obsolete, please include tf2_sensor_msgs/tf2_sensor_msgs.hpp instead\n'}
+[24.661978] (spraying_pathways) StderrLine: {'line': b'      |  \x1b[01;35m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[24.757461] (-) TimerEvent: {}
+[24.858014] (-) TimerEvent: {}
+[24.958502] (-) TimerEvent: {}
+[25.059200] (-) TimerEvent: {}
+[25.159748] (-) TimerEvent: {}
+[25.260214] (-) TimerEvent: {}
+[25.360744] (-) TimerEvent: {}
+[25.461138] (-) TimerEvent: {}
+[25.561759] (-) TimerEvent: {}
+[25.662186] (-) TimerEvent: {}
+[25.762626] (-) TimerEvent: {}
+[25.863081] (-) TimerEvent: {}
+[25.963497] (-) TimerEvent: {}
+[26.064057] (-) TimerEvent: {}
+[26.164556] (-) TimerEvent: {}
+[26.265010] (-) TimerEvent: {}
+[26.365814] (-) TimerEvent: {}
+[26.466451] (-) TimerEvent: {}
+[26.566982] (-) TimerEvent: {}
+[26.667418] (-) TimerEvent: {}
+[26.767905] (-) TimerEvent: {}
+[26.868381] (-) TimerEvent: {}
+[26.968854] (-) TimerEvent: {}
+[27.069372] (-) TimerEvent: {}
+[27.170065] (-) TimerEvent: {}
+[27.270543] (-) TimerEvent: {}
+[27.371103] (-) TimerEvent: {}
+[27.471537] (-) TimerEvent: {}
+[27.572064] (-) TimerEvent: {}
+[27.672888] (-) TimerEvent: {}
+[27.773337] (-) TimerEvent: {}
+[27.873804] (-) TimerEvent: {}
+[27.974176] (-) TimerEvent: {}
+[28.074734] (-) TimerEvent: {}
+[28.175312] (-) TimerEvent: {}
+[28.275753] (-) TimerEvent: {}
+[28.376154] (-) TimerEvent: {}
+[28.476556] (-) TimerEvent: {}
+[28.577005] (-) TimerEvent: {}
+[28.677950] (-) TimerEvent: {}
+[28.778896] (-) TimerEvent: {}
+[28.879294] (-) TimerEvent: {}
+[28.979677] (-) TimerEvent: {}
+[29.080157] (-) TimerEvent: {}
+[29.180734] (-) TimerEvent: {}
+[29.238433] (spraying_pathways) StdoutLine: {'line': b'[ 90%] \x1b[32m\x1b[1mLinking CXX executable cartesian_path_planner_cubes_test_go_v2_node\x1b[0m\n'}
+[29.280890] (-) TimerEvent: {}
+[29.381729] (-) TimerEvent: {}
+[29.462838] (spraying_pathways) StderrLine: {'line': b'\x1b[01m\x1b[K/ros2_ws/src/spraying_pathways/src/lidar_surface_scanner.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid LidarSurfaceScanner::executeTrajectory()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[29.463036] (spraying_pathways) StderrLine: {'line': b'\x1b[01m\x1b[K/ros2_ws/src/spraying_pathways/src/lidar_surface_scanner.cpp:170:98:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kusing MoveItErrorCode = class moveit::core::MoveItErrorCode\x1b[m\x1b[K\xe2\x80\x99 is deprecated: Use moveit::core::MoveItErrorCode [\x1b[01;35m\x1b[K-Wdeprecated-declarations\x1b[m\x1b[K]\n'}
+[29.463111] (spraying_pathways) StderrLine: {'line': b'  170 |     bool success = (move_group->plan(joint_plan) == moveit::planning_interface::MoveItErrorCode::\x1b[01;35m\x1b[KSUCCESS\x1b[m\x1b[K);\n'}
+[29.463171] (spraying_pathways) StderrLine: {'line': b'      |                                                                                                  \x1b[01;35m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[29.463228] (spraying_pathways) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/ros2_ws/src/spraying_pathways/src/lidar_surface_scanner.cpp:5\x1b[m\x1b[K:\n'}
+[29.463284] (spraying_pathways) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/moveit/move_group_interface/move_group_interface.h:71:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kdeclared here\n'}
+[29.463342] (spraying_pathways) StderrLine: {'line': b'   71 | using \x1b[01;36m\x1b[KMoveItErrorCode\x1b[m\x1b[K [[deprecated("Use moveit::core::MoveItErrorCode")]] = moveit::core::MoveItErrorCode;\n'}
+[29.463413] (spraying_pathways) StderrLine: {'line': b'      |       \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[29.463556] (spraying_pathways) StderrLine: {'line': b'\x1b[01m\x1b[K/ros2_ws/src/spraying_pathways/src/lidar_surface_scanner.cpp:126:12:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused variable \xe2\x80\x98\x1b[01m\x1b[Ky_start\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wunused-variable\x1b[m\x1b[K]\n'}
+[29.463683] (spraying_pathways) StderrLine: {'line': b'  126 |     double \x1b[01;35m\x1b[Ky_start\x1b[m\x1b[K = corners[0].second;\n'}
+[29.463744] (spraying_pathways) StderrLine: {'line': b'      |            \x1b[01;35m\x1b[K^~~~~~~\x1b[m\x1b[K\n'}
+[29.463800] (spraying_pathways) StderrLine: {'line': b'\x1b[01m\x1b[K/ros2_ws/src/spraying_pathways/src/lidar_surface_scanner.cpp:127:12:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused variable \xe2\x80\x98\x1b[01m\x1b[Ky_end\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wunused-variable\x1b[m\x1b[K]\n'}
+[29.463855] (spraying_pathways) StderrLine: {'line': b'  127 |     double \x1b[01;35m\x1b[Ky_end\x1b[m\x1b[K = corners[3].second;\n'}
+[29.463908] (spraying_pathways) StderrLine: {'line': b'      |            \x1b[01;35m\x1b[K^~~~~\x1b[m\x1b[K\n'}
+[29.481885] (-) TimerEvent: {}
+[29.575091] (spraying_pathways) StdoutLine: {'line': b'[ 90%] Built target cartesian_path_planner_cubes_test_go_v2_node\n'}
+[29.582031] (-) TimerEvent: {}
+[29.682424] (-) TimerEvent: {}
+[29.782881] (-) TimerEvent: {}
+[29.883262] (-) TimerEvent: {}
+[29.977467] (spraying_pathways) StdoutLine: {'line': b'[ 95%] \x1b[32m\x1b[1mLinking CXX executable cartesian_path_planner_cubes_v4_node\x1b[0m\n'}
+[29.984643] (-) TimerEvent: {}
+[30.084893] (-) TimerEvent: {}
+[30.185428] (-) TimerEvent: {}
+[30.258331] (spraying_pathways) StdoutLine: {'line': b'[ 95%] Built target cartesian_path_planner_cubes_v4_node\n'}
+[30.285654] (-) TimerEvent: {}
+[30.386300] (-) TimerEvent: {}
+[30.486880] (-) TimerEvent: {}
+[30.587260] (-) TimerEvent: {}
+[30.687654] (-) TimerEvent: {}
+[30.788124] (-) TimerEvent: {}
+[30.888550] (-) TimerEvent: {}
+[30.989039] (-) TimerEvent: {}
+[31.089503] (-) TimerEvent: {}
+[31.189953] (-) TimerEvent: {}
+[31.290320] (-) TimerEvent: {}
+[31.390739] (-) TimerEvent: {}
+[31.491171] (-) TimerEvent: {}
+[31.591682] (-) TimerEvent: {}
+[31.692056] (-) TimerEvent: {}
+[31.792498] (-) TimerEvent: {}
+[31.892931] (-) TimerEvent: {}
+[31.993372] (-) TimerEvent: {}
+[32.093722] (-) TimerEvent: {}
+[32.194157] (-) TimerEvent: {}
+[32.294534] (-) TimerEvent: {}
+[32.395024] (-) TimerEvent: {}
+[32.495480] (-) TimerEvent: {}
+[32.595923] (-) TimerEvent: {}
+[32.696294] (-) TimerEvent: {}
+[32.796680] (-) TimerEvent: {}
+[32.897143] (-) TimerEvent: {}
+[32.997682] (-) TimerEvent: {}
+[33.098057] (-) TimerEvent: {}
+[33.198431] (-) TimerEvent: {}
+[33.298949] (-) TimerEvent: {}
+[33.399646] (-) TimerEvent: {}
+[33.500141] (-) TimerEvent: {}
+[33.600954] (-) TimerEvent: {}
+[33.701449] (-) TimerEvent: {}
+[33.801882] (-) TimerEvent: {}
+[33.902303] (-) TimerEvent: {}
+[34.002799] (-) TimerEvent: {}
+[34.103245] (-) TimerEvent: {}
+[34.203659] (-) TimerEvent: {}
+[34.304191] (-) TimerEvent: {}
+[34.404762] (-) TimerEvent: {}
+[34.505318] (-) TimerEvent: {}
+[34.605677] (-) TimerEvent: {}
+[34.706034] (-) TimerEvent: {}
+[34.806394] (-) TimerEvent: {}
+[34.907139] (-) TimerEvent: {}
+[35.007581] (-) TimerEvent: {}
+[35.108047] (-) TimerEvent: {}
+[35.208479] (-) TimerEvent: {}
+[35.308976] (-) TimerEvent: {}
+[35.409441] (-) TimerEvent: {}
+[35.509903] (-) TimerEvent: {}
+[35.610315] (-) TimerEvent: {}
+[35.710719] (-) TimerEvent: {}
+[35.811142] (-) TimerEvent: {}
+[35.911537] (-) TimerEvent: {}
+[36.012117] (-) TimerEvent: {}
+[36.112883] (-) TimerEvent: {}
+[36.213212] (-) TimerEvent: {}
+[36.313957] (-) TimerEvent: {}
+[36.414459] (-) TimerEvent: {}
+[36.514933] (-) TimerEvent: {}
+[36.615369] (-) TimerEvent: {}
+[36.716238] (-) TimerEvent: {}
+[36.816682] (-) TimerEvent: {}
+[36.917276] (-) TimerEvent: {}
+[37.017642] (-) TimerEvent: {}
+[37.118184] (-) TimerEvent: {}
+[37.218716] (-) TimerEvent: {}
+[37.319251] (-) TimerEvent: {}
+[37.419701] (-) TimerEvent: {}
+[37.520123] (-) TimerEvent: {}
+[37.620693] (-) TimerEvent: {}
+[37.721198] (-) TimerEvent: {}
+[37.821630] (-) TimerEvent: {}
+[37.922167] (-) TimerEvent: {}
+[38.022758] (-) TimerEvent: {}
+[38.123197] (-) TimerEvent: {}
+[38.223630] (-) TimerEvent: {}
+[38.324101] (-) TimerEvent: {}
+[38.429293] (-) TimerEvent: {}
+[38.529784] (-) TimerEvent: {}
+[38.630307] (-) TimerEvent: {}
+[38.730799] (-) TimerEvent: {}
+[38.831308] (-) TimerEvent: {}
+[38.931764] (-) TimerEvent: {}
+[39.033759] (-) TimerEvent: {}
+[39.107793] (spraying_pathways) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable lidar_surface_scanner_node\x1b[0m\n'}
+[39.133866] (-) TimerEvent: {}
+[39.234290] (-) TimerEvent: {}
+[39.334861] (-) TimerEvent: {}
+[39.435343] (-) TimerEvent: {}
+[39.535977] (-) TimerEvent: {}
+[39.636467] (-) TimerEvent: {}
+[39.737026] (-) TimerEvent: {}
+[39.837462] (-) TimerEvent: {}
+[39.938048] (-) TimerEvent: {}
+[40.038399] (-) TimerEvent: {}
+[40.139674] (-) TimerEvent: {}
+[40.239998] (-) TimerEvent: {}
+[40.242972] (spraying_pathways) StdoutLine: {'line': b'[100%] Built target lidar_surface_scanner_node\n'}
+[40.255659] (spraying_pathways) CommandEnded: {'returncode': 0}
+[40.340103] (-) TimerEvent: {}
+[40.371507] (spraying_pathways) JobProgress: {'identifier': 'spraying_pathways', 'progress': 'install'}
+[40.372110] (spraying_pathways) Command: {'cmd': ['/usr/bin/cmake', '--install', '/ros2_ws/build/spraying_pathways'], 'cwd': '/ros2_ws/build/spraying_pathways', 'env': OrderedDict([('HOSTNAME', 'bonitsispantelis-virtual-machine'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/vulcanexus/humble/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/vulcanexus_user'), ('ROS_PYTHON_VERSION', '3'), ('COLCON_PREFIX_PATH', '/ros2_ws/install:/opt/vulcanexus/humble'), ('ROS_DISTRO', 'humble'), ('VULCANEXUS_HOME', '/opt/vulcanexus/humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('PKG_CONFIG_PATH', '/opt/vulcanexus/humble/lib/x86_64-linux-gnu/pkgconfig:/opt/vulcanexus/humble/lib/pkgconfig'), ('TERM', 'xterm'), ('ROS_LOCALHOST_ONLY', '0'), ('QT_X11_NO_MITSHM', '1'), ('PATH', '/opt/vulcanexus/humble/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('RMW_IMPLEMENTATION', 'rmw_fastrtps_cpp'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/ros2_ws/install/ur_simulation_gazebo:/ros2_ws/install/spraying_pathways:/opt/vulcanexus/humble:/opt/ros/humble'), ('DEBIAN_FRONTEND', 'noninteractive'), ('VULCANEXUS_BRANCH', 'humble'), ('VULCANEXUS_DISTRO', 'humble'), ('PWD', '/ros2_ws/build/spraying_pathways'), ('LC_ALL', 'C.UTF-8'), ('GAZEBO_PLUGIN_PATH', '/opt/ros/humble/lib'), ('PYTHONPATH', '/opt/vulcanexus/humble/local/lib/python3.10/dist-packages:/opt/vulcanexus/humble/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/ros2_ws/install/ur_simulation_gazebo:/ros2_ws/install/spraying_pathways:/opt/vulcanexus/humble:/opt/ros/humble')]), 'shell': False}
+[40.383216] (spraying_pathways) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[40.383439] (spraying_pathways) StdoutLine: {'line': b'-- Installing: /ros2_ws/install/spraying_pathways/lib/spraying_pathways/go_home_node\n'}
+[40.384752] (spraying_pathways) StdoutLine: {'line': b'-- Set runtime path of "/ros2_ws/install/spraying_pathways/lib/spraying_pathways/go_home_node" to ""\n'}
+[40.384872] (spraying_pathways) StdoutLine: {'line': b'-- Installing: /ros2_ws/install/spraying_pathways/lib/spraying_pathways/follow_joints_positions_node\n'}
+[40.384971] (spraying_pathways) StdoutLine: {'line': b'-- Set runtime path of "/ros2_ws/install/spraying_pathways/lib/spraying_pathways/follow_joints_positions_node" to ""\n'}
+[40.385035] (spraying_pathways) StdoutLine: {'line': b'-- Installing: /ros2_ws/install/spraying_pathways/lib/spraying_pathways/cartesian_path_planner_cubes_v2_node\n'}
+[40.385808] (spraying_pathways) StdoutLine: {'line': b'-- Set runtime path of "/ros2_ws/install/spraying_pathways/lib/spraying_pathways/cartesian_path_planner_cubes_v2_node" to ""\n'}
+[40.385889] (spraying_pathways) StdoutLine: {'line': b'-- Installing: /ros2_ws/install/spraying_pathways/lib/spraying_pathways/cartesian_path_planner_trajectory_v1_node\n'}
+[40.386742] (spraying_pathways) StdoutLine: {'line': b'-- Set runtime path of "/ros2_ws/install/spraying_pathways/lib/spraying_pathways/cartesian_path_planner_trajectory_v1_node" to ""\n'}
+[40.386804] (spraying_pathways) StdoutLine: {'line': b'-- Installing: /ros2_ws/install/spraying_pathways/lib/spraying_pathways/cartesian_path_planner_cubes_v3_node\n'}
+[40.386965] (spraying_pathways) StdoutLine: {'line': b'-- Set runtime path of "/ros2_ws/install/spraying_pathways/lib/spraying_pathways/cartesian_path_planner_cubes_v3_node" to ""\n'}
+[40.387101] (spraying_pathways) StdoutLine: {'line': b'-- Installing: /ros2_ws/install/spraying_pathways/lib/spraying_pathways/cartesian_path_planner_cubes_test_v1_node\n'}
+[40.387754] (spraying_pathways) StdoutLine: {'line': b'-- Set runtime path of "/ros2_ws/install/spraying_pathways/lib/spraying_pathways/cartesian_path_planner_cubes_test_v1_node" to ""\n'}
+[40.387890] (spraying_pathways) StdoutLine: {'line': b'-- Installing: /ros2_ws/install/spraying_pathways/lib/spraying_pathways/cartesian_path_planner_cubes_test_v2_node\n'}
+[40.388525] (spraying_pathways) StdoutLine: {'line': b'-- Set runtime path of "/ros2_ws/install/spraying_pathways/lib/spraying_pathways/cartesian_path_planner_cubes_test_v2_node" to ""\n'}
+[40.388665] (spraying_pathways) StdoutLine: {'line': b'-- Installing: /ros2_ws/install/spraying_pathways/lib/spraying_pathways/cartesian_path_planner_cubes_test_go_v1_node\n'}
+[40.389299] (spraying_pathways) StdoutLine: {'line': b'-- Set runtime path of "/ros2_ws/install/spraying_pathways/lib/spraying_pathways/cartesian_path_planner_cubes_test_go_v1_node" to ""\n'}
+[40.389406] (spraying_pathways) StdoutLine: {'line': b'-- Installing: /ros2_ws/install/spraying_pathways/lib/spraying_pathways/cartesian_path_planner_cubes_test_go_v2_node\n'}
+[40.390131] (spraying_pathways) StdoutLine: {'line': b'-- Set runtime path of "/ros2_ws/install/spraying_pathways/lib/spraying_pathways/cartesian_path_planner_cubes_test_go_v2_node" to ""\n'}
+[40.390240] (spraying_pathways) StdoutLine: {'line': b'-- Installing: /ros2_ws/install/spraying_pathways/lib/spraying_pathways/cartesian_path_planner_cubes_v4_node\n'}
+[40.390959] (spraying_pathways) StdoutLine: {'line': b'-- Set runtime path of "/ros2_ws/install/spraying_pathways/lib/spraying_pathways/cartesian_path_planner_cubes_v4_node" to ""\n'}
+[40.391045] (spraying_pathways) StdoutLine: {'line': b'-- Installing: /ros2_ws/install/spraying_pathways/lib/spraying_pathways/lidar_surface_scanner_node\n'}
+[40.396343] (spraying_pathways) StdoutLine: {'line': b'-- Set runtime path of "/ros2_ws/install/spraying_pathways/lib/spraying_pathways/lidar_surface_scanner_node" to ""\n'}
+[40.396488] (spraying_pathways) StdoutLine: {'line': b'-- Installing: /ros2_ws/install/spraying_pathways/lib/spraying_pathways/trajectory_logger.py\n'}
+[40.396612] (spraying_pathways) StdoutLine: {'line': b'-- Installing: /ros2_ws/install/spraying_pathways/lib/spraying_pathways/plot_trajectory_log.py\n'}
+[40.396805] (spraying_pathways) StdoutLine: {'line': b'-- Installing: /ros2_ws/install/spraying_pathways/share/spraying_pathways/launch\n'}
+[40.396999] (spraying_pathways) StdoutLine: {'line': b'-- Installing: /ros2_ws/install/spraying_pathways/share/spraying_pathways/launch/bringup_v3.launch.py\n'}
+[40.397137] (spraying_pathways) StdoutLine: {'line': b'-- Installing: /ros2_ws/install/spraying_pathways/share/spraying_pathways/launch/bringup_v2.launch.py\n'}
+[40.397311] (spraying_pathways) StdoutLine: {'line': b'-- Installing: /ros2_ws/install/spraying_pathways/share/spraying_pathways/launch/bringup.launch.py\n'}
+[40.397491] (spraying_pathways) StdoutLine: {'line': b'-- Installing: /ros2_ws/install/spraying_pathways/share/spraying_pathways/rviz\n'}
+[40.397605] (spraying_pathways) StdoutLine: {'line': b'-- Installing: /ros2_ws/install/spraying_pathways/share/spraying_pathways/config\n'}
+[40.397770] (spraying_pathways) StdoutLine: {'line': b'-- Installing: /ros2_ws/install/spraying_pathways/share/spraying_pathways/models\n'}
+[40.397860] (spraying_pathways) StdoutLine: {'line': b'-- Installing: /ros2_ws/install/spraying_pathways/share/spraying_pathways/models/box_0_5\n'}
+[40.397932] (spraying_pathways) StdoutLine: {'line': b'-- Installing: /ros2_ws/install/spraying_pathways/share/spraying_pathways/models/box_0_5/model.config\n'}
+[40.397994] (spraying_pathways) StdoutLine: {'line': b'-- Installing: /ros2_ws/install/spraying_pathways/share/spraying_pathways/models/box_0_5/model.sdf\n'}
+[40.398119] (spraying_pathways) StdoutLine: {'line': b'-- Installing: /ros2_ws/install/spraying_pathways/share/spraying_pathways/models/black_table\n'}
+[40.398220] (spraying_pathways) StdoutLine: {'line': b'-- Installing: /ros2_ws/install/spraying_pathways/share/spraying_pathways/models/black_table/model.config\n'}
+[40.398379] (spraying_pathways) StdoutLine: {'line': b'-- Installing: /ros2_ws/install/spraying_pathways/share/spraying_pathways/models/black_table/model.sdf\n'}
+[40.398533] (spraying_pathways) StdoutLine: {'line': b'-- Installing: /ros2_ws/install/spraying_pathways/share/spraying_pathways/models/wood_table\n'}
+[40.398645] (spraying_pathways) StdoutLine: {'line': b'-- Installing: /ros2_ws/install/spraying_pathways/share/spraying_pathways/models/wood_table/model.config\n'}
+[40.398812] (spraying_pathways) StdoutLine: {'line': b'-- Installing: /ros2_ws/install/spraying_pathways/share/spraying_pathways/models/wood_table/model.sdf\n'}
+[40.400411] (spraying_pathways) StdoutLine: {'line': b'-- Installing: /ros2_ws/install/spraying_pathways/share/spraying_pathways/worlds\n'}
+[40.400556] (spraying_pathways) StdoutLine: {'line': b'-- Installing: /ros2_ws/install/spraying_pathways/share/spraying_pathways/worlds/table_world.world\n'}
+[40.400770] (spraying_pathways) StdoutLine: {'line': b'-- Installing: /ros2_ws/install/spraying_pathways/share/spraying_pathways/worlds/first_test_case.world\n'}
+[40.401151] (spraying_pathways) StdoutLine: {'line': b'-- Installing: /ros2_ws/install/spraying_pathways/share/ament_index/resource_index/package_run_dependencies/spraying_pathways\n'}
+[40.401335] (spraying_pathways) StdoutLine: {'line': b'-- Installing: /ros2_ws/install/spraying_pathways/share/ament_index/resource_index/parent_prefix_path/spraying_pathways\n'}
+[40.401551] (spraying_pathways) StdoutLine: {'line': b'-- Installing: /ros2_ws/install/spraying_pathways/share/spraying_pathways/environment/ament_prefix_path.sh\n'}
+[40.401830] (spraying_pathways) StdoutLine: {'line': b'-- Installing: /ros2_ws/install/spraying_pathways/share/spraying_pathways/environment/ament_prefix_path.dsv\n'}
+[40.402057] (spraying_pathways) StdoutLine: {'line': b'-- Installing: /ros2_ws/install/spraying_pathways/share/spraying_pathways/environment/path.sh\n'}
+[40.402671] (spraying_pathways) StdoutLine: {'line': b'-- Installing: /ros2_ws/install/spraying_pathways/share/spraying_pathways/environment/path.dsv\n'}
+[40.402835] (spraying_pathways) StdoutLine: {'line': b'-- Installing: /ros2_ws/install/spraying_pathways/share/spraying_pathways/local_setup.bash\n'}
+[40.403006] (spraying_pathways) StdoutLine: {'line': b'-- Installing: /ros2_ws/install/spraying_pathways/share/spraying_pathways/local_setup.sh\n'}
+[40.404520] (spraying_pathways) StdoutLine: {'line': b'-- Installing: /ros2_ws/install/spraying_pathways/share/spraying_pathways/local_setup.zsh\n'}
+[40.404573] (spraying_pathways) StdoutLine: {'line': b'-- Installing: /ros2_ws/install/spraying_pathways/share/spraying_pathways/local_setup.dsv\n'}
+[40.404617] (spraying_pathways) StdoutLine: {'line': b'-- Installing: /ros2_ws/install/spraying_pathways/share/spraying_pathways/package.dsv\n'}
+[40.404653] (spraying_pathways) StdoutLine: {'line': b'-- Installing: /ros2_ws/install/spraying_pathways/share/ament_index/resource_index/packages/spraying_pathways\n'}
+[40.404686] (spraying_pathways) StdoutLine: {'line': b'-- Installing: /ros2_ws/install/spraying_pathways/share/spraying_pathways/cmake/spraying_pathwaysConfig.cmake\n'}
+[40.404718] (spraying_pathways) StdoutLine: {'line': b'-- Installing: /ros2_ws/install/spraying_pathways/share/spraying_pathways/cmake/spraying_pathwaysConfig-version.cmake\n'}
+[40.404756] (spraying_pathways) StdoutLine: {'line': b'-- Installing: /ros2_ws/install/spraying_pathways/share/spraying_pathways/package.xml\n'}
+[40.406747] (spraying_pathways) CommandEnded: {'returncode': 0}
+[40.440209] (-) TimerEvent: {}
+[40.525987] (spraying_pathways) JobEnded: {'identifier': 'spraying_pathways', 'rc': 0}
+[40.526939] (-) EventReactorShutdown: {}

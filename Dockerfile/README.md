@@ -68,7 +68,7 @@ ros2 launch ur_description view_ur.launch.py ur_type:=ur10
 ## Launching the Robot in Gazebo using `spraying_pathways` package
 
 ```bash
-ros2 launch spraying_pathways bringup.launch.py
+ros2 launch spraying_pathways bringup_v3.launch.py
 ```
 
 ## Sending the Robot to its Home Position
@@ -85,4 +85,9 @@ Before running any of the commands below, make sure the robot is already at its 
 ros2 run spraying_pathways cartesian_path_planner_trajectory_v1_node
 ros2 run spraying_pathways cartesian_path_planner_cubes_v2_node
 ros2 run spraying_pathways cartesian_path_planner_cubes_v3_node
+ros2 run spraying_pathways cartesian_path_planner_cubes_v4_node
+
+ros2 run spraying_pathways cartesian_path_planner_cubes_test_v1_node
+ros2 run spraying_pathways cartesian_path_planner_cubes_test_go_v2_node
+ros2 run spraying_pathways cartesian_path_planner_cubes_test_go_v1_node
 ```

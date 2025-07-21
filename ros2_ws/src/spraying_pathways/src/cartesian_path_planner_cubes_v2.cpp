@@ -82,16 +82,20 @@ int main(int argc, char** argv) {
   move_group.setMaxAccelerationScalingFactor(0.3);
 
   std::vector<Point2D> unordered_points = {
-    {0.3, 0.45}, {0.3, 0.05}, {0.7, 0.45}, {0.7, 0.05}
+    {0.8, 0.0}, {0.8, 0.4}, {1.2, 0.0}, {1.2, 0.4}
   };
 
   auto corners = sort_rectangle_corners(unordered_points);
 
   double spray_width = 0.04;
   double z_height = 0.4;
+
   double z1 = 0.02;
   double z2 = 0.005;
-  double z_base = 0.2;
+  double z_base = 0.715 + 0.05;  // updated
+
+  const double robot_base_x = 0.25;  // updated
+  const double robot_base_y = 0.0;
 
   geometry_msgs::msg::Quaternion orientation;
   orientation.x = 0.0;
@@ -122,19 +126,21 @@ int main(int argc, char** argv) {
       int col = (i % 2 == 0) ? j : (cols - j - 1);
 
       geometry_msgs::msg::Pose pose;
-      pose.position.x = corners[0].first + (col + 0.5) * step_x;
-      pose.position.y = corners[0].second + (i + 0.5) * step_y;
+      pose.position.x = corners[0].first + (col + 0.5) * step_x - robot_base_x;
+      pose.position.y = corners[0].second + (i + 0.5) * step_y - robot_base_y;
       pose.position.z = z_height;
       pose.orientation = orientation;
 
       waypoints.push_back(pose);
 
+      // Cube in world frame: add base offset back
       geometry_msgs::msg::Pose pose_cube;
-      pose_cube.position.x = pose.position.x;
-      pose_cube.position.y = pose.position.y;
+      pose_cube.position.x = pose.position.x + robot_base_x;
+      pose_cube.position.y = pose.position.y + robot_base_y;
 
       double selected_height = (std::rand() % 100 < 60) ? z1 : z2;
       pose_cube.position.z = z_base + selected_height / 2.0;
+      pose_cube.orientation = orientation;
 
       cubes.push_back(Cube{pose_cube, selected_height, count});
       ++count;

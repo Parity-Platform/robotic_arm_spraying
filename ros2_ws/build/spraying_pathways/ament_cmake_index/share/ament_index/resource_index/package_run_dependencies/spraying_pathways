@@ -1,1 +1,1 @@
-rclcpp;rclpy;geometry_msgs;std_msgs;sensor_msgs;urdf;gazebo_ros;tf2_ros;control_msgs;tf_transformations;moveit_ros_planning_interface;ament_lint_auto;ament_lint_common
+rclcpp;rclpy;geometry_msgs;std_msgs;sensor_msgs;urdf;gazebo_ros;tf2_ros;control_msgs;tf_transformations;tf2_sensor_msgs;sensor_msgs_py;pcl_ros;pcl_conversions;laser_geometry;moveit_ros_planning_interface;ament_lint_auto;ament_lint_common

@@ -16,6 +16,7 @@ setup(
     entry_points={
         'console_scripts': [
             'trajectory_logger = scripts.trajectory_logger:main',
+            'lidar_surface_scanner = scripts.lidar_surface_scanner:main',
         ],
     },
 )

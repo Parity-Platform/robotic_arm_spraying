@@ -89,14 +89,17 @@ int main(int argc, char** argv) {
   move_group.setMaxAccelerationScalingFactor(0.3);
 
   std::vector<Point2D> unordered_points = {
-    {0.3, 0.45}, {0.3, 0.05}, {0.7, 0.45}, {0.7, 0.05}
+    {0.8, 0.0}, {0.8, 0.4}, {1.2, 0.0}, {1.2, 0.4}
   };
   auto corners = sort_rectangle_corners(unordered_points);
 
   double spray_width = 0.04;
   int total_cubes_per_waypoint = 25;
   int N = static_cast<int>(std::sqrt(total_cubes_per_waypoint));
-  double z_base = 0.2;
+
+  double z_base = 0.715 + 0.05;  // updated
+  const double robot_base_x = 0.25;
+  const double robot_base_y = 0.0;
   double max_height = 0.02;
 
   geometry_msgs::msg::Quaternion orientation;
@@ -128,15 +131,15 @@ int main(int argc, char** argv) {
       int col = (i % 2 == 0) ? j : (cols - j - 1);
 
       geometry_msgs::msg::Pose center_pose;
-      center_pose.position.x = corners[0].first + (col + 0.5) * step_x;
-      center_pose.position.y = corners[0].second + (i + 0.5) * step_y;
+      center_pose.position.x = corners[0].first + (col + 0.5) * step_x - robot_base_x;
+      center_pose.position.y = corners[0].second + (i + 0.5) * step_y - robot_base_y;
       center_pose.position.z = 0.4;
       center_pose.orientation = orientation;
 
       waypoints.push_back(center_pose);
 
-      double start_x = center_pose.position.x - step_x / 2.0 + cube_size_x / 2.0;
-      double start_y = center_pose.position.y - step_y / 2.0 + cube_size_y / 2.0;
+      double start_x = center_pose.position.x + robot_base_x - step_x / 2.0 + cube_size_x / 2.0;
+      double start_y = center_pose.position.y + robot_base_y - step_y / 2.0 + cube_size_y / 2.0;
 
       for (int cx = 0; cx < N; ++cx) {
         for (int cy = 0; cy < N; ++cy) {
@@ -166,7 +169,6 @@ int main(int argc, char** argv) {
     }
   }
 
-  // 🦾 Execute robot motion after user input
   moveit_msgs::msg::RobotTrajectory trajectory;
   const double eef_step = 0.01;
   const double jump_threshold = 0.0;

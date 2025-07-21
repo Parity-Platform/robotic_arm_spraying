@@ -17,6 +17,12 @@ find_package(sensor_msgs REQUIRED)
 find_package(urdf REQUIRED)
 find_package(gazebo_ros REQUIRED)
 find_package(tf2_ros REQUIRED)
+find_package(laser_geometry REQUIRED)
+find_package(pcl_ros REQUIRED)
+find_package(pcl_conversions REQUIRED)
+find_package(rosbag2_cpp REQUIRED)
+find_package(tf2_sensor_msgs REQUIRED)
+find_package(tf2_py REQUIRED)
 
 # === Build C++ Executables ===
 add_executable(go_home_node src/go_home.cpp)
@@ -109,6 +115,27 @@ ament_target_dependencies(cartesian_path_planner_cubes_test_go_v2_node
   tf2_ros
 )
 
+add_executable(cartesian_path_planner_cubes_v4_node src/cartesian_path_planner_cubes_v4.cpp)
+ament_target_dependencies(cartesian_path_planner_cubes_v4_node
+  rclcpp
+  moveit_ros_planning_interface
+  geometry_msgs
+  std_msgs
+  sensor_msgs
+  tf2_ros
+)
+
+add_executable(lidar_surface_scanner_node src/lidar_surface_scanner.cpp)
+ament_target_dependencies(lidar_surface_scanner_node
+  rclcpp
+  moveit_ros_planning_interface
+  geometry_msgs
+  std_msgs
+  sensor_msgs
+  tf2_ros
+  pcl_conversions
+)
+
 # === Install C++ Executables ===
 install(TARGETS
   go_home_node
@@ -120,6 +147,8 @@ install(TARGETS
   cartesian_path_planner_cubes_test_v2_node
   cartesian_path_planner_cubes_test_go_v1_node
   cartesian_path_planner_cubes_test_go_v2_node
+  cartesian_path_planner_cubes_v4_node
+  lidar_surface_scanner_node
   DESTINATION lib/${PROJECT_NAME}
 )
 
@@ -145,6 +174,10 @@ install(DIRECTORY config
 
 install(DIRECTORY models/
   DESTINATION share/${PROJECT_NAME}/models
+)
+
+install(DIRECTORY worlds/
+  DESTINATION share/${PROJECT_NAME}/worlds
 )
 
 # === Linting / Testing (optional) ===

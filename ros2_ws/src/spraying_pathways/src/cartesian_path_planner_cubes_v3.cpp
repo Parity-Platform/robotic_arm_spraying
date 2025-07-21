@@ -1,6 +1,14 @@
 #include <rclcpp/rclcpp.hpp>
+#include <sensor_msgs/msg/point_cloud2.hpp>
+#include <sensor_msgs/msg/joint_state.hpp>
 #include <geometry_msgs/msg/pose.hpp>
 #include <moveit/move_group_interface/move_group_interface.h>
+#include <moveit_msgs/msg/robot_trajectory.hpp>
+#include <tf2_ros/transform_listener.h>
+#include <tf2_ros/buffer.h>
+#include <tf2_sensor_msgs/tf2_sensor_msgs.h>
+#include <thread>
+#include <atomic>
 #include <tf2/LinearMath/Quaternion.h>
 #include <fstream>
 #include <sstream>
@@ -82,14 +90,17 @@ int main(int argc, char** argv) {
   move_group.setMaxAccelerationScalingFactor(0.3);
 
   std::vector<Point2D> unordered_points = {
-    {0.3, 0.45}, {0.3, 0.05}, {0.7, 0.45}, {0.7, 0.05}
+    {0.8, 0.0}, {0.8, 0.4}, {1.2, 0.0}, {1.2, 0.4}
   };
   auto corners = sort_rectangle_corners(unordered_points);
 
   double spray_width = 0.04;
   int total_cubes_per_waypoint = 25;
   int N = static_cast<int>(std::sqrt(total_cubes_per_waypoint));
-  double z_base = 0.2;
+
+  double z_base = 0.715 + 0.05;  // updated
+  const double robot_base_x = 0.25;  // updated
+  const double robot_base_y = 0.0;   // updated
 
   // Parameters you can now change easily
   double max_height = 0.02;
@@ -127,11 +138,16 @@ int main(int argc, char** argv) {
 
       geometry_msgs::msg::Pose center_pose;
       center_pose.position.x = corners[0].first + (col + 0.5) * step_x;
+      center_pose.position.x -= robot_base_x;
       center_pose.position.y = corners[0].second + (i + 0.5) * step_y;
+      center_pose.position.y -= robot_base_y;
       center_pose.position.z = 0.4;
       center_pose.orientation = orientation;
 
       waypoints.push_back(center_pose);
+
+      center_pose.position.x += robot_base_x;
+      center_pose.position.y += robot_base_y;
 
       double start_x = center_pose.position.x - step_x / 2.0 + cube_size_x / 2.0;
       double start_y = center_pose.position.y - step_y / 2.0 + cube_size_y / 2.0;

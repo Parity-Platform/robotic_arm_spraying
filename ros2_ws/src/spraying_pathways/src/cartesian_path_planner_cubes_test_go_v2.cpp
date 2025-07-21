@@ -88,14 +88,16 @@ int main(int argc, char** argv) {
   move_group.setMaxAccelerationScalingFactor(0.3);
 
   std::vector<Point2D> unordered_points = {
-    {0.3, 0.45}, {0.3, 0.05}, {0.7, 0.45}, {0.7, 0.05}
+    {0.8, 0.0}, {0.8, 0.4}, {1.2, 0.0}, {1.2, 0.4}
   };
   auto corners = sort_rectangle_corners(unordered_points);
 
   double spray_width = 0.04;
   double z_height = 0.4;
   double max_height = 0.02;
-  double z_base = 0.2;
+  double z_base = 0.715 + 0.05;
+  const double robot_base_x = 0.25;
+  const double robot_base_y = 0.0;
 
   geometry_msgs::msg::Quaternion orientation;
   orientation.x = 0.0;
@@ -126,15 +128,15 @@ int main(int argc, char** argv) {
       int col = (i % 2 == 0) ? j : (cols - j - 1);
 
       geometry_msgs::msg::Pose pose;
-      pose.position.x = corners[0].first + (col + 0.5) * step_x;
-      pose.position.y = corners[0].second + (i + 0.5) * step_y;
+      pose.position.x = corners[0].first + (col + 0.5) * step_x - robot_base_x;
+      pose.position.y = corners[0].second + (i + 0.5) * step_y - robot_base_y;
       pose.position.z = z_height;
       pose.orientation = orientation;
 
       waypoints.push_back(pose);
 
-      double x = round_to(pose.position.x, 4);
-      double y = round_to(pose.position.y, 4);
+      double x = round_to(pose.position.x + robot_base_x, 4);
+      double y = round_to(pose.position.y + robot_base_y, 4);
       positions.push_back({x, y});
     }
   }
@@ -211,8 +213,8 @@ int main(int argc, char** argv) {
 
     for (const auto& [x, y, h] : sorted_inputs) {
       geometry_msgs::msg::Pose p;
-      p.position.x = x;
-      p.position.y = y;
+      p.position.x = x - robot_base_x;
+      p.position.y = y - robot_base_y;
       p.position.z = z_height;
       p.orientation = orientation;
       custom_waypoints.push_back(p);

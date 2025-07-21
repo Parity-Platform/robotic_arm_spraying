@@ -89,14 +89,17 @@ int main(int argc, char** argv) {
   move_group.setMaxAccelerationScalingFactor(0.3);
 
   std::vector<Point2D> unordered_points = {
-    {0.3, 0.45}, {0.3, 0.05}, {0.7, 0.45}, {0.7, 0.05}
+    {0.8, 0.0}, {0.8, 0.4}, {1.2, 0.0}, {1.2, 0.4}
   };
   auto corners = sort_rectangle_corners(unordered_points);
 
   double spray_width = 0.04;
   int total_cubes_per_waypoint = 25;
   int N = static_cast<int>(std::sqrt(total_cubes_per_waypoint));
-  double z_base = 0.2;
+
+  double z_base = 0.715 + 0.05;
+  const double robot_base_x = 0.25;
+  const double robot_base_y = 0.0;
   double max_height = 0.02;
   double z_height = 0.4;
 
@@ -129,15 +132,15 @@ int main(int argc, char** argv) {
       int col = (i % 2 == 0) ? j : (cols - j - 1);
 
       geometry_msgs::msg::Pose center_pose;
-      center_pose.position.x = corners[0].first + (col + 0.5) * step_x;
-      center_pose.position.y = corners[0].second + (i + 0.5) * step_y;
+      center_pose.position.x = corners[0].first + (col + 0.5) * step_x - robot_base_x;
+      center_pose.position.y = corners[0].second + (i + 0.5) * step_y - robot_base_y;
       center_pose.position.z = z_height;
       center_pose.orientation = orientation;
 
       waypoints.push_back(center_pose);
 
-      double start_x = center_pose.position.x - step_x / 2.0 + cube_size_x / 2.0;
-      double start_y = center_pose.position.y - step_y / 2.0 + cube_size_y / 2.0;
+      double start_x = center_pose.position.x + robot_base_x - step_x / 2.0 + cube_size_x / 2.0;
+      double start_y = center_pose.position.y + robot_base_y - step_y / 2.0 + cube_size_y / 2.0;
 
       for (int cx = 0; cx < N; ++cx) {
         for (int cy = 0; cy < N; ++cy) {
@@ -167,7 +170,7 @@ int main(int argc, char** argv) {
     }
   }
 
-  // ✳️ Εκτέλεση πρώτης διαδρομής
+  // First trajectory
   moveit_msgs::msg::RobotTrajectory trajectory;
   const double eef_step = 0.01;
   const double jump_threshold = 0.0;
@@ -179,7 +182,7 @@ int main(int argc, char** argv) {
     RCLCPP_ERROR(node->get_logger(), "Path planning failed. Only %.2f%% completed.", fraction * 100.0);
   }
 
-  // 🧱 Spawn cubes
+  // Spawn cubes
   std::vector<Cube> cubes;
   int count = 0;
   for (const auto& pos : positions) {
@@ -213,7 +216,7 @@ int main(int argc, char** argv) {
       << " -entity all_cubes";
   std::system(cmd.str().c_str());
 
-  // ⏳ Wait for 'go' command
+  // Go command for final movement
   std::string go_cmd;
   std::cout << "Type 'go' to move the robot to selected positions:\n";
   std::getline(std::cin, go_cmd);
@@ -221,14 +224,13 @@ int main(int argc, char** argv) {
     std::vector<geometry_msgs::msg::Pose> selected_waypoints;
     for (const auto& sel : selected_positions) {
       geometry_msgs::msg::Pose p;
-      p.position.x = sel.first.first;
-      p.position.y = sel.first.second;
+      p.position.x = sel.first.first - robot_base_x;
+      p.position.y = sel.first.second - robot_base_y;
       p.position.z = z_height;
       p.orientation = orientation;
       selected_waypoints.push_back(p);
     }
 
-    // 🔽 Sort waypoints by X
     std::sort(selected_waypoints.begin(), selected_waypoints.end(), [](const auto& a, const auto& b) {
       return a.position.x < b.position.x;
     });
