@@ -65,10 +65,10 @@ ros2 launch ur_simulation_gazebo ur_sim_control.launch.py ur_type:=ur10e
 ros2 launch ur_description view_ur.launch.py ur_type:=ur10
 ```
 
-## Launching the Robot in Gazebo using `spraying_pathways` package
+## Launching the Robot in Gazebo using `spraying_pathways` package with custom World and custom Urdf file
 
 ```bash
-ros2 launch spraying_pathways bringup_v3.launch.py
+ros2 launch spraying_pathways bringup_v4.launch.py
 ```
 
 ## Sending the Robot to its Home Position
@@ -86,8 +86,19 @@ ros2 run spraying_pathways cartesian_path_planner_trajectory_v1_node
 ros2 run spraying_pathways cartesian_path_planner_cubes_v2_node
 ros2 run spraying_pathways cartesian_path_planner_cubes_v3_node
 ros2 run spraying_pathways cartesian_path_planner_cubes_v4_node
+```
+For fixed position of problematic glue cubes run the scripts below
 
+```bash
 ros2 run spraying_pathways cartesian_path_planner_cubes_test_v1_node
-ros2 run spraying_pathways cartesian_path_planner_cubes_test_go_v2_node
+ros2 run spraying_pathways cartesian_path_planner_cubes_test_v2_node
 ros2 run spraying_pathways cartesian_path_planner_cubes_test_go_v1_node
+ros2 run spraying_pathways cartesian_path_planner_cubes_test_go_v2_node
+```
+## Executing Lidar Scan
+
+Before running the command below, make sure the robot is already at its home position.
+
+```bash
+  ros2 run spraying_pathways lidar_surface_scanner_node
 ```

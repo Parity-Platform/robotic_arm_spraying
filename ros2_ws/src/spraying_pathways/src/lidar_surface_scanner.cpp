@@ -4,7 +4,7 @@
 #include <geometry_msgs/msg/pose.hpp>
 #include <moveit/move_group_interface/move_group_interface.h>
 #include <moveit_msgs/msg/robot_trajectory.hpp>
-#include <pcl_conversions/pcl_conversions/pcl_conversions.h>
+#include <pcl_conversions/pcl_conversions.h>
 #include <pcl/point_cloud.h>
 #include <pcl/point_types.h>
 #include <tf2_ros/transform_listener.h>
@@ -147,36 +147,65 @@ private:
     moveWithWaypoints(move_group, {makePose(x_start - robot_base_x, mid_y, z_fixed, 0, 1, 0, 0)}, false);
     moveWithWaypoints(move_group, {makePose(x_end - robot_base_x, mid_y, z_fixed, 0, 1, 0, 0)}, true);
 
-    // Read joint values from subscribed topic
-    rclcpp::Rate rate(10);
-    std::vector<double> joint_values;
-    for (int i = 0; i < 50; ++i) {
-      if (joint_state_received_) {
-        joint_values = latest_joint_state_.position;
-        break;
-      }
-      RCLCPP_WARN(this->get_logger(), "Waiting for joint_states...");
-      rate.sleep();
-    }
-    if (!joint_state_received_ || joint_values.empty()) {
-      RCLCPP_ERROR(this->get_logger(), "Timeout: joint_states not received.");
-      return;
-    }
+    std::vector<double> joint_position_1 = {
+      -14.0 * M_PI / 180.0,   // shoulder_pan_joint
+      -80.0 * M_PI / 180.0,  // shoulder_lift_joint
+      108.0 * M_PI / 180.0,  // elbow_joint
+      -118.0 * M_PI / 180.0, // wrist_1_joint
+      -90.0 * M_PI / 180.0,  // wrist_2_joint
+      -14.0 * M_PI / 180.0   // wrist_3_joint
+    };
 
-    joint_values.back() = 0.0;
-    move_group->setJointValueTarget(joint_values);
+    std::vector<double> joint_position_2 = {
+      16.0 * M_PI / 180.0,   // shoulder_pan_joint
+      -71.0 * M_PI / 180.0,  // shoulder_lift_joint
+      97.0 * M_PI / 180.0,   // elbow_joint
+      -115.0 * M_PI / 180.0, // wrist_1_joint
+      -90.0 * M_PI / 180.0,  // wrist_2_joint
+      16.0 * M_PI / 180.0    // wrist_3_joint
+    };
 
-    moveit::planning_interface::MoveGroupInterface::Plan joint_plan;
-    bool success = (move_group->plan(joint_plan) == moveit::planning_interface::MoveItErrorCode::SUCCESS);
-    if (success) {
-      move_group->execute(joint_plan);
-      RCLCPP_INFO(this->get_logger(), "Moved final joint to 0 radians.");
+    // Move to first joint position
+    move_group->setJointValueTarget(joint_position_1);
+    moveit::planning_interface::MoveGroupInterface::Plan plan1;
+    if (move_group->plan(plan1) == moveit::planning_interface::MoveItErrorCode::SUCCESS) {
+      move_group->execute(plan1);
+      RCLCPP_INFO(this->get_logger(), "Moved to first joint position.");
     } else {
-      RCLCPP_ERROR(this->get_logger(), "Failed to plan for final joint adjustment.");
+      RCLCPP_ERROR(this->get_logger(), "Failed to plan first joint position.");
     }
 
-    moveWithWaypoints(move_group, {makePose(mid_x - robot_base_x, 0.4, z_fixed, 0.7071, -0.7071, 0, 0)}, false);
-    moveWithWaypoints(move_group, {makePose(mid_x - robot_base_x, 0.0, z_fixed, 0.7071, -0.7071, 0, 0)}, true);
+    // Start collecting before second pose
+    collecting_ = true;
+
+    // Move to second joint position
+    move_group->setJointValueTarget(joint_position_2);
+    moveit::planning_interface::MoveGroupInterface::Plan plan2;
+    if (move_group->plan(plan2) == moveit::planning_interface::MoveItErrorCode::SUCCESS) {
+      
+      // Scale down velocity and acceleration
+      double velocity_scaling = 0.1;
+      double time_scaling = 1.0 / velocity_scaling;
+
+      for (auto& point : plan2.trajectory_.joint_trajectory.points) {
+        double t = point.time_from_start.sec + point.time_from_start.nanosec / 1e9;
+        double scaled = t * time_scaling;
+        point.time_from_start.sec = static_cast<int32_t>(scaled);
+        point.time_from_start.nanosec = static_cast<uint32_t>((scaled - point.time_from_start.sec) * 1e9);
+
+        for (auto& v : point.velocities) v *= velocity_scaling;
+        for (auto& a : point.accelerations) a *= velocity_scaling * velocity_scaling;
+      }
+
+      move_group->execute(plan2);
+      RCLCPP_INFO(this->get_logger(), "Moved to second joint position (with velocity scaling).");
+    } else {
+      RCLCPP_ERROR(this->get_logger(), "Failed to plan second joint position.");
+    }
+
+    // Stop collecting
+    collecting_ = false;
+   
 
     RCLCPP_INFO(this->get_logger(), "All trajectories complete.");
   }

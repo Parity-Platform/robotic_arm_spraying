@@ -21,6 +21,7 @@ RUN apt-get update && apt-get install -y \
 
 # Install ROS 2 and simulation-related packages
 RUN apt-get update && apt install -y \
+    ros-humble-pcl-conversions ros-humble-pcl-ros \
     ros-humble-ur-description \
     ros-humble-tf-transformations \
     ros-humble-desktop \

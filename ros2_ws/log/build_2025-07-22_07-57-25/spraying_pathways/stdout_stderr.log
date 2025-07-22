@@ -173,37 +173,73 @@
 -- Configuring done
 -- Generating done
 -- Build files have been written to: /ros2_ws/build/spraying_pathways
-[  9%] [32mBuilding CXX object CMakeFiles/go_home_node.dir/src/go_home.cpp.o[0m
-[  9%] [32mBuilding CXX object CMakeFiles/cartesian_path_planner_trajectory_v1_node.dir/src/cartesian_path_planner_trajectory_v1.cpp.o[0m
-[ 13%] [32mBuilding CXX object CMakeFiles/cartesian_path_planner_cubes_v2_node.dir/src/cartesian_path_planner_cubes_v2.cpp.o[0m
-[ 18%] [32mBuilding CXX object CMakeFiles/follow_joints_positions_node.dir/src/follow_joints_positions.cpp.o[0m
+[  4%] [32mBuilding CXX object CMakeFiles/go_home_node.dir/src/go_home.cpp.o[0m
+[  9%] [32mBuilding CXX object CMakeFiles/follow_joints_positions_node.dir/src/follow_joints_positions.cpp.o[0m
+[ 13%] [32mBuilding CXX object CMakeFiles/cartesian_path_planner_trajectory_v1_node.dir/src/cartesian_path_planner_trajectory_v1.cpp.o[0m
+[ 18%] [32mBuilding CXX object CMakeFiles/cartesian_path_planner_cubes_v2_node.dir/src/cartesian_path_planner_cubes_v2.cpp.o[0m
+[01m[K/ros2_ws/src/spraying_pathways/src/cartesian_path_planner_trajectory_v1.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/ros2_ws/src/spraying_pathways/src/cartesian_path_planner_trajectory_v1.cpp:109:10:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kz_base[m[K’ [[01;35m[K-Wunused-variable[m[K]
+  109 |   double [01;35m[Kz_base[m[K = 0.715 + 0.05; // defined for consistency (not used directly here)
+      |          [01;35m[K^~~~~~[m[K
 [ 22%] [32m[1mLinking CXX executable follow_joints_positions_node[0m
 [ 22%] Built target follow_joints_positions_node
 [ 27%] [32mBuilding CXX object CMakeFiles/cartesian_path_planner_cubes_v3_node.dir/src/cartesian_path_planner_cubes_v3.cpp.o[0m
 [ 31%] [32m[1mLinking CXX executable cartesian_path_planner_trajectory_v1_node[0m
-[ 36%] [32m[1mLinking CXX executable cartesian_path_planner_cubes_v2_node[0m
-[ 36%] Built target cartesian_path_planner_trajectory_v1_node
-[ 40%] [32mBuilding CXX object CMakeFiles/cartesian_path_planner_cubes_test_v1_node.dir/src/cartesian_path_planner_cubes_test_v1.cpp.o[0m
-[ 45%] [32m[1mLinking CXX executable go_home_node[0m
+[ 31%] Built target cartesian_path_planner_trajectory_v1_node
+[ 36%] [32mBuilding CXX object CMakeFiles/cartesian_path_planner_cubes_test_v1_node.dir/src/cartesian_path_planner_cubes_test_v1.cpp.o[0m
+[ 40%] [32m[1mLinking CXX executable go_home_node[0m
+[ 45%] [32m[1mLinking CXX executable cartesian_path_planner_cubes_v2_node[0m
+In file included from [01m[K/ros2_ws/src/spraying_pathways/src/cartesian_path_planner_cubes_v3.cpp:9[m[K:
+[01m[K/opt/ros/humble/include/tf2_sensor_msgs/tf2_sensor_msgs.h:32:2:[m[K [01;35m[Kwarning: [m[K#warning This header is obsolete, please include tf2_sensor_msgs/tf2_sensor_msgs.hpp instead [[01;35m[K-Wcpp[m[K]
+   32 | #[01;35m[Kwarning[m[K This header is obsolete, please include tf2_sensor_msgs/tf2_sensor_msgs.hpp instead
+      |  [01;35m[K^~~~~~~[m[K
 [ 45%] Built target cartesian_path_planner_cubes_v2_node
+[ 45%] Built target go_home_node
 [ 50%] [32mBuilding CXX object CMakeFiles/cartesian_path_planner_cubes_test_v2_node.dir/src/cartesian_path_planner_cubes_test_v2.cpp.o[0m
-[ 50%] Built target go_home_node
 [ 54%] [32mBuilding CXX object CMakeFiles/cartesian_path_planner_cubes_test_go_v1_node.dir/src/cartesian_path_planner_cubes_test_go_v1.cpp.o[0m
-[ 59%] [32m[1mLinking CXX executable cartesian_path_planner_cubes_v3_node[0m
-[ 63%] [32m[1mLinking CXX executable cartesian_path_planner_cubes_test_v2_node[0m
-[ 68%] [32m[1mLinking CXX executable cartesian_path_planner_cubes_test_v1_node[0m
-[ 68%] Built target cartesian_path_planner_cubes_v3_node
-[ 72%] [32mBuilding CXX object CMakeFiles/cartesian_path_planner_cubes_test_go_v2_node.dir/src/cartesian_path_planner_cubes_test_go_v2.cpp.o[0m
-[ 72%] Built target cartesian_path_planner_cubes_test_v2_node
+[ 59%] [32m[1mLinking CXX executable cartesian_path_planner_cubes_test_v1_node[0m
+[ 63%] [32m[1mLinking CXX executable cartesian_path_planner_cubes_test_go_v1_node[0m
+[ 63%] Built target cartesian_path_planner_cubes_test_v1_node
+[ 68%] [32mBuilding CXX object CMakeFiles/cartesian_path_planner_cubes_test_go_v2_node.dir/src/cartesian_path_planner_cubes_test_go_v2.cpp.o[0m
+[ 72%] [32m[1mLinking CXX executable cartesian_path_planner_cubes_v3_node[0m
+[ 72%] Built target cartesian_path_planner_cubes_test_go_v1_node
 [ 77%] [32mBuilding CXX object CMakeFiles/cartesian_path_planner_cubes_v4_node.dir/src/cartesian_path_planner_cubes_v4.cpp.o[0m
-[ 77%] Built target cartesian_path_planner_cubes_test_v1_node
+[ 77%] Built target cartesian_path_planner_cubes_v3_node
 [ 81%] [32mBuilding CXX object CMakeFiles/lidar_surface_scanner_node.dir/src/lidar_surface_scanner.cpp.o[0m
-[ 86%] [32m[1mLinking CXX executable cartesian_path_planner_cubes_test_go_v1_node[0m
-[ 86%] Built target cartesian_path_planner_cubes_test_go_v1_node
-[ 90%] [32m[1mLinking CXX executable cartesian_path_planner_cubes_test_go_v2_node[0m
-[ 90%] Built target cartesian_path_planner_cubes_test_go_v2_node
-[ 95%] [32m[1mLinking CXX executable cartesian_path_planner_cubes_v4_node[0m
+[ 86%] [32m[1mLinking CXX executable cartesian_path_planner_cubes_test_v2_node[0m
+[ 86%] Built target cartesian_path_planner_cubes_test_v2_node
+In file included from [01m[K/ros2_ws/src/spraying_pathways/src/lidar_surface_scanner.cpp:12[m[K:
+[01m[K/opt/ros/humble/include/tf2_sensor_msgs/tf2_sensor_msgs.h:32:2:[m[K [01;35m[Kwarning: [m[K#warning This header is obsolete, please include tf2_sensor_msgs/tf2_sensor_msgs.hpp instead [[01;35m[K-Wcpp[m[K]
+   32 | #[01;35m[Kwarning[m[K This header is obsolete, please include tf2_sensor_msgs/tf2_sensor_msgs.hpp instead
+      |  [01;35m[K^~~~~~~[m[K
+[01m[K/ros2_ws/src/spraying_pathways/src/lidar_surface_scanner.cpp:[m[K In member function ‘[01m[Kvoid LidarSurfaceScanner::executeTrajectory()[m[K’:
+[01m[K/ros2_ws/src/spraying_pathways/src/lidar_surface_scanner.cpp:171:81:[m[K [01;35m[Kwarning: [m[K‘[01m[Kusing MoveItErrorCode = class moveit::core::MoveItErrorCode[m[K’ is deprecated: Use moveit::core::MoveItErrorCode [[01;35m[K-Wdeprecated-declarations[m[K]
+  171 |     if (move_group->plan(plan1) == moveit::planning_interface::MoveItErrorCode::[01;35m[KSUCCESS[m[K) {
+      |                                                                                 [01;35m[K^~~~~~~[m[K
+In file included from [01m[K/ros2_ws/src/spraying_pathways/src/lidar_surface_scanner.cpp:5[m[K:
+[01m[K/opt/ros/humble/include/moveit/move_group_interface/move_group_interface.h:71:7:[m[K [01;36m[Knote: [m[Kdeclared here
+   71 | using [01;36m[KMoveItErrorCode[m[K [[deprecated("Use moveit::core::MoveItErrorCode")]] = moveit::core::MoveItErrorCode;
+      |       [01;36m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/ros2_ws/src/spraying_pathways/src/lidar_surface_scanner.cpp:184:81:[m[K [01;35m[Kwarning: [m[K‘[01m[Kusing MoveItErrorCode = class moveit::core::MoveItErrorCode[m[K’ is deprecated: Use moveit::core::MoveItErrorCode [[01;35m[K-Wdeprecated-declarations[m[K]
+  184 |     if (move_group->plan(plan2) == moveit::planning_interface::MoveItErrorCode::[01;35m[KSUCCESS[m[K) {
+      |                                                                                 [01;35m[K^~~~~~~[m[K
+In file included from [01m[K/ros2_ws/src/spraying_pathways/src/lidar_surface_scanner.cpp:5[m[K:
+[01m[K/opt/ros/humble/include/moveit/move_group_interface/move_group_interface.h:71:7:[m[K [01;36m[Knote: [m[Kdeclared here
+   71 | using [01;36m[KMoveItErrorCode[m[K [[deprecated("Use moveit::core::MoveItErrorCode")]] = moveit::core::MoveItErrorCode;
+      |       [01;36m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/ros2_ws/src/spraying_pathways/src/lidar_surface_scanner.cpp:123:12:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kmid_x[m[K’ [[01;35m[K-Wunused-variable[m[K]
+  123 |     double [01;35m[Kmid_x[m[K = (corners[0].first + corners[2].first) / 2.0;
+      |            [01;35m[K^~~~~[m[K
+[01m[K/ros2_ws/src/spraying_pathways/src/lidar_surface_scanner.cpp:126:12:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Ky_start[m[K’ [[01;35m[K-Wunused-variable[m[K]
+  126 |     double [01;35m[Ky_start[m[K = corners[0].second;
+      |            [01;35m[K^~~~~~~[m[K
+[01m[K/ros2_ws/src/spraying_pathways/src/lidar_surface_scanner.cpp:127:12:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Ky_end[m[K’ [[01;35m[K-Wunused-variable[m[K]
+  127 |     double [01;35m[Ky_end[m[K = corners[3].second;
+      |            [01;35m[K^~~~~[m[K
+[ 90%] [32m[1mLinking CXX executable cartesian_path_planner_cubes_v4_node[0m
+[ 95%] [32m[1mLinking CXX executable cartesian_path_planner_cubes_test_go_v2_node[0m
 [ 95%] Built target cartesian_path_planner_cubes_v4_node
+[ 95%] Built target cartesian_path_planner_cubes_test_go_v2_node
 [100%] [32m[1mLinking CXX executable lidar_surface_scanner_node[0m
 [100%] Built target lidar_surface_scanner_node
 -- Install configuration: ""
@@ -234,9 +270,15 @@
 -- Installing: /ros2_ws/install/spraying_pathways/share/spraying_pathways/launch
 -- Installing: /ros2_ws/install/spraying_pathways/share/spraying_pathways/launch/bringup_v3.launch.py
 -- Installing: /ros2_ws/install/spraying_pathways/share/spraying_pathways/launch/bringup_v2.launch.py
+-- Installing: /ros2_ws/install/spraying_pathways/share/spraying_pathways/launch/bringup_v4.launch.py
 -- Installing: /ros2_ws/install/spraying_pathways/share/spraying_pathways/launch/bringup.launch.py
 -- Installing: /ros2_ws/install/spraying_pathways/share/spraying_pathways/rviz
 -- Installing: /ros2_ws/install/spraying_pathways/share/spraying_pathways/config
+-- Installing: /ros2_ws/install/spraying_pathways/share/spraying_pathways/config/ur10e
+-- Installing: /ros2_ws/install/spraying_pathways/share/spraying_pathways/config/ur10e/visual_parameters.yaml
+-- Installing: /ros2_ws/install/spraying_pathways/share/spraying_pathways/config/ur10e/default_kinematics.yaml
+-- Installing: /ros2_ws/install/spraying_pathways/share/spraying_pathways/config/ur10e/joint_limits.yaml
+-- Installing: /ros2_ws/install/spraying_pathways/share/spraying_pathways/config/ur10e/physical_parameters.yaml
 -- Installing: /ros2_ws/install/spraying_pathways/share/spraying_pathways/models
 -- Installing: /ros2_ws/install/spraying_pathways/share/spraying_pathways/models/box_0_5
 -- Installing: /ros2_ws/install/spraying_pathways/share/spraying_pathways/models/box_0_5/model.config
@@ -250,6 +292,10 @@
 -- Installing: /ros2_ws/install/spraying_pathways/share/spraying_pathways/worlds
 -- Installing: /ros2_ws/install/spraying_pathways/share/spraying_pathways/worlds/table_world.world
 -- Installing: /ros2_ws/install/spraying_pathways/share/spraying_pathways/worlds/first_test_case.world
+-- Installing: /ros2_ws/install/spraying_pathways/share/spraying_pathways/urdf
+-- Installing: /ros2_ws/install/spraying_pathways/share/spraying_pathways/urdf/2d_lidar.urdf.xacro
+-- Installing: /ros2_ws/install/spraying_pathways/share/spraying_pathways/urdf/depth_camera.urdf.xacro
+-- Installing: /ros2_ws/install/spraying_pathways/share/spraying_pathways/urdf/my_robot.urdf.xacro
 -- Installing: /ros2_ws/install/spraying_pathways/share/ament_index/resource_index/package_run_dependencies/spraying_pathways
 -- Installing: /ros2_ws/install/spraying_pathways/share/ament_index/resource_index/parent_prefix_path/spraying_pathways
 -- Installing: /ros2_ws/install/spraying_pathways/share/spraying_pathways/environment/ament_prefix_path.sh

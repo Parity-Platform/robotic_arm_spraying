@@ -180,6 +180,10 @@ install(DIRECTORY worlds/
   DESTINATION share/${PROJECT_NAME}/worlds
 )
 
+install(DIRECTORY urdf/
+  DESTINATION share/${PROJECT_NAME}/urdf
+)
+
 # === Linting / Testing (optional) ===
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
