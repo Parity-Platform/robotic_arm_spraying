@@ -51,7 +51,10 @@ std::string generate_multi_box_sdf(const std::vector<Cube>& cubes, double cube_s
     sdf << "        <box><size>" << cube_size_x << " " << cube_size_y << " " << cube.height << "</size></box>\n";
     sdf << "      </geometry>\n";
     sdf << "      <material>\n";
-    sdf << "        <ambient>0.8 0.1 0.1 1</ambient>\n";
+    sdf << "        <script>\n";
+    sdf << "          <uri>file:///ros2_ws/src/spraying_pathways/materials/scripts</uri>\n";
+    sdf << "          <name>My/Seaweed</name>\n";
+    sdf << "        </script>\n";
     sdf << "      </material>\n";
     sdf << "    </visual>\n";
     sdf << "  </link>\n";

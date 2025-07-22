@@ -27,18 +27,10 @@
           </box>
         </geometry>
         <material>
-          <lighting>1</lighting>
           <script>
-            <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Grey</name>
+            <uri>file:///ros2_ws/src/spraying_pathways/materials/scripts</uri>
+            <name>My/Seaweed</name>
           </script>
-          <shader type='pixel'>
-            <normal_map>__default__</normal_map>
-          </shader>
-          <ambient>0.0 0.2 0.0 1</ambient>
-          <diffuse>0.0 0.4 0.0 1</diffuse>
-          <specular>0.05 0.1 0.05 1</specular>
-          <emissive>0 0 0 1</emissive>
         </material>
         <transparency>0</transparency>
         <cast_shadows>1</cast_shadows>
