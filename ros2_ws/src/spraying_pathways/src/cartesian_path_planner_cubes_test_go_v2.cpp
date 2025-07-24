@@ -44,13 +44,12 @@ std::vector<Point2D> sort_rectangle_corners(const std::vector<Point2D>& points) 
   return {top[0], top[1], bottom[1], bottom[0]};
 }
 
-std::string generate_multi_box_sdf(const std::vector<Cube>& cubes, double size_x, double size_y) {
+std::string generate_multi_box_sdf(const std::vector<Cube>& cubes, double cube_size_x, double cube_size_y) {
   std::ostringstream sdf;
   sdf << "<?xml version='1.0'?>\n";
   sdf << "<sdf version='1.7'>\n";
   sdf << "<model name='multi_cube'>\n";
   sdf << "  <static>true</static>\n";
-
   for (const auto& cube : cubes) {
     sdf << "  <link name='cube_" << cube.id << "'>\n";
     sdf << "    <pose>"
@@ -59,21 +58,26 @@ std::string generate_multi_box_sdf(const std::vector<Cube>& cubes, double size_x
         << cube.pose.position.z << " 0 0 0</pose>\n";
     sdf << "    <collision name='collision'>\n";
     sdf << "      <geometry>\n";
-    sdf << "        <box><size>" << size_x << " " << size_y << " " << cube.height << "</size></box>\n";
+    sdf << "        <box><size>" << cube_size_x << " " << cube_size_y << " " << cube.height << "</size></box>\n";
     sdf << "      </geometry>\n";
     sdf << "    </collision>\n";
     sdf << "    <visual name='visual'>\n";
     sdf << "      <geometry>\n";
-    sdf << "        <box><size>" << size_x << " " << size_y << " " << cube.height << "</size></box>\n";
+    sdf << "        <box><size>" << cube_size_x << " " << cube_size_y << " " << cube.height << "</size></box>\n";
     sdf << "      </geometry>\n";
     sdf << "      <material>\n";
-    sdf << "        <ambient>0.8 0.1 0.1 1</ambient>\n";
+    sdf << "        <script>\n";
+    sdf << "          <uri>file:///ros2_ws/src/spraying_pathways/materials/scripts</uri>\n";
+    sdf << "          <name>My/Seaweed</name>\n";
+    sdf << "        </script>\n";
+    sdf << "        <ambient>1 1 1 0.7</ambient>\n";   // RGBA - 0.7 alpha = 70% visible
+    sdf << "        <diffuse>1 1 1 0.7</diffuse>\n";   // Controls lighting and transparency
     sdf << "      </material>\n";
     sdf << "    </visual>\n";
     sdf << "  </link>\n";
   }
-
-  sdf << "</model>\n</sdf>\n";
+  sdf << "</model>\n";
+  sdf << "</sdf>\n";
   return sdf.str();
 }
 
@@ -188,7 +192,7 @@ int main(int argc, char** argv) {
     cubes.push_back(Cube{pose_cube, final_height, count++});
   }
 
-  std::string sdf_all = generate_multi_box_sdf(cubes, step_x, step_y);
+  std::string sdf_all = generate_multi_box_sdf(cubes, std::abs(step_x), std::abs(step_y));
   std::string path = "/tmp/multi_cubes.sdf";
   std::ofstream out(path);
   out << sdf_all;

@@ -44,13 +44,12 @@ std::vector<Point2D> sort_rectangle_corners(const std::vector<Point2D>& points) 
   return {top[0], top[1], bottom[1], bottom[0]};
 }
 
-std::string generate_multi_box_sdf(const std::vector<Cube>& cubes, double size_x, double size_y) {
+std::string generate_multi_box_sdf(const std::vector<Cube>& cubes, double cube_size_x, double cube_size_y) {
   std::ostringstream sdf;
   sdf << "<?xml version='1.0'?>\n";
   sdf << "<sdf version='1.7'>\n";
   sdf << "<model name='multi_cube'>\n";
   sdf << "  <static>true</static>\n";
-
   for (const auto& cube : cubes) {
     sdf << "  <link name='cube_" << cube.id << "'>\n";
     sdf << "    <pose>"
@@ -59,21 +58,26 @@ std::string generate_multi_box_sdf(const std::vector<Cube>& cubes, double size_x
         << cube.pose.position.z << " 0 0 0</pose>\n";
     sdf << "    <collision name='collision'>\n";
     sdf << "      <geometry>\n";
-    sdf << "        <box><size>" << size_x << " " << size_y << " " << cube.height << "</size></box>\n";
+    sdf << "        <box><size>" << cube_size_x << " " << cube_size_y << " " << cube.height << "</size></box>\n";
     sdf << "      </geometry>\n";
     sdf << "    </collision>\n";
     sdf << "    <visual name='visual'>\n";
     sdf << "      <geometry>\n";
-    sdf << "        <box><size>" << size_x << " " << size_y << " " << cube.height << "</size></box>\n";
+    sdf << "        <box><size>" << cube_size_x << " " << cube_size_y << " " << cube.height << "</size></box>\n";
     sdf << "      </geometry>\n";
     sdf << "      <material>\n";
-    sdf << "        <ambient>0.8 0.1 0.1 1</ambient>\n";
+    sdf << "        <script>\n";
+    sdf << "          <uri>file:///ros2_ws/src/spraying_pathways/materials/scripts</uri>\n";
+    sdf << "          <name>My/Seaweed</name>\n";
+    sdf << "        </script>\n";
+    sdf << "        <ambient>1 1 1 0.7</ambient>\n";   // RGBA - 0.7 alpha = 70% visible
+    sdf << "        <diffuse>1 1 1 0.7</diffuse>\n";   // Controls lighting and transparency
     sdf << "      </material>\n";
     sdf << "    </visual>\n";
     sdf << "  </link>\n";
   }
-
-  sdf << "</model>\n</sdf>\n";
+  sdf << "</model>\n";
+  sdf << "</sdf>\n";
   return sdf.str();
 }
 
@@ -106,11 +110,19 @@ int main(int argc, char** argv) {
   orientation.z = 0.0;
   orientation.w = 0.0;
 
+  //RCLCPP_INFO(rclcpp::get_logger("planner"), "%f corners[0].first , %f corners[0].second", corners[0].first, corners[0].second);
+  //RCLCPP_INFO(rclcpp::get_logger("planner"), "%f corners[1].first , %f corners[1].second", corners[1].first, corners[1].second);
+  //RCLCPP_INFO(rclcpp::get_logger("planner"), "%f corners[2].first , %f corners[2].second", corners[2].first, corners[2].second);
+  //RCLCPP_INFO(rclcpp::get_logger("planner"), "%f corners[3].first , %f corners[3].second", corners[3].first, corners[3].second);
+
   auto dx = corners[1].first - corners[0].first;
   auto dy = corners[3].second - corners[0].second;
+  //RCLCPP_INFO(rclcpp::get_logger("planner"), "%f dx , %f dy", dx, dy);
 
   double length = std::hypot(dx, corners[1].second - corners[0].second);
   double height = std::hypot(corners[3].first - corners[0].first, dy);
+
+  //RCLCPP_INFO(rclcpp::get_logger("planner"), "%f length , %f height", length, height);
 
   int cols = std::max(1, static_cast<int>(std::floor(length / spray_width)));
   int rows = std::max(1, static_cast<int>(std::floor(height / spray_width)));
@@ -190,7 +202,7 @@ int main(int argc, char** argv) {
     RCLCPP_ERROR(node->get_logger(), "Path planning failed. Only %.2f%% completed.", fraction * 100.0);
   }
 
-  std::string sdf_all = generate_multi_box_sdf(cubes, step_x, step_y);
+  std::string sdf_all = generate_multi_box_sdf(cubes, std::abs(step_x), std::abs(step_y));
   std::string path = "/tmp/multi_cubes.sdf";
   std::ofstream out(path);
   out << sdf_all;

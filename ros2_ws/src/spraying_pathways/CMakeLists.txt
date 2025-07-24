@@ -156,6 +156,8 @@ install(TARGETS
 install(PROGRAMS
   scripts/trajectory_logger.py
   scripts/plot_trajectory_log.py
+  scripts/depth_dip_detector_v1.py
+  scripts/transform_camera_pointcloud.py
   DESTINATION lib/${PROJECT_NAME}
 )
 
