@@ -90,7 +90,7 @@ class RotatedPointCloudPublisher(Node):
         for px, py, _ in problematic_points:
             for wx, wy in waypoints:
                 distance = math.sqrt((px - wx) ** 2 + (py - wy) ** 2)
-                if distance <= 0.012:
+                if distance <= 0.02:
                     matched_waypoints.add((wx, wy))
                     break 
 
@@ -98,15 +98,18 @@ class RotatedPointCloudPublisher(Node):
         robot_base_y = 0.0
 
         if matched_waypoints:
+            
             #print("Matched waypoints for problematic points (within 0.02m):")
             #for wp in sorted(matched_waypoints):
                 #print(f"Waypoint: x={wp[0]:.4f}, y={wp[1]:.4f}")
+            
             rebase_matched_waypoints = [
                 (x + robot_base_x, y + robot_base_y) for (x, y) in matched_waypoints
             ]
-            print("Rebased matched waypoints for problematic points (within 0.012m):")
+            print("Rebased matched waypoints for problematic points (within 0.02m):")
             for wp in sorted(rebase_matched_waypoints):
                 print(f"Waypoint: x={wp[0]:.4f}, y={wp[1]:.4f}")
+        
         else:
             print("No waypoints matched for problematic points.")
 

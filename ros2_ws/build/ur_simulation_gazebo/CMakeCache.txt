@@ -248,7 +248,7 @@ PYTHON_LIBRARY_DEBUG:FILEPATH=PYTHON_LIBRARY_DEBUG-NOTFOUND
 Python3_EXECUTABLE:FILEPATH=/usr/bin/python3
 
 //Name of the computer/site where compile is being run
-SITE:STRING=georgiossid-virtual-machine
+SITE:STRING=bonitsispantelis-virtual-machine
 
 //Path to a file.
 _launch_test_FILE_NAME:FILEPATH=/ros2_ws/src/ur_simulation_gazebo/test/test_gazebo.py

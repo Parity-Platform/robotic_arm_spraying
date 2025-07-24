@@ -3,6 +3,8 @@ from launch.actions import (
     DeclareLaunchArgument,
     IncludeLaunchDescription,
     OpaqueFunction,
+    TimerAction,
+    ExecuteProcess
 )
 from launch.conditions import IfCondition, UnlessCondition
 from launch.launch_description_sources import PythonLaunchDescriptionSource
@@ -137,6 +139,19 @@ def launch_setup(context, *args, **kwargs):
         }.items(),
     )
 
+    transform_camera_pointcloud_script = TimerAction(
+        period=10.0,  # Delay in seconds to let the system stabilize
+        actions=[
+            ExecuteProcess(
+                cmd=["ros2", "run", "spraying_pathways", "transform_camera_pointcloud.py"], 
+                shell=True,
+                output="screen"
+            )
+        ]
+    )
+
+
+
     return [
         ur_moveit_launch,
         gzserver,
@@ -146,6 +161,7 @@ def launch_setup(context, *args, **kwargs):
         initial_joint_controller_start,
         initial_joint_controller_stop,
         spawn_ur,
+        transform_camera_pointcloud_script,
     ]
 
 

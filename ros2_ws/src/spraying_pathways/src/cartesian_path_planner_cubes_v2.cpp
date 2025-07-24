@@ -63,8 +63,8 @@ std::string generate_multi_box_sdf(const std::vector<Cube>& cubes, double cube_s
     sdf << "          <uri>file:///ros2_ws/src/spraying_pathways/materials/scripts</uri>\n";
     sdf << "          <name>My/Seaweed</name>\n";
     sdf << "        </script>\n";
-    sdf << "        <ambient>1 1 1 0.7</ambient>\n";   // RGBA - 0.7 alpha = 70% visible
-    sdf << "        <diffuse>1 1 1 0.7</diffuse>\n";   // Controls lighting and transparency
+    sdf << "        <ambient>1 1 1 0.2</ambient>\n";   // RGBA - 0.7 alpha = 70% visible
+    sdf << "        <diffuse>1 1 1 0.2</diffuse>\n";   // Controls lighting and transparency
     sdf << "      </material>\n";
     sdf << "    </visual>\n";
     sdf << "  </link>\n";

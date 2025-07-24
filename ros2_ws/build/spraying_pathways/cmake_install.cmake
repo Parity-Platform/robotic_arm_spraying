@@ -266,6 +266,8 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/spraying_pathways" TYPE PROGRAM FILES
     "/ros2_ws/src/spraying_pathways/scripts/trajectory_logger.py"
     "/ros2_ws/src/spraying_pathways/scripts/plot_trajectory_log.py"
+    "/ros2_ws/src/spraying_pathways/scripts/depth_dip_detector_v1.py"
+    "/ros2_ws/src/spraying_pathways/scripts/transform_camera_pointcloud.py"
     )
 endif()
 
