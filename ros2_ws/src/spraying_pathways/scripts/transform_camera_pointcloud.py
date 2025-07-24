@@ -19,12 +19,6 @@ class RotatedPointCloudPublisher(Node):
             self.pointcloud_callback,
             10)
         
-        # Publisher for rotated (intermediate) point cloud
-        self.publisher_rotated = self.create_publisher(
-            PointCloud2,
-            '/rotated_points',
-            10)
-        
         # Publisher for final transformed and clipped point cloud
         self.publisher_transformed = self.create_publisher(
             PointCloud2,
@@ -63,12 +57,6 @@ class RotatedPointCloudPublisher(Node):
                 vec = np.array([p[0], p[1], p[2]])
                 rotated = R_initial @ vec
                 rotated_points.append(tuple(rotated))
-        
-        # Publish rotated cloud
-        header_rot = msg.header
-        header_rot.frame_id = 'depth_camera_link'
-        rotated_msg = pc2.create_cloud_xyz32(header_rot, rotated_points)
-        self.publisher_rotated.publish(rotated_msg)
         
         # --- Final transformation: translation + custom matrix ---
         translation = np.array([-1.0, 0.2, 0.75])

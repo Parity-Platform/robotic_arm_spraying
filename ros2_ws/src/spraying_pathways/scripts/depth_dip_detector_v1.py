@@ -18,6 +18,12 @@ class RotatedPointCloudPublisher(Node):
             self.pointcloud_callback,
             10)
 
+        # Publisher for the final problematic points
+        self.publisher_problematic_points = self.create_publisher(
+            PointCloud2,
+            '/problematic_points',
+            10)
+
     
     def generate_waypoints(self): 
         #unordered_points = [(0.8, 0.0), (0.8, 0.4), (1.2, 0.0), (1.2, 0.4)]
@@ -70,7 +76,7 @@ class RotatedPointCloudPublisher(Node):
         
         problematic_points = []
         z_threshold = 0.07
-        tolerance = 0.001
+        tolerance = 0.007
         for pt in points:
             if pt[2] < (z_threshold - tolerance):
                 #print(f"Low Z point: x={pt[0]:.4f}, y={pt[1]:.4f}, z={pt[2]:.4f}")
@@ -112,6 +118,11 @@ class RotatedPointCloudPublisher(Node):
         
         else:
             print("No waypoints matched for problematic points.")
+
+        header_final = msg.header
+        header_final.frame_id = 'base_link'
+        final_msg = pc2.create_cloud_xyz32(header_final, problematic_points)
+        self.publisher_problematic_points.publish(final_msg)
 
         
 def main(args=None):

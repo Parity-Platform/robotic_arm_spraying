@@ -86,7 +86,7 @@ int main(int argc, char** argv) {
   const double robot_base_x = 0.25;
   const double robot_base_y = 0.0;
   // Parameters you can now change easily
-  double max_height = 0.025;
+  double max_height = 0.02;
   double random_height_min = 0.01;
   double random_height_max = max_height;
   geometry_msgs::msg::Quaternion orientation;
