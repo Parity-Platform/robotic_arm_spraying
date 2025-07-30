@@ -75,7 +75,7 @@ class RotatedPointCloudPublisher(Node):
         points = list(pc2.read_points(msg, field_names=("x", "y", "z"), skip_nans=True))
         
         problematic_points = []
-        z_threshold = 0.07
+        z_threshold = 0.07 # 0.02 glue 
         tolerance = 0.007
         for pt in points:
             if pt[2] < (z_threshold - tolerance):
