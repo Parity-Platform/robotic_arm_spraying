@@ -136,6 +136,18 @@ ament_target_dependencies(lidar_surface_scanner_node
   pcl_conversions
 )
 
+add_executable(flat_fan_spraying_node src/flat_fan_spraying.cpp)
+ament_target_dependencies(flat_fan_spraying_node
+  rclcpp
+  moveit_ros_planning_interface
+  geometry_msgs
+  std_msgs
+  sensor_msgs
+  tf2_ros
+  pcl_conversions
+  visualization_msgs
+)
+
 # === Install C++ Executables ===
 install(TARGETS
   go_home_node
@@ -149,6 +161,7 @@ install(TARGETS
   cartesian_path_planner_cubes_test_go_v2_node
   cartesian_path_planner_cubes_v4_node
   lidar_surface_scanner_node
+  flat_fan_spraying_node
   DESTINATION lib/${PROJECT_NAME}
 )
 
@@ -158,6 +171,7 @@ install(PROGRAMS
   scripts/plot_trajectory_log.py
   scripts/depth_dip_detector_v1.py
   scripts/transform_camera_pointcloud.py
+  scripts/ee_velocity_monitor.py
   DESTINATION lib/${PROJECT_NAME}
 )
 
