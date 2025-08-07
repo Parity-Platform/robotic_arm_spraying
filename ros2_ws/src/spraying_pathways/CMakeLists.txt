@@ -23,6 +23,9 @@ find_package(pcl_conversions REQUIRED)
 find_package(rosbag2_cpp REQUIRED)
 find_package(tf2_sensor_msgs REQUIRED)
 find_package(tf2_py REQUIRED)
+find_package(moveit_core REQUIRED)
+find_package(yaml-cpp REQUIRED)
+
 
 # === Build C++ Executables ===
 add_executable(go_home_node src/go_home.cpp)
@@ -33,7 +36,10 @@ ament_target_dependencies(go_home_node
   std_msgs
   sensor_msgs
   tf2_ros
+  yaml-cpp
 )
+
+target_link_libraries(go_home_node yaml-cpp)
 
 add_executable(follow_joints_positions_node src/follow_joints_positions.cpp)
 ament_target_dependencies(follow_joints_positions_node
@@ -148,6 +154,42 @@ ament_target_dependencies(flat_fan_spraying_node
   visualization_msgs
 )
 
+add_executable(test_node src/test.cpp)
+ament_target_dependencies(test_node
+  rclcpp
+  moveit_ros_planning_interface
+  geometry_msgs
+  std_msgs
+  sensor_msgs
+  tf2_ros
+  pcl_conversions
+  visualization_msgs
+  moveit_core
+  moveit_ros_planning
+  tf2_geometry_msgs
+  yaml-cpp
+)
+
+target_link_libraries(test_node yaml-cpp)
+
+add_executable(flat_fan_spraying_v2_node src/flat_fan_spraying_v2.cpp)
+ament_target_dependencies(flat_fan_spraying_v2_node
+  rclcpp
+  moveit_ros_planning_interface
+  geometry_msgs
+  std_msgs
+  sensor_msgs
+  tf2_ros
+  pcl_conversions
+  visualization_msgs
+  moveit_core
+  moveit_ros_planning
+  tf2_geometry_msgs
+  yaml-cpp
+)
+
+target_link_libraries(flat_fan_spraying_v2_node yaml-cpp)
+
 # === Install C++ Executables ===
 install(TARGETS
   go_home_node
@@ -162,6 +204,8 @@ install(TARGETS
   cartesian_path_planner_cubes_v4_node
   lidar_surface_scanner_node
   flat_fan_spraying_node
+  test_node
+  flat_fan_spraying_v2_node
   DESTINATION lib/${PROJECT_NAME}
 )
 
@@ -172,6 +216,7 @@ install(PROGRAMS
   scripts/depth_dip_detector_v1.py
   scripts/transform_camera_pointcloud.py
   scripts/ee_velocity_monitor.py
+  scripts/unknown_object_detector.py
   DESTINATION lib/${PROJECT_NAME}
 )
 

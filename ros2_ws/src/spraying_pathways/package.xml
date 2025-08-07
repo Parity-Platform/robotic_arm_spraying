@@ -23,6 +23,7 @@
   <depend>tf2_ros</depend>
   <depend>control_msgs</depend>
   <depend>tf_transformations</depend>
+  <depend>moveit_core</depend>
 
   <!-- Additional dependencies for lidar_surface_scanner.py -->
   <depend>tf2_sensor_msgs</depend>
@@ -38,6 +39,8 @@
 
   <!-- MoveIt -->
   <depend>moveit_ros_planning_interface</depend>
+  <depend>moveit_ros_planning</depend>
+
 
   <!-- Testing -->
   <test_depend>ament_lint_auto</test_depend>

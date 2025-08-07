@@ -24,6 +24,12 @@ class RotatedPointCloudPublisher(Node):
             PointCloud2,
             '/transformed_points',
             10)
+        
+        # Publisher for final transformed and clipped point cloud
+        self.publisher_final_points = self.create_publisher(
+            PointCloud2,
+            '/final_points',
+            10)
 
     def pointcloud_callback(self, msg):  
         # Read point cloud
@@ -74,6 +80,12 @@ class RotatedPointCloudPublisher(Node):
             translated = np.array(point) + translation
             final = R_custom @ translated
             final_points.append(tuple(final))
+
+        # Publish final clipped cloud
+        header_final = msg.header
+        header_final.frame_id = 'base_link'
+        final_msg = pc2.create_cloud_xyz32(header_final, final_points)
+        self.publisher_final_points.publish(final_msg)
 
         # --- Clipping: keep only points within bounding box ---
         clipped_points = [

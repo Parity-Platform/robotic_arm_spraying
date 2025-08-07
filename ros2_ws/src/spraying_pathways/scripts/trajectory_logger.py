@@ -2,9 +2,7 @@
 
 import rclpy
 from rclpy.node import Node
-from rclpy.parameter import Parameter
 from sensor_msgs.msg import JointState
-from std_msgs.msg import String
 from tf2_ros import Buffer, TransformListener
 from tf_transformations import euler_from_quaternion
 from datetime import datetime
@@ -19,11 +17,9 @@ class TrajectoryLogger(Node):
         super().__init__('trajectory_logger')
 
         # Logging directory
-        default_log_dir = str(Path.home() / 'ros2_ws/src/spraying_pathways/robot_logs')
-        self.declare_parameter('log_dir', default_log_dir)
-        log_dir_param = self.get_parameter('log_dir').get_parameter_value().string_value
-        self.log_dir = Path(log_dir_param)
-        self.log_dir.mkdir(parents=True, exist_ok=True)
+        log_dir = Path('/ros2_ws/src/spraying_pathways/robot_logs')
+        log_dir.mkdir(parents=True, exist_ok=True)
+        self.log_dir = log_dir
         self.get_logger().info(f'Logging trajectory data to: {self.log_dir}')
 
         # TF listener
@@ -34,31 +30,29 @@ class TrajectoryLogger(Node):
         self.joint_names = []
         self.joint_positions = {}
         self.joint_velocities = {}
-        self.last_positions = {}
 
-        # Logging state
-        self.logging = False
-        self.csv_file = None
-        self.csv_writer = None
-
-        # Motion tracking
-        self.position_change_threshold = 1e-4  # Euclidean threshold
-        self.motion_time_required = 0.5        # Seconds
-        self.last_position_change_time = None
+        # EE speed tracking
+        self.last_ee_position = None
+        self.last_ee_time = None
 
         # End-effector frame
         self.end_effector_frame = None
         self.detect_end_effector_frame()
 
+        # Logging state
+        self.csv_file = None
+        self.csv_writer = None
+        self.logging_started = False
+
         # Subscriptions
         self.create_subscription(JointState, '/joint_states', self.joint_state_cb, 10)
 
         # Timer
-        self.create_timer(0.25, self.log_data)  # 25 Hz
+        self.create_timer(0.1, self.log_data)
 
     def detect_end_effector_frame(self):
         self.get_logger().info('Detecting end-effector frame from TF...')
-        time.sleep(2.0)  # Wait for TF to initialize
+        time.sleep(2.0)
         try:
             frames_yaml = self.tf_buffer.all_frames_as_yaml()
             candidate_frames = []
@@ -81,26 +75,12 @@ class TrajectoryLogger(Node):
 
     def joint_state_cb(self, msg):
         self.joint_names = msg.name
-        now = self.get_clock().now().nanoseconds * 1e-9
-
-        current_positions = [msg.position[i] for i in range(len(msg.name))]
-        prev_positions = [self.last_positions.get(name, pos) for name, pos in zip(msg.name, current_positions)]
-
-        # Euclidean distance
-        distance = math.sqrt(sum((curr - prev) ** 2 for curr, prev in zip(current_positions, prev_positions)))
-        #self.get_logger().debug(f"[Motion Check] Δq (Euclidean) = {distance:.8f}")
-
-        if distance > self.position_change_threshold:
-            #self.get_logger().info(f"Motion detected (Δq = {distance:.6f}) → Timer reset")
-            self.last_position_change_time = now
-        #else:
-            #self.get_logger().debug("No significant motion")
-
-        # Update joint data
         for i, name in enumerate(msg.name):
             self.joint_positions[name] = msg.position[i]
             self.joint_velocities[name] = msg.velocity[i] if i < len(msg.velocity) else 0.0
-            self.last_positions[name] = msg.position[i]
+
+        if not self.logging_started:
+            self.start_logging()
 
     def start_logging(self):
         timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
@@ -112,38 +92,24 @@ class TrajectoryLogger(Node):
         for name in self.joint_names:
             joint_headers.extend([f'{name}_pos', f'{name}_vel'])
 
-        self.csv_writer.writerow(
-            ['time'] + joint_headers + ['ee_x', 'ee_y', 'ee_z', 'ee_roll', 'ee_pitch', 'ee_yaw']
-        )
+        header = ['time'] + joint_headers + ['ee_x', 'ee_y', 'ee_z', 'ee_roll', 'ee_pitch', 'ee_yaw', 'ee_speed']
+        self.csv_writer.writerow(header)
 
-        self.logging = True
-        self.get_logger().info(f' Started logging to {filename}')
+        self.logging_started = True
+        self.get_logger().info(f'Started logging to {filename}')
 
     def stop_logging(self):
-        self.logging = False
         if self.csv_file:
             self.csv_file.close()
-            self.csv_file = None
             self.csv_writer = None
+            self.logging_started = False
             self.get_logger().info('Stopped logging and saved CSV.')
 
     def log_data(self):
+        if not self.logging_started or not self.csv_writer:
+            return
+
         now = self.get_clock().now().nanoseconds * 1e-9
-
-        if self.last_position_change_time is None:
-            return
-
-        time_since_change = now - self.last_position_change_time
-        self.get_logger().debug(f"[State] time_since_change = {time_since_change:.2f}s  logging={self.logging}")
-
-        if not self.logging and time_since_change < self.motion_time_required:
-            self.start_logging()
-
-        if self.logging and time_since_change > self.motion_time_required:
-            self.stop_logging()
-
-        if not self.logging or not self.csv_writer:
-            return
 
         joint_values = []
         for name in self.joint_names:
@@ -160,22 +126,40 @@ class TrajectoryLogger(Node):
             t = transform.transform.translation
             r = transform.transform.rotation
             roll, pitch, yaw = euler_from_quaternion([r.x, r.y, r.z, r.w])
-            ee_values = [t.x, t.y, t.z, roll, pitch, yaw]
+
+            current_pos = (t.x, t.y, t.z)
+            current_time = now
+
+            # Compute speed
+            if self.last_ee_position is not None and self.last_ee_time is not None:
+                dx = current_pos[0] - self.last_ee_position[0]
+                dy = current_pos[1] - self.last_ee_position[1]
+                dz = current_pos[2] - self.last_ee_position[2]
+                dt = current_time - self.last_ee_time
+                ee_speed = math.sqrt(dx**2 + dy**2 + dz**2) / dt if dt > 0 else 0.0
+                
+            else:
+                ee_speed = 0.0
+
+            self.last_ee_position = current_pos
+            self.last_ee_time = current_time
+
+            ee_values = [t.x, t.y, t.z, roll, pitch, yaw, ee_speed]
+
         except Exception as e:
             self.get_logger().warn_once(f'EE transform not available: {e}')
-            ee_values = [0.0] * 6
+            ee_values = [0.0] * 7
 
         self.csv_writer.writerow([now] + joint_values + ee_values)
 
     def destroy_node(self):
-        if self.csv_file:
-            self.csv_file.close()
+        self.stop_logging()
         super().destroy_node()
 
 
 def main(args=None):
     rclpy.init(args=args)
-    rclpy.logging.set_logger_level('trajectory_logger', rclpy.logging.LoggingSeverity.DEBUG)
+    rclpy.logging.set_logger_level('trajectory_logger', rclpy.logging.LoggingSeverity.INFO)
     node = TrajectoryLogger()
     try:
         rclpy.spin(node)
