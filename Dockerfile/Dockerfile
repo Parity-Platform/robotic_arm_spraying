@@ -40,6 +40,14 @@ RUN apt-get update && apt install -y \
     ros-humble-moveit \
     ros-humble-moveit-ros-planning \
     ros-humble-moveit-ros-planning-interface
+
+# Python tooling + deps for numpy-stl
+RUN apt-get update && apt-get install -y \
+    python3-pip \
+    python3-numpy \
+ && pip3 install --no-cache-dir numpy-stl \
+ && rm -rf /var/lib/apt/lists/*
+
     
 # Create a non-root user with passwordless sudo privileges
 RUN groupadd --gid $USER_GID $USERNAME && \

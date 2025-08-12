@@ -83,7 +83,8 @@ int main(int argc, char** argv) {
   move_group.setMaxAccelerationScalingFactor(0.3);
 
   geometry_msgs::msg::Pose target_pose;
-  target_pose.position.x = 0.561;
+  //target_pose.position.x = 0.561;
+  target_pose.position.x = 0.7;
   target_pose.position.y = 0.350;
   target_pose.position.z = 0.2;
   target_pose.orientation.x = 0.0;
