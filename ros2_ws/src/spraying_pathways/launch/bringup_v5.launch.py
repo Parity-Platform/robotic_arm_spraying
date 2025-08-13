@@ -228,7 +228,8 @@ def launch_setup(context, *args, **kwargs):
         PythonLaunchDescriptionSource([
             PathJoinSubstitution([FindPackageShare("gazebo_ros"), "launch", "gzserver.launch.py"])
         ]),
-        launch_arguments={"world": world_file}.items()
+        launch_arguments={"world": world_file,
+        }.items()
     )
 
     gzclient = IncludeLaunchDescription(

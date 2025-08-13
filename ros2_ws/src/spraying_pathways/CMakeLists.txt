@@ -25,7 +25,8 @@ find_package(tf2_sensor_msgs REQUIRED)
 find_package(tf2_py REQUIRED)
 find_package(moveit_core REQUIRED)
 find_package(yaml-cpp REQUIRED)
-
+find_package(gazebo_msgs REQUIRED)
+find_package(ament_index_cpp REQUIRED)
 
 # === Build C++ Executables ===
 add_executable(go_home_node src/go_home.cpp)
@@ -190,6 +191,15 @@ ament_target_dependencies(flat_fan_spraying_v2_node
 
 target_link_libraries(flat_fan_spraying_v2_node yaml-cpp)
 
+add_executable(moving_obstacle src/moving_obstacle.cpp)
+ament_target_dependencies(moving_obstacle
+  rclcpp
+  geometry_msgs
+  gazebo_msgs
+  ament_index_cpp
+)
+
+
 # === Install C++ Executables ===
 install(TARGETS
   go_home_node
@@ -206,6 +216,7 @@ install(TARGETS
   flat_fan_spraying_node
   test_node
   flat_fan_spraying_v2_node
+  moving_obstacle
   DESTINATION lib/${PROJECT_NAME}
 )
 
