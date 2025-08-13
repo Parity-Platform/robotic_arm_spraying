@@ -218,6 +218,7 @@ install(PROGRAMS
   scripts/ee_velocity_monitor.py
   scripts/unknown_object_detector.py
   scripts/pointcloud_transform_and_unknown_filter.py
+  scripts/pointcloud_transform_and_unknown_filter_v2.py
   DESTINATION lib/${PROJECT_NAME}
 )
 

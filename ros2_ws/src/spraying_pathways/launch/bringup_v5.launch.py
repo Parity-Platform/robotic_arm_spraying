@@ -254,7 +254,7 @@ def launch_setup(context, *args, **kwargs):
         period=10.0,  # Delay in seconds to let the system stabilize
         actions=[
             ExecuteProcess(
-                cmd=["ros2", "run", "spraying_pathways", "pointcloud_transform_and_unknown_filter.py", "/ros2_ws/src/spraying_pathways/worlds/table_world.world"],
+                cmd=["ros2", "run", "spraying_pathways", "pointcloud_transform_and_unknown_filter_v2.py", "/ros2_ws/src/spraying_pathways/worlds/table_world.world"],
                 shell=True,
                 output="screen"
             )
