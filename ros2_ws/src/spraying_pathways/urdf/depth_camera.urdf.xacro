@@ -41,8 +41,8 @@
               <format>R8G8B8</format>
             </image>
             <clip>
-              <near>0.01</near>
-              <far>10.0</far>
+              <near>0.05</near>   <!-- before 0.01 -->
+              <far>20.0</far>     <!-- after 10.0 -->
             </clip>
           </camera>
 
@@ -53,10 +53,10 @@
             <camera_info_topic_name>camera_info</camera_info_topic_name>
             <depth_image_topic_name>depth/image_raw</depth_image_topic_name>
             <point_cloud_topic_name>depth/points</point_cloud_topic_name>
-            <point_cloud_cutoff_min>0.01</point_cloud_cutoff_min>
-            <point_cloud_cutoff_max>10.0</point_cloud_cutoff_max>
-            <min_depth>0.01</min_depth>
-            <max_depth>10.0</max_depth>
+            <point_cloud_cutoff_min>0.05</point_cloud_cutoff_min>
+            <point_cloud_cutoff_max>20.0</point_cloud_cutoff_max>
+            <min_depth>0.05</min_depth>
+            <max_depth>20.0</max_depth>
           </plugin>
         </sensor>
       </gazebo>
