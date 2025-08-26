@@ -34,11 +34,11 @@ public:
     model_name_ = this->declare_parameter<std::string>("model_name", "human_arm");
     sdf_path_   = this->declare_parameter<std::string>("sdf_path", default_sdf.string());
 
-    start_x_ = this->declare_parameter<double>("start_x", 3.0);
-    start_y_ = this->declare_parameter<double>("start_y", 5.0);
-    start_z_ = this->declare_parameter<double>("start_z", 1.5);
-    end_y_   = this->declare_parameter<double>("end_y", -5.0);
-    speed_   = this->declare_parameter<double>("speed", 0.4);     // m/s
+    start_x_ = this->declare_parameter<double>("start_x", 2.26);
+    start_y_ = this->declare_parameter<double>("start_y", 3.0);
+    start_z_ = this->declare_parameter<double>("start_z", 1.05);
+    end_y_   = this->declare_parameter<double>("end_y", -3.0);
+    speed_   = this->declare_parameter<double>("speed", 0.2);     // m/s
     hz_      = this->declare_parameter<double>("update_rate", 20.0);
     pause_s_ = this->declare_parameter<double>("pause_s", 0.0);
     delete_existing_ = this->declare_parameter<bool>("delete_existing", true);

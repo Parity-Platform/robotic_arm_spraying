@@ -52,7 +52,7 @@
       </collision>
     </link>
 
-    <!-- 👇 Planar move plugin: drive with /human_arm/cmd_vel (geometry_msgs/Twist) -->
+    <!-- Planar move plugin: drive with /human_arm/cmd_vel (geometry_msgs/Twist) -->
     <plugin name="arm_planar_move" filename="libgazebo_ros_planar_move.so">
       <ros>
         <namespace>human_arm</namespace>

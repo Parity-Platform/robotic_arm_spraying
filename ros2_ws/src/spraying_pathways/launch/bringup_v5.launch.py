@@ -239,23 +239,11 @@ def launch_setup(context, *args, **kwargs):
         condition=IfCondition(gazebo_gui),
     )
 
-
-    """transform_camera_pointcloud_script = TimerAction(
-        period=10.0,  # Delay in seconds to let the system stabilize
-        actions=[
-            ExecuteProcess(
-                cmd=["ros2", "run", "spraying_pathways", "transform_camera_pointcloud.py"],
-                shell=True,
-                output="screen"
-            )
-        ]
-    )"""
-
     pointcloud_transform_and_unknown_filter_script = TimerAction(
         period=10.0,  # Delay in seconds to let the system stabilize
         actions=[
             ExecuteProcess(
-                cmd=["ros2", "run", "spraying_pathways", "pointcloud_transform_and_unknown_filter_v2.py", "/ros2_ws/src/spraying_pathways/worlds/table_world.world"],
+                cmd=["ros2", "run", "spraying_pathways", "pointcloud_transform_and_unknown_filter_v3.py", "/ros2_ws/src/spraying_pathways/worlds/table_world.world"],
                 shell=True,
                 output="screen"
             )
@@ -273,7 +261,6 @@ def launch_setup(context, *args, **kwargs):
         spawn_ur,
         move_group_node,
         rviz_node,
-        #transform_camera_pointcloud_script,
         pointcloud_transform_and_unknown_filter_script,
     ]
 

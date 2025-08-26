@@ -62,7 +62,7 @@ def combine_pose(world_pos, world_rpy, local_pos, local_rpy):
 class CombinedPipelineNode(Node):
     """
     Sub:  /depth_camera/points
-    Pub:  /camera_all_points, /work_surface_points, /unknown_points
+    Pub:  /camera_all_points, /unknown_points
           /known_objects_markers, /robot_objects_markers
     """
 
@@ -71,7 +71,6 @@ class CombinedPipelineNode(Node):
 
         # ── Publishers (created early, OK) ──
         self.pub_camera_all = self.create_publisher(PointCloud2, "/camera_all_points", 10)
-        self.pub_work_surface = self.create_publisher(PointCloud2, "/work_surface_points", 10)
         self.known_pub = self.create_publisher(MarkerArray, "/known_objects_markers", 10)
         self.unknown_pub = self.create_publisher(PointCloud2, "/unknown_points", 10)
         self.robot_marker_pub = self.create_publisher(MarkerArray, "/robot_objects_markers", 10)
@@ -89,11 +88,24 @@ class CombinedPipelineNode(Node):
                         [0, math.sin(theta_x),  math.cos(theta_x)]], dtype=np.float32)
         self.R_initial = R_x @ R_y
 
-        self.R_custom = np.array([[0, 0, 1],
-                                  [0, 1, 0],
-                                  [-1, 0, 0]], dtype=np.float32)
+        theta_z1_custom = math.radians(-30)
+        R1_custom = np.array([[math.cos(theta_z1_custom), -math.sin(theta_z1_custom), 0],
+                        [math.sin(theta_z1_custom), math.cos(theta_z1_custom), 0],
+                        [0, 0, 1]], dtype=np.float32)
 
-        self.translation = np.array([0.75, 0.2, 1.5], dtype=np.float32)
+        theta_y2_custom = math.radians(135)
+        R2_custom = np.array([[math.cos(theta_y2_custom), 0, math.sin(theta_y2_custom)],
+                        [0, 1, 0],
+                        [-math.sin(theta_y2_custom), 0, math.cos(theta_y2_custom)]], dtype=np.float32)
+
+        theta_x3_custom = math.radians(180)
+        R3_custom = np.array([[1, 0, 0],
+                        [0, math.cos(theta_x3_custom), -math.sin(theta_x3_custom)],
+                        [0, math.sin(theta_x3_custom),  math.cos(theta_x3_custom)]], dtype=np.float32)
+
+        #self.R_custom = R2_custom
+        self.R_custom = R1_custom @ R2_custom @ R3_custom
+        self.translation = np.array([2.3, -1.0, 2.0], dtype=np.float32)
 
         # Throttle logs in the hot path
         try:
@@ -589,6 +601,11 @@ class CombinedPipelineNode(Node):
         if pts.size == 0:
             return
 
+        mask = np.isfinite(pts).all(axis=1)
+        pts = pts[mask]
+        if pts.size == 0:
+            return
+
         # Unified transform
         # optical -> camera_link
         pts_cam  = (self.R_initial @ pts.T).T
@@ -602,10 +619,6 @@ class CombinedPipelineNode(Node):
         hdr_all = msg.header
         hdr_all.frame_id = "base_link"
         self.pub_camera_all.publish(pc2.create_cloud_xyz32(hdr_all, pts.tolist()))
-
-        # Workspace clipping
-        m = (0.55 <= pts[:, 0]) & (pts[:, 0] <= 0.95) & (0.0 <= pts[:, 1]) & (pts[:, 1] <= 0.4)
-        self.pub_work_surface.publish(pc2.create_cloud_xyz32(hdr_all, pts[m].tolist() if np.any(m) else []))
 
         # Unknown pipeline (same logic)
         unknown_points = self.remove_known(pts)

@@ -23,7 +23,7 @@
     <joint name="depth_camera_joint" type="fixed">
       <parent link="${parent_link}"/>
       <child link="depth_camera_link"/>
-      <origin xyz="0.75 0.2 1.0" rpy="0 ${pi/2} 0"/>
+      <origin xyz="2.3 -1.0 2.0" rpy="${pi} ${3*pi/4} ${-pi/6}"/>
     </joint>
 
     <xacro:if value="${sim_gazebo}">

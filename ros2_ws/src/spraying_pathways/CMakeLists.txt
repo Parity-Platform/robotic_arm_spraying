@@ -27,6 +27,20 @@ find_package(moveit_core REQUIRED)
 find_package(yaml-cpp REQUIRED)
 find_package(gazebo_msgs REQUIRED)
 find_package(ament_index_cpp REQUIRED)
+find_package(rclcpp_action REQUIRED)    ###########
+find_package(control_msgs REQUIRED)
+find_package(moveit_ros_planning REQUIRED)
+find_package(visualization_msgs REQUIRED)
+find_package(tf2_geometry_msgs REQUIRED)
+find_package(trajectory_msgs REQUIRED)
+
+# Make headers available to everything built in this package
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
+
+# Install & export headers (so downstream packages can include them)
+install(DIRECTORY include/ DESTINATION include)
+ament_export_include_directories(include)
+
 
 # === Build C++ Executables ===
 add_executable(go_home_node src/go_home.cpp)
@@ -199,6 +213,59 @@ ament_target_dependencies(moving_obstacle
   ament_index_cpp
 )
 
+add_executable(flat_fan_spraying_v3_node src/flat_fan_spraying_v3.cpp)
+ament_target_dependencies(flat_fan_spraying_v3_node
+  rclcpp
+  moveit_ros_planning_interface
+  geometry_msgs
+  std_msgs
+  sensor_msgs
+  tf2_ros
+  pcl_conversions
+  visualization_msgs
+  moveit_core
+  moveit_ros_planning
+  tf2_geometry_msgs
+  yaml-cpp
+)
+
+target_link_libraries(flat_fan_spraying_v3_node yaml-cpp)
+
+add_executable(safety_stop_on_unknown_node src/safety_stop_on_unknown.cpp)
+ament_target_dependencies(safety_stop_on_unknown_node
+  rclcpp
+  rclcpp_action
+  sensor_msgs
+  control_msgs
+  moveit_ros_planning_interface
+  trajectory_msgs
+  )
+
+add_executable(flat_fan_spraying_v4_node src/flat_fan_spraying_v4.cpp)
+ament_target_dependencies(flat_fan_spraying_v4_node
+  rclcpp
+  moveit_ros_planning_interface
+  geometry_msgs
+  std_msgs
+  sensor_msgs
+  tf2_ros
+  pcl_conversions
+  visualization_msgs
+  moveit_core
+  moveit_ros_planning
+  tf2_geometry_msgs
+  yaml-cpp
+  control_msgs
+)
+target_link_libraries(flat_fan_spraying_v4_node yaml-cpp)
+
+add_executable(inspect_flatness_node src/inspect_flatness.cpp)
+ament_target_dependencies(inspect_flatness_node
+  rclcpp
+  sensor_msgs
+  moveit_ros_planning_interface
+  tf2_geometry_msgs
+)
 
 # === Install C++ Executables ===
 install(TARGETS
@@ -217,6 +284,10 @@ install(TARGETS
   test_node
   flat_fan_spraying_v2_node
   moving_obstacle
+  flat_fan_spraying_v3_node
+  flat_fan_spraying_v4_node
+  safety_stop_on_unknown_node
+  inspect_flatness_node
   DESTINATION lib/${PROJECT_NAME}
 )
 
@@ -230,6 +301,8 @@ install(PROGRAMS
   scripts/unknown_object_detector.py
   scripts/pointcloud_transform_and_unknown_filter.py
   scripts/pointcloud_transform_and_unknown_filter_v2.py
+  scripts/pointcloud_transform_and_unknown_filter_v3.py
+  scripts/obstacles_tracking.py
   DESTINATION lib/${PROJECT_NAME}
 )
 

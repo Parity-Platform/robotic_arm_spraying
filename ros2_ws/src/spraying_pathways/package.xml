@@ -24,6 +24,7 @@
   <depend>control_msgs</depend>
   <depend>tf_transformations</depend>
   <depend>moveit_core</depend>
+  <depend>trajectory_msgs</depend>
 
   <!-- Additional dependencies for lidar_surface_scanner.py -->
   <depend>tf2_sensor_msgs</depend>

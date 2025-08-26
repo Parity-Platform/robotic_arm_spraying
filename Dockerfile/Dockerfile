@@ -45,6 +45,7 @@ RUN apt-get update && apt install -y \
 RUN apt-get update && apt-get install -y \
     python3-pip \
     python3-numpy \
+    python3-sklearn \
  && pip3 install --no-cache-dir numpy-stl \
  && rm -rf /var/lib/apt/lists/*
 
