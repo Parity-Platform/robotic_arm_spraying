@@ -20,10 +20,10 @@
 
   <xacro:include filename="$(find spraying_pathways)/urdf/depth_camera.urdf.xacro" />
   <xacro:include filename="$(find spraying_pathways)/urdf/depth_camera_ee.urdf.xacro" />
-  <xacro:include filename="$(find spraying_pathways)/urdf/2d_lidar.urdf.xacro" />
+  <!-- <xacro:include filename="$(find spraying_pathways)/urdf/2d_lidar.urdf.xacro" /> -->
   
   <!-- Custom sensors -->
   <xacro:depth_camera parent_link="$(arg tf_prefix)base_link" sim_gazebo="$(arg sim_gazebo)" />
   <xacro:depth_camera_ee parent_link="$(arg tf_prefix)wrist_3_link" sim_gazebo="$(arg sim_gazebo)" />
-  <xacro:lidar_sensor parent_link="$(arg tf_prefix)tool0" tf_prefix="$(arg tf_prefix)" sim_gazebo="$(arg sim_gazebo)" />
+  <!-- <xacro:lidar_sensor parent_link="$(arg tf_prefix)tool0" tf_prefix="$(arg tf_prefix)" sim_gazebo="$(arg sim_gazebo)" /> -->
 </robot>
