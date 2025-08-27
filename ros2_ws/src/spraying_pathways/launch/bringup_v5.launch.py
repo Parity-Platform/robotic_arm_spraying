@@ -239,7 +239,7 @@ def launch_setup(context, *args, **kwargs):
         condition=IfCondition(gazebo_gui),
     )
 
-    pointcloud_transform_and_unknown_filter_script = TimerAction(
+    """pointcloud_transform_and_unknown_filter_script = TimerAction(
         period=10.0,  # Delay in seconds to let the system stabilize
         actions=[
             ExecuteProcess(
@@ -248,7 +248,7 @@ def launch_setup(context, *args, **kwargs):
                 output="screen"
             )
         ]
-    )
+    )"""
 
 
     return [
@@ -261,7 +261,7 @@ def launch_setup(context, *args, **kwargs):
         spawn_ur,
         move_group_node,
         rviz_node,
-        pointcloud_transform_and_unknown_filter_script,
+        #pointcloud_transform_and_unknown_filter_script,
     ]
 
 

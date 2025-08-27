@@ -22,17 +22,6 @@
         <origin xyz="-0.06 0 -0.03" rpy="${pi/2} ${-pi/2} 0"/> <!-- xyz="-0.06 0 -0.03" ${pi/2} -${pi/2} -${pi}-->
     </joint>
 
-    <joint name="wrist_3_camera_optical_joint" type="fixed">
-        <!-- these values have to be these values otherwise the gazebo camera
-            image won't be aligned properly with the frame it is supposedly
-            originating from -->
-        <origin xyz="0 0 0" rpy="${-pi/2} 0 ${-pi/2}"/>
-        <parent link="wrist_3_camera_link"/>
-        <child link="wrist_3_camera_link_optical"/>
-    </joint>
-
-    <link name="wrist_3_camera_link_optical"></link>
-
     <!-- Camera sensor plugin, only in Gazebo -->
     <xacro:if value="$(arg sim_gazebo)">
         <gazebo reference="wrist_3_camera_link">

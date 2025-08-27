@@ -92,13 +92,14 @@ private:
 
   void init_interfaces_()
   {
-    pub_problematic_ = this->create_publisher<sensor_msgs::msg::PointCloud2>(output_topic_.c_str(), 10);
-    RCLCPP_INFO(this->get_logger(), "Advertising problematic cloud on: %s", output_topic_.c_str());
+    // === ORIGINAL (commented): publisher for problematic points ===
+    // pub_problematic_ = this->create_publisher<sensor_msgs::msg::PointCloud2>(output_topic_.c_str(), 10);
+    // RCLCPP_INFO(this->get_logger(), "Advertising problematic cloud on: %s", output_topic_.c_str());
   }
 
   // ── EDIT THESE VARIABLES AS YOU LIKE ──────────────────────────────────────────
   // Topics
-  std::string input_topic_  = "/wrist3_cam/points";
+  std::string input_topic_  = "/camera_ee_all_points";
   std::string output_topic_ = "/problematic_points";
 
   // Parallelogram corners (x,y) in base frame
@@ -290,119 +291,158 @@ private:
   {
     ++clouds_seen_;
 
-    // Summary of the input cloud
+    // === ORIGINAL summary including thresholds (commented) ===
+    // const auto &h = msg->header;
+    // const size_t npts = static_cast<size_t>(msg->width) * static_cast<size_t>(msg->height);
+    // RCLCPP_INFO(this->get_logger(),
+    //   "[Cloud %zu] frame='%s' stamp=%u.%09u size=%ux%u (%zu pts) | z_thresh=%.4f tol=%.4f",
+    //   clouds_seen_, h.frame_id.c_str(), h.stamp.sec, h.stamp.nanosec,
+    //   msg->width, msg->height, npts, z_threshold_, tolerance_);
+
+    // === Replacement summary without thresholds (ACTIVE) ===
     const auto &h = msg->header;
     const size_t npts = static_cast<size_t>(msg->width) * static_cast<size_t>(msg->height);
     RCLCPP_INFO(this->get_logger(),
-      "[Cloud %zu] frame='%s' stamp=%u.%09u size=%ux%u (%zu pts) | z_thresh=%.4f tol=%.4f",
+      "[Cloud %zu] frame='%s' stamp=%u.%09u size=%ux%u (%zu pts)",
       clouds_seen_, h.frame_id.c_str(), h.stamp.sec, h.stamp.nanosec,
-      msg->width, msg->height, npts, z_threshold_, tolerance_);
+      msg->width, msg->height, npts);
 
-    // Iterate and collect problematic points, while tracking min/max/avg Z
-    std::vector<std::array<float,3>> problematic_points;
-    problematic_points.reserve(npts);
+    // === ORIGINAL detection of problematic points & stats (commented) ===
+    // std::vector<std::array<float,3>> problematic_points;
+    // problematic_points.reserve(npts);
+    //
+    // double min_z = std::numeric_limits<double>::infinity();
+    // double max_z = -std::numeric_limits<double>::infinity();
+    // double sum_z = 0.0;
+    // size_t valid_count = 0;
+    //
+    // sensor_msgs::PointCloud2ConstIterator<float> ix(*msg, "x");
+    // sensor_msgs::PointCloud2ConstIterator<float> iy(*msg, "y");
+    // sensor_msgs::PointCloud2ConstIterator<float> iz(*msg, "z");
+    //
+    // for (; ix != ix.end(); ++ix, ++iy, ++iz) {
+    //   const float x = *ix, y = *iy, z = *iz;
+    //   if (!std::isfinite(x) || !std::isfinite(y) || !std::isfinite(z)) continue;
+    //
+    //   // stats
+    //   min_z = std::min(min_z, static_cast<double>(z));
+    //   max_z = std::max(max_z, static_cast<double>(z));
+    //   sum_z += z;
+    //   ++valid_count;
+    //
+    //   if (static_cast<double>(z) < (z_threshold_ - tolerance_)) {
+    //     problematic_points.push_back({x, y, z});
+    //   }
+    // }
+    //
+    // const double avg_z = valid_count ? (sum_z / static_cast<double>(valid_count)) : std::numeric_limits<double>::quiet_NaN();
+    // RCLCPP_INFO(this->get_logger(),
+    //   "[Cloud %zu] valid=%zu minZ=%.4f maxZ=%.4f avgZ=%.4f | problematic=%zu",
+    //   clouds_seen_, valid_count, min_z, max_z, avg_z, problematic_points.size());
+    //
+    // // Print up to N sample problematic points
+    // if (!problematic_points.empty()) {
+    //   size_t n_show = std::min(sample_print_limit_, problematic_points.size());
+    //   std::ostringstream oss;
+    //   oss.setf(std::ios::fixed); oss.precision(4);
+    //   oss << "Problematic sample (" << n_show << "/" << problematic_points.size() << "): ";
+    //   for (size_t i = 0; i < n_show; ++i) {
+    //     const auto &p = problematic_points[i];
+    //     oss << "(" << p[0] << ", " << p[1] << ", " << p[2] << ")";
+    //     if (i + 1 < n_show) oss << ", ";
+    //   }
+    //   RCLCPP_INFO(this->get_logger(), "%s", oss.str().c_str());
+    // }
 
+    // === ORIGINAL waypoint matching (commented) ===
+    // const auto waypoints = generateWaypoints();
+    // std::set<std::pair<double,double>> matched_waypoints;
+    // for (const auto &p : problematic_points) {
+    //   const double px = p[0], py = p[1];
+    //   for (const auto &wp : waypoints) {
+    //     if (std::hypot(px - wp.first, py - wp.second) <= match_radius_) {
+    //       matched_waypoints.insert(wp);
+    //       break;
+    //     }
+    //   }
+    // }
+    // RCLCPP_INFO(this->get_logger(), "[Cloud %zu] matched_waypoints=%zu (radius=%.3f)",
+    //             clouds_seen_, matched_waypoints.size(), match_radius_);
+    // if (!matched_waypoints.empty()) {
+    //   size_t n_show = std::min(sample_print_limit_, matched_waypoints.size());
+    //   std::ostringstream oss;
+    //   oss.setf(std::ios::fixed); oss.precision(4);
+    //   oss << "Matched waypoint samples (" << n_show << "/" << matched_waypoints.size() << "): ";
+    //   size_t i = 0;
+    //   for (const auto &wp : matched_waypoints) {
+    //     // Rebase for readability in base frame coordinates
+    //     const double x = wp.first  + robot_base_x_;
+    //     const double y = wp.second + robot_base_y_;
+    //     oss << "(" << x << ", " << y << ")";
+    //     if (++i >= n_show) break;
+    //     oss << ", ";
+    //   }
+    //   RCLCPP_INFO(this->get_logger(), "%s", oss.str().c_str());
+    // }
+
+    // === ORIGINAL publish of problematic points (commented) ===
+    // sensor_msgs::msg::PointCloud2 out;
+    // out.header = msg->header;                 // keep stamp
+    // out.header.frame_id = "base_link";        // as in your original code
+    //
+    // sensor_msgs::PointCloud2Modifier mod(out);
+    // mod.setPointCloud2Fields(
+    //   3,
+    //   "x", 1, sensor_msgs::msg::PointField::FLOAT32,
+    //   "y", 1, sensor_msgs::msg::PointField::FLOAT32,
+    //   "z", 1, sensor_msgs::msg::PointField::FLOAT32
+    // );
+    // mod.resize(problematic_points.size());
+    //
+    // sensor_msgs::PointCloud2Iterator<float> ox(out, "x"), oy(out, "y"), oz(out, "z");
+    // for (const auto &p : problematic_points) {
+    //   *ox = p[0]; *oy = p[1]; *oz = p[2];
+    //   ++ox; ++oy; ++oz;  // prefix increments (postfix++ is not defined for these iterators)
+    // }
+    //
+    // pub_problematic_->publish(out);
+    // RCLCPP_INFO(this->get_logger(),
+    //   "[Cloud %zu] published %zu problematic points to %s (frame=base_link)",
+    //   clouds_seen_, problematic_points.size(), output_topic_.c_str());
+
+    // === NEW: υπολογισμός εύρους x, y, z και εκτύπωση (ACTIVE) ===
+    double min_x = std::numeric_limits<double>::infinity();
+    double max_x = -std::numeric_limits<double>::infinity();
+    double min_y = std::numeric_limits<double>::infinity();
+    double max_y = -std::numeric_limits<double>::infinity();
     double min_z = std::numeric_limits<double>::infinity();
     double max_z = -std::numeric_limits<double>::infinity();
-    double sum_z = 0.0;
     size_t valid_count = 0;
 
-    sensor_msgs::PointCloud2ConstIterator<float> ix(*msg, "x");
-    sensor_msgs::PointCloud2ConstIterator<float> iy(*msg, "y");
-    sensor_msgs::PointCloud2ConstIterator<float> iz(*msg, "z");
+    sensor_msgs::PointCloud2ConstIterator<float> ix2(*msg, "x");
+    sensor_msgs::PointCloud2ConstIterator<float> iy2(*msg, "y");
+    sensor_msgs::PointCloud2ConstIterator<float> iz2(*msg, "z");
 
-    for (; ix != ix.end(); ++ix, ++iy, ++iz) {
-      const float x = *ix, y = *iy, z = *iz;
+    for (; ix2 != ix2.end(); ++ix2, ++iy2, ++iz2) {
+      const float x = *ix2, y = *iy2, z = *iz2;
       if (!std::isfinite(x) || !std::isfinite(y) || !std::isfinite(z)) continue;
 
-      // stats
-      min_z = std::min(min_z, static_cast<double>(z));
-      max_z = std::max(max_z, static_cast<double>(z));
-      sum_z += z;
+      if (x < min_x) min_x = x;
+      if (x > max_x) max_x = x;
+      if (y < min_y) min_y = y;
+      if (y > max_y) max_y = y;
+      if (z < min_z) min_z = z;
+      if (z > max_z) max_z = z;
       ++valid_count;
-
-      if (static_cast<double>(z) < (z_threshold_ - tolerance_)) {
-        problematic_points.push_back({x, y, z});
-      }
     }
 
-    const double avg_z = valid_count ? (sum_z / static_cast<double>(valid_count)) : std::numeric_limits<double>::quiet_NaN();
-    RCLCPP_INFO(this->get_logger(),
-      "[Cloud %zu] valid=%zu minZ=%.4f maxZ=%.4f avgZ=%.4f | problematic=%zu",
-      clouds_seen_, valid_count, min_z, max_z, avg_z, problematic_points.size());
-
-    // Print up to N sample problematic points
-    if (!problematic_points.empty()) {
-      size_t n_show = std::min(sample_print_limit_, problematic_points.size());
-      std::ostringstream oss;
-      oss.setf(std::ios::fixed); oss.precision(4);
-      oss << "Problematic sample (" << n_show << "/" << problematic_points.size() << "): ";
-      for (size_t i = 0; i < n_show; ++i) {
-        const auto &p = problematic_points[i];
-        oss << "(" << p[0] << ", " << p[1] << ", " << p[2] << ")";
-        if (i + 1 < n_show) oss << ", ";
-      }
-      RCLCPP_INFO(this->get_logger(), "%s", oss.str().c_str());
+    if (valid_count == 0) {
+      RCLCPP_WARN(this->get_logger(), "[Cloud %zu] No valid XYZ points to compute ranges.", clouds_seen_);
+    } else {
+      RCLCPP_INFO(this->get_logger(),
+        "[Cloud %zu] Ranges | X:[%.4f, %.4f]  Y:[%.4f, %.4f]  Z:[%.4f, %.4f]  (valid=%zu)",
+        clouds_seen_, min_x, max_x, min_y, max_y, min_z, max_z, valid_count);
     }
-
-    // Waypoint matching
-    const auto waypoints = generateWaypoints();
-    std::set<std::pair<double,double>> matched_waypoints;
-
-    for (const auto &p : problematic_points) {
-      const double px = p[0], py = p[1];
-      for (const auto &wp : waypoints) {
-        if (std::hypot(px - wp.first, py - wp.second) <= match_radius_) {
-          matched_waypoints.insert(wp);
-          break;
-        }
-      }
-    }
-
-    RCLCPP_INFO(this->get_logger(), "[Cloud %zu] matched_waypoints=%zu (radius=%.3f)",
-                clouds_seen_, matched_waypoints.size(), match_radius_);
-
-    if (!matched_waypoints.empty()) {
-      size_t n_show = std::min(sample_print_limit_, matched_waypoints.size());
-      std::ostringstream oss;
-      oss.setf(std::ios::fixed); oss.precision(4);
-      oss << "Matched waypoint samples (" << n_show << "/" << matched_waypoints.size() << "): ";
-      size_t i = 0;
-      for (const auto &wp : matched_waypoints) {
-        // Rebase for readability in base frame coordinates
-        const double x = wp.first  + robot_base_x_;
-        const double y = wp.second + robot_base_y_;
-        oss << "(" << x << ", " << y << ")";
-        if (++i >= n_show) break;
-        oss << ", ";
-      }
-      RCLCPP_INFO(this->get_logger(), "%s", oss.str().c_str());
-    }
-
-    // Publish problematic points in base_link
-    sensor_msgs::msg::PointCloud2 out;
-    out.header = msg->header;                 // keep stamp
-    out.header.frame_id = "base_link";        // as in your original code
-
-    sensor_msgs::PointCloud2Modifier mod(out);
-    mod.setPointCloud2Fields(
-      3,
-      "x", 1, sensor_msgs::msg::PointField::FLOAT32,
-      "y", 1, sensor_msgs::msg::PointField::FLOAT32,
-      "z", 1, sensor_msgs::msg::PointField::FLOAT32
-    );
-    mod.resize(problematic_points.size());
-
-    sensor_msgs::PointCloud2Iterator<float> ox(out, "x"), oy(out, "y"), oz(out, "z");
-    for (const auto &p : problematic_points) {
-      *ox = p[0]; *oy = p[1]; *oz = p[2];
-      ++ox; ++oy; ++oz;  // prefix increments (postfix++ is not defined for these iterators)
-    }
-
-    pub_problematic_->publish(out);
-    RCLCPP_INFO(this->get_logger(),
-      "[Cloud %zu] published %zu problematic points to %s (frame=base_link)",
-      clouds_seen_, problematic_points.size(), output_topic_.c_str());
   }
 };
 
