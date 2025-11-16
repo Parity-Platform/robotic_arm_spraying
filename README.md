@@ -1,6 +1,7 @@
 ```markdown
 
 <img width="538" height="317" alt="image" src="https://github.com/user-attachments/assets/6f6f36c5-6cb4-4f61-a156-612f9332f768" />
+
 # Robotic Arm Spraying — robotic_arm_spraying
 
 Purpose
