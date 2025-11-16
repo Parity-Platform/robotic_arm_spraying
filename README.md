@@ -1,6 +1,9 @@
 ```markdown
 # Robotic Arm Spraying — robotic_arm_spraying
 
+<img width="538" height="317" alt="image" src="https://github.com/user-attachments/assets/6f6f36c5-6cb4-4f61-a156-612f9332f768" />
+
+
 Purpose
 - Platform to plan and execute spray-painting tasks with a 6-DOF robotic arm. Includes ROS 2 packages for safety, path generation and UR simulation, calibration tooling and example trajectory output for validation.
 
