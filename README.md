@@ -121,7 +121,7 @@ find . -type f -perm -111 -maxdepth 6 -print
 cmake --install . --prefix ../install
 ../install/bin/<executable> --config ../configs/<config>.yaml
 ```
-Docker (reproducible environment)
+Docker 
 - Build (Dockerfile is in the repo under `Dockerfile/`):
 ```bash
 docker build -t robotic-arm-spraying:latest -f Dockerfile/Dockerfile .
