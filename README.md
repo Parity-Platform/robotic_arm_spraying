@@ -7,7 +7,7 @@ Status & composition
 - Active development for Arise Project (RAPSEB Subgrant).
 - Languages: Python, C++, CMake. ROS 2 workspace present at `ros2_ws/`.
 
-Quick facts discovered in the repository
+
 - ROS 2 packages under ros2_ws/src/:
   - rapseb_hri_safety
     - Node/script: `ros2_ws/src/rapseb_hri_safety/hri_safety_guard.py`
@@ -169,6 +169,3 @@ Contributing
 Maintainer / contact
 -Parity-Platform (info@parityplatform.com)
 
-Notes
-- I inspected the repository to locate ROS 2 packages and a safety launch file and inserted exact ROS 2 build and run commands that use those package and launch names. Use the discovery commands in the "Discover other executables" section to obtain other package executables and available launch files and substitute them into the examples above.
-```
