@@ -1,8 +1,5 @@
 ```markdown
 
-<img width="538" height="317" alt="image" src="https://github.com/user-attachments/assets/6f6f36c5-6cb4-4f61-a156-612f9332f768" />
-
-
 Purpose
 - Platform to plan and execute spray-painting tasks with a 6-DOF robotic arm. Includes ROS 2 packages for safety, path generation and UR simulation, calibration tooling and example trajectory output for validation.
 
@@ -124,6 +121,20 @@ find . -type f -perm -111 -maxdepth 6 -print
 cmake --install . --prefix ../install
 ../install/bin/<executable> --config ../configs/<config>.yaml
 ```
+Docker (reproducible environment)
+- Build (Dockerfile is in the repo under `Dockerfile/`):
+```bash
+docker build -t robotic-arm-spraying:latest -f Dockerfile/Dockerfile .
+```
+- Run container (example with device passthrough and mapped workspaces):
+```bash
+docker run --rm -it --network host \
+  --device /dev/ttyUSB0 \
+  -v $(pwd)/ros2_ws:/workspace/ros2_ws \
+  -v $(pwd)/configs:/workspace/configs \
+  robotic-arm-spraying:latest /bin/bash
+
+
 # inside container:
 source /opt/ros/<ros2-distro>/setup.bash
 cd /workspace/ros2_ws
